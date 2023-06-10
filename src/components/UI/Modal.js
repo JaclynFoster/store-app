@@ -8,8 +8,8 @@ const Background = props => {
 
 const Overlay = props => {
   return (
-    <div className={modal}>
-      <div className={content}>{props.children}</div>
+    <div className="modal">
+      <div className="content">{props.children}</div>
     </div>
   )
 }
