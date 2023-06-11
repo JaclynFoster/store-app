@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout/Layout'
 import Card from '../components/UI/Card'
 import Input from '../components/UI/Input'
+import FeaturedProducts from '../components/Home/FeaturedProducts'
 import '../components/Home/Home.css'
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
           <input type="email" placeholder="enter email..." />
           <button>Submit</button>
         </Card>
+        <FeaturedProducts />
       </div>
     </Layout>
   )
