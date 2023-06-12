@@ -12,6 +12,12 @@ const AnimalCard = props => {
   const duckHandler = () => {
     navigate('/ducks', {replace: true})
   }
+  const geeseHandler = () => {
+    navigate('/geese', {replace: true})
+  }
+  const chickenHandler = () => {
+    navigate('/chickens', {replace: true})
+  }
   return (
     <div className="animal-card-container">
       <Card>
@@ -20,12 +26,12 @@ const AnimalCard = props => {
         <label>Ducks</label>
       </Card>
       <Card>
-        <img className="animal-img" src={geese} />
+        <img onClick={() => geeseHandler()}className="animal-img" src={geese} />
         <Divider />
         <label>Geese</label>
       </Card>
       <Card>
-        <img className="animal-img" src={chickens} />
+        <img onClick={() => chickenHandler()}className="animal-img" src={chickens} />
         <Divider />
         <label>Chickens</label>
       </Card>

@@ -28,6 +28,14 @@ const router = createBrowserRouter([
     element: <Animals />
   },
   {
+    path: '/animals/:category',
+    element: <AnimalCategory />
+  },
+  {
+    path: '/animals/:category/:type',
+    element: <SinglePageAnimal />
+  },
+  {
     path: '/cart',
     element: <Cart />
   },
@@ -46,44 +54,7 @@ const router = createBrowserRouter([
   {
     path: '/signup',
     element: <Signup />
-  }, 
-  {
-    path: '/fowl',
-    element: <AnimalCategory />
-  },
-  {
-    path: '/reptiles',
-    element: <AnimalCategory />
-  },
-  {
-    path: '/bugs',
-    element: <AnimalCategory/>
-  },
-  {
-    path: '/ducks',
-    element: <SinglePageAnimal />
-  },
-  {
-    path: '/geese',
-    element: <SinglePageAnimal />
-  },
-   {
-    path: '/chickens',
-    element: <SinglePageAnimal />
-   }, 
-   {
-    path: '/turtles',
-    element: <SinglePageAnimal />
-   },
-   {
-    path: '/lizards',
-    element: <SinglePageAnimal />
-   },
-   {
-    path: '/toads',
-    element: <SinglePageAnimal />
-   },
-
+  }
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
@@ -98,4 +69,5 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals()
+
 

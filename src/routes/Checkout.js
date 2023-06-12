@@ -1,7 +1,12 @@
 import React from 'react'
+import Layout from '../components/Layout/Layout'
 
 const Checkout = () => {
-  return <div>Checkout</div>
+  return (
+    <Layout>
+      <div>Checkout</div>
+    </Layout>
+  )
 }
 
 export default Checkout

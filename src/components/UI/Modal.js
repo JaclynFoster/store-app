@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom'
 import "../UI/Modal.css"
 
 const Background = props => {
-  return <div className={background} onClick={props.onClose} />
+  return <div className="background" onClick={props.onClose} />
 }
 
 const Overlay = props => {
@@ -17,7 +17,7 @@ const portal = document.getElementById('portal')
 const Modal = props => {
   return (
     <Fragment>
-      (createPortal(<Background onClose={props.onClose} />, portal))
+      {createPortal(<Background onClose={props.onClose} />, portal)}
       {createPortal(<Overlay>{props.children}</Overlay>, portal)}
     </Fragment>
   )
