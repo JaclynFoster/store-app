@@ -10,6 +10,7 @@ import Contact from './routes/Contact'
 import Home from './routes/Home'
 import Login from './routes/Login'
 import Signup from './routes/Signup'
+import AnimalCard from './routes/AnimalCard'
 import reportWebVitals from './reportWebVitals'
 
 const router = createBrowserRouter([
@@ -44,7 +45,19 @@ const router = createBrowserRouter([
   {
     path: '/signup',
     element: <Signup />
-  }
+  }, 
+  {
+    path: '/fowl',
+    element: <AnimalCard />
+  },
+  {
+    path: '/reptiles',
+    element: <AnimalCard />
+  },
+  {
+    path: '/bugs',
+    element: <AnimalCard />
+  },
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
