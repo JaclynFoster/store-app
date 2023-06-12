@@ -10,8 +10,9 @@ import Contact from './routes/Contact'
 import Home from './routes/Home'
 import Login from './routes/Login'
 import Signup from './routes/Signup'
-import AnimalCard from './routes/AnimalCard'
 import reportWebVitals from './reportWebVitals'
+import AnimalCategory from './routes/AnimalCategory'
+import SinglePageAnimal from './routes/SinglePageAnimal'
 
 const router = createBrowserRouter([
   {
@@ -48,16 +49,41 @@ const router = createBrowserRouter([
   }, 
   {
     path: '/fowl',
-    element: <AnimalCard />
+    element: <AnimalCategory />
   },
   {
     path: '/reptiles',
-    element: <AnimalCard />
+    element: <AnimalCategory />
   },
   {
     path: '/bugs',
-    element: <AnimalCard />
+    element: <AnimalCategory/>
   },
+  {
+    path: '/ducks',
+    element: <SinglePageAnimal />
+  },
+  {
+    path: '/geese',
+    element: <SinglePageAnimal />
+  },
+   {
+    path: '/chickens',
+    element: <SinglePageAnimal />
+   }, 
+   {
+    path: '/turtles',
+    element: <SinglePageAnimal />
+   },
+   {
+    path: '/lizards',
+    element: <SinglePageAnimal />
+   },
+   {
+    path: '/toads',
+    element: <SinglePageAnimal />
+   },
+
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'))

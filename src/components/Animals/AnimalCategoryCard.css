@@ -1,0 +1,15 @@
+
+.animal-img {
+    height: 300px;
+    width: 400px;
+    border-radius: 14px;
+    border: 2px solid darkgray;
+  }
+
+  .animal-card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding: 15px;
+  }

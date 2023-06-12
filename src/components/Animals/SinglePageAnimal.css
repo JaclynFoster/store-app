@@ -1,0 +1,9 @@
+.back-btn {
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.back-btn:hover {
+    color: darkblue;
+}
