@@ -1,0 +1,13 @@
+.link-section {
+    background-color: burlywood;
+    position: relative;
+    bottom: 0; 
+    
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    
+}

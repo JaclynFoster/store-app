@@ -4,27 +4,29 @@ import goose from '../../images/goose.jpg'
 import eggs from '../../images/eggs.jpg'
 import wyandotte from '../../images/wyandotte.jpg'
 import React from 'react'
+import 'antd/dist/reset.css'
+import './FeaturedProducts.css'
 
 const FeaturedProducts = () => {
   return (
-    <div>
-      <h1>Hot Deals:</h1>
-      <Carousel autoplay>
-        <div>
+    <div className="featured">
+      <h1 className="deals">Hot Deals:</h1>
+      <Carousel className="carousel-container" autoplay>
+        <div className="carousel">
           <img className="carousel-img" src={muscovy} />
-          <label>Muscovy Chicks 1/2 Off!</label>
+          <label className="carousel-label">Muscovy Chicks 1/2 Off!</label>
         </div>
-        <div>
+        <div className="carousel">
           <img className="carousel-img" src={goose} />
-          <label>Toulouse Goose $10.00 Off!</label>
+          <label className="carousel-label">Toulouse Goose $10.00 Off!</label>
         </div>
-        <div>
+        <div className="carousel">
           <img className="carousel-img" src={eggs} />
-          <label>Farm Fresh Eggs $3.99!</label>
+          <label className="carousel-label">Farm Fresh Eggs $3.99!</label>
         </div>
-        <div>
+        <div className="carousel">
           <img className="carousel-img" src={wyandotte} />
-          <label>Wyandottes 2 for 1 Special!</label>
+          <label className="carousel-label">Wyandottes 2 for 1 Special!</label>
         </div>
       </Carousel>
     </div>
@@ -32,4 +34,5 @@ const FeaturedProducts = () => {
 }
 
 export default FeaturedProducts
+
 

@@ -1,0 +1,42 @@
+.login-container {
+    position: relative;
+    left: 29%;
+    margin-top: 40px;
+    border: 2px solid darkgray;
+   width: 40%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 15px;
+    border-radius: 15px;
+    
+}
+
+.login-label {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.login-input {
+    padding: 5px;
+    width: 500px;
+    border-radius: 14px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.login-btn {
+    width: 180px;
+    border-radius: 14px;
+    padding: 5px;
+    margin: auto;
+    margin-top: 15px;
+    background-color:bisque;
+    color: black;
+    font-weight: bold;
+
+}
+.login-btn:hover {
+    background-color: beige;
+}

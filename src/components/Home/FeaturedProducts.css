@@ -1,6 +1,50 @@
 .carousel-img {
-    height: 160px;
+ height: 400px;
+ width: 470px;
+ border-radius: 14px;
+ border: 4px solid crimson;
+}
+
+.carousel {
     border-radius: 14px;
     text-align: center;
     line-height: 160px;
+}
+
+.carousel-container {
+   height: 500px;
+   width: 500px;
+   text-align: center;
+   padding: 15px;
+   float: right;
+
+   border-radius: 14px;
+  
+}
+
+.carousel-label {
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(254, 2, 53);
+}
+
+.featured {
+   display: flex;
+   flex-direction: column;
+background-color: rgb(246, 217, 143);
+width: 40%;
+justify-content: flex-end;
+align-items: center;
+padding: 15px;
+float: right;
+border: 4px solid rgb(254, 2, 53);
+margin-right: 40px;
+border-radius: 14px;
+
+}
+
+.deals {
+    font-size: 40px;
+    text-align: right;
+    color: crimson;
 }

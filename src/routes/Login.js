@@ -1,7 +1,13 @@
 import React from 'react'
+import Layout from '../components/Layout/Layout'
+import LoginForm from '../components/Login/LoginForm'
 
 const Login = () => {
-  return <div>Login</div>
+  return (
+   <Layout>
+    <LoginForm />
+   </Layout>
+  )
 }
 
 export default Login
