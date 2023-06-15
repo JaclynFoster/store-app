@@ -1,7 +1,7 @@
 const express = require("express");
-const { test } = require("../controllers/animalController");
+const { test, getAllAnimals } = require("../controllers/animalController");
 const app = express.Router()
 
-app.get('/all', test)
+app.get('/types', getAllAnimals)
 
 module.exports = app;
