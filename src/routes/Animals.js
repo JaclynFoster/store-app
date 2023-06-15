@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Card from '../components/UI/Card'
 import axios from 'axios'
 import BSF from '../images/BSF.jpg'
@@ -10,10 +10,12 @@ import '../components/Animals/Animals.css'
 import { useNavigate } from 'react-router-dom'
 
 const Animals = () => {
+  const [animalType, setAnimalType] = useState([])
   const getTypes = () => {
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/animals/types`)
       .then(res => {
+        setAnimalType(res.data)
         console.log(res.data)
       })
       .catch(err => {
@@ -36,23 +38,18 @@ const Animals = () => {
   }, [])
   return (
     <Layout>
-      <div className="card-container">
-        <Card>
-          <img onClick={() => fowlHandler()} className="main-img" />
+    {animalType.map(animal => {
+         return (
+            <div className="card-container">
+            <Card>
+          <img className="main-img" src={animal.image}/>
           <Divider />
-          <h2>Fowl</h2>
-        </Card>
-        <Card>
-          <img onClick={() => reptileHandler()} className="main-img" />
-          <Divider />
-          <h2>Reptiles</h2>
-        </Card>
-        <Card>
-          <img onClick={() => bugHandler()} className="main-img" />
-          <Divider />
-          <h2>Bugs</h2>
+          <h2>{animal.type}</h2>
         </Card>
       </div>
+         )
+  })}
+    
     </Layout>
   )
 }
