@@ -10,6 +10,8 @@ const createBreedTable = `CREATE TABLE breeds (
   breed_image VARCHAR(1000)
 );`
 
+
+
 const insertBreeds = `INSERT INTO breeds(animal_id, breed_type, breed_image)
 VALUES (873949768395784194, 'ducks', 'https://jaclynsimages.s3.us-east-2.amazonaws.com/ducklings.jpg'),
 (873949768395784194, 'chickens', 'https://jaclynsimages.s3.us-east-2.amazonaws.com/chickenCard.jpg'),
@@ -40,6 +42,8 @@ VALUES('fowl'),('lizards'),('bugs')
 `
 const alterAnimalsTable = `ALTER TABLE animals ADD image VARCHAR(1000)
 `
+const alterTypesTable = `ALTER TABLE breeds RENAME TO types`
+const alterTypesColumn = `ALTER TABLE types RENAME COLUMN breed_image TO type_image`
 const addImagesToTypes = `UPDATE animals SET image = $1 WHERE id = $2`
 
 module.exports = {
@@ -48,6 +52,8 @@ module.exports = {
   insertAnimals,
   insertBreeds,
   alterAnimalsTable,
+  alterTypesTable,
+  alterTypesColumn,
   addImagesToTypes
 }
 

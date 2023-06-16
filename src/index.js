@@ -28,11 +28,11 @@ const router = createBrowserRouter([
     element: <Animals />
   },
   {
-    path: '/animals/:category',
+    path: '/animals/:types',
     element: <AnimalCategory />
   },
   {
-    path: '/animals/:category/:type',
+    path: '/animals/:types/:breed',
     element: <SinglePageAnimal />
   },
   {

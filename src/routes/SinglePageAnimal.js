@@ -9,7 +9,7 @@ import "../components/Animals/SinglePageAnimal.css"
 const SinglePageAnimal = () => {
     const navigate = useNavigate()
     const backHandler = () => {
-        navigate('/fowl', {replace: true})
+        navigate('/animals', {replace: true})
     } 
     return (
      <Layout> 

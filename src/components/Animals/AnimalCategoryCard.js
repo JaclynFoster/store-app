@@ -7,7 +7,8 @@ import Card from '../UI/Card'
 import './AnimalCategoryCard.css'
 import { useNavigate } from 'react-router-dom'
 
-const AnimalCard = props => {
+const AnimalCategoryCard = ({animalType, animal}) => {
+
   const navigate = useNavigate()
   const duckHandler = () => {
     navigate('/ducks', {replace: true})
@@ -20,12 +21,17 @@ const AnimalCard = props => {
   }
   return (
     <div className="animal-card-container">
-      <Card>
-        <img onClick={() => duckHandler()}className="animal-img" src={ducks} />
-        <Divider />
-        <label>Ducks</label>
-      </Card>
-      <Card>
+      {animalType.map(type => {
+        return (
+          <Card>
+          <img className="animal-img" src={type.type_id} />
+          <Divider />
+          <label>{type.type_name}</label>
+        </Card>
+        )
+      })}
+   
+      {/* <Card>
         <img onClick={() => geeseHandler()}className="animal-img" src={geese} />
         <Divider />
         <label>Geese</label>
@@ -34,9 +40,9 @@ const AnimalCard = props => {
         <img onClick={() => chickenHandler()}className="animal-img" src={chickens} />
         <Divider />
         <label>Chickens</label>
-      </Card>
+      </Card> */}
     </div>
   )
 }
 
-export default AnimalCard
+export default AnimalCategoryCard

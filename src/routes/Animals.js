@@ -7,19 +7,20 @@ import reptiles from '../images/reptiles.jpg'
 import Layout from '../components/Layout/Layout'
 import { Divider } from 'antd'
 import '../components/Animals/Animals.css'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const Animals = () => {
-  const [animalType, setAnimalType] = useState([])
-  const getTypes = () => {
+  const [animal, setAnimal] = useState([])
+  const params = useParams()
+  const getAllAnimals = () => {
     axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/animals/types`)
+      .get(`${process.env.REACT_APP_BACKEND_URL}/animals/all`)
       .then(res => {
-        setAnimalType(res.data)
+        setAnimal(res.data)
         console.log(res.data)
       })
       .catch(err => {
-        console.log('error getTypes: ', err)
+        console.log('error getAllAnimals: ', err)
       })
   }
   const navigate = useNavigate()
@@ -34,16 +35,16 @@ const Animals = () => {
   }
 
   useEffect(() => {
-    getTypes()
+    getAllAnimals()
   }, [])
   return (
     <Layout>
-    {animalType.map(animal => {
+    {animal.map(animal => {
          return (
             <div className="card-container">
             <Card>
       
-          <img onClick={() => navigate(`/breeds/${animal.id}`, {replace: true})}className="main-img" src={animal.image}/>
+          <img onClick={() => navigate(`/animals/types/?animal_id=${params.id}`, {replace: true})}className="main-img" src={animal.image}/>
           <Divider />
           <h2>{animal.type}</h2>
         </Card>

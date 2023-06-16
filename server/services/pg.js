@@ -1,9 +1,9 @@
 require('dotenv').config()
 const { Client } = require('pg')
-const client = new Client({ connectionString: process.env.CONNECTION_STRING })
 
 const queryInvoke = async (query, params) => {
   try {
+    const client = new Client({ connectionString: process.env.CONNECTION_STRING })
     await client.connect()
     const res = await client.query(query, params)
     // console.log(res.rows[0].message)
