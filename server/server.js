@@ -4,7 +4,7 @@ const app = express()
 const userRouter = require('./endpoints/userRouter')
 const animalRouter= require('./endpoints/animalRouter')
 const { queryInvoke } = require('./services/pg')
-const { createAnimalTable, insertAnimals, alterAnimalsTable, addImagesToTypes } = require('./schema/createTable.js')
+const { createAnimalTable, insertAnimals, alterAnimalsTable, addImagesToTypes, createBreedTable, insertBreeds } = require('./schema/createTable.js')
 require('dotenv').config()
 const { SERVER_PORT } = process.env
 
@@ -16,26 +16,10 @@ app.use('/animals', animalRouter)
 app.use('/user', userRouter)
 
 const sqlSetup = async () => {
-  const results = await queryInvoke(addImagesToTypes, ["reptiles", "873949768395849730" ])
+  const results = await queryInvoke(insertBreeds, [])
   console.log(results)
 }
-// [
-//   {
-//       "id": "873949768395784194",
-//       "type": "fowl",
-//       "image": null
-//   },
-//   {
-//       "id": "873949768395849730",
-//       "type": "lizards",
-//       "image": null
-//   },
-//   {
-//       "id": "873949768395882498",
-//       "type": "bugs",
-//       "image": null
-//   }
-// ]
+
 
 // sqlSetup()
 app.listen(SERVER_PORT, () => {

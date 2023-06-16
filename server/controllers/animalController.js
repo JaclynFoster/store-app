@@ -14,5 +14,6 @@ const getAllAnimals = async (req, res) => {
   }
 }
 
+
 module.exports = { test, getAllAnimals }
 

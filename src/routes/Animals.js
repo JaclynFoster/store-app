@@ -42,7 +42,8 @@ const Animals = () => {
          return (
             <div className="card-container">
             <Card>
-          <img className="main-img" src={animal.image}/>
+      
+          <img onClick={() => navigate(`/breeds/${animal.id}`, {replace: true})}className="main-img" src={animal.image}/>
           <Divider />
           <h2>{animal.type}</h2>
         </Card>
