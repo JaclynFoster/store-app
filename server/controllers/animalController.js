@@ -17,7 +17,7 @@ const getAllAnimals = async (req, res) => {
 const getAllTypes = async (req, res) => {
   try {
     const { animal_id} = req.query;
-    const response = await queryInvoke('SELECT * FROM types where animal_id = $1', [animal_id] )
+    const response = await queryInvoke('SELECT * FROM types WHERE ($1::int = ("animal_id") )',[animal_id] )
     res.status(200).send(response.rows)
   } catch (error) {
     console.log("getAllTypes Error: ", error)

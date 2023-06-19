@@ -24,7 +24,7 @@ const AnimalCategoryCard = ({animalType, animal}) => {
       {animalType.map(type => {
         return (
           <Card>
-          <img className="animal-img" src={type.type_id} />
+          <img className="animal-img" src={type.type_image} />
           <Divider />
           <label>{type.type_name}</label>
         </Card>
