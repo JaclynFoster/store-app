@@ -5,6 +5,7 @@ import twitter from '../../images/twitter.png'
 import facebook from '../../images/facebook.png'
 import instagram from '../../images/instagram.png'
 import tiktok from '../../images/tiktok.png'
+import goosey from '../../images/goosey.jpeg'
 import '../Contact/Contact.css'
 
 const { TextArea } = Input
@@ -12,7 +13,8 @@ const { TextArea } = Input
 const ContactForm = () => {
   return (
     <div>
-      <Card>
+      <Card className="contact-card">
+        <img className="duckies"src={goosey}/>
         <h2>We Want to Hear From You!</h2>
         <p>
           Leave us any feedback, questions, comments or concerns below and we
