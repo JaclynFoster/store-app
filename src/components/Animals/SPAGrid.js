@@ -8,146 +8,30 @@ import {
 } from '@ant-design/icons'
 import './SPAGrid.css'
 
-const SPAGrid = () => {
+const SPAGrid = ({ animalBreed }) => {
   return (
     <div className="grid">
-      <Card>
-        <label className="grid-label">Animal Name</label>
-        <Divider />
-        <img className="grid-img" />
-        <Divider />
-        <span>Qty:</span>
-        <MinusOutlined className="icons" />
-        <span>3</span>
-        <PlusOutlined className="icons" />
-        <button className="add-cart">
-          Add to Cart <ShoppingCartOutlined className="icons" />
-        </button>
-        <button className="details">Details</button>
-      </Card>
-
-      <Card>
-        <label className="grid-label">Animal Name</label>
-        <Divider />
-        <img className="grid-img" />
-        <Divider />
-        <span>Qty:</span>
-        <MinusOutlined className="icons" />
-        <span>3</span>
-        <PlusOutlined className="icons" />
-        <button className="add-cart">
-          Add to Cart <ShoppingCartOutlined className="icons" />
-        </button>
-        <button className="details">Details</button>
-      </Card>
-
-      <Card>
-        <label className="grid-label">Animal Name</label>
-        <Divider />
-        <img className="grid-img" />
-        <Divider />
-        <span>Qty:</span>
-        <MinusOutlined className="icons" />
-        <span>3</span>
-        <PlusOutlined className="icons" />
-        <button className="add-cart">
-          Add to Cart <ShoppingCartOutlined className="icons" />
-        </button>
-        <button className="details">Details</button>
-      </Card>
-
-      <Card>
-        <label className="grid-label">Animal Name</label>
-        <Divider />
-        <img className="grid-img" />
-        <Divider />
-        <span>Qty:</span>
-        <MinusOutlined className="icons" />
-        <span>3</span>
-        <PlusOutlined className="icons" />
-        <button className="add-cart">
-          Add to Cart <ShoppingCartOutlined className="icons" />
-        </button>
-        <button className="details">Details</button>
-      </Card>
-
-      <Card>
-        <label className="grid-label">Animal Name</label>
-        <Divider />
-        <img className="grid-img" />
-        <Divider />
-        <span>Qty:</span>
-        <MinusOutlined className="icons" />
-        <span>3</span>
-        <PlusOutlined className="icons" />
-        <button className="add-cart">
-          Add to Cart <ShoppingCartOutlined className="icons" />
-        </button>
-        <button className="details">Details</button>
-      </Card>
-
-      <Card>
-        <label className="grid-label">Animal Name</label>
-        <Divider />
-        <img className="grid-img" />
-        <Divider />
-        <span>Qty:</span>
-        <MinusOutlined className="icons" />
-        <span>3</span>
-        <PlusOutlined className="icons" />
-        <button className="add-cart">
-          Add to Cart <ShoppingCartOutlined className="icons" />
-        </button>
-        <button className="details">Details</button>
-      </Card>
-
-      <Card>
-        <label className="grid-label">Animal Name</label>
-        <Divider />
-        <img className="grid-img" />
-        <Divider />
-
-        <span>Qty:</span>
-        <MinusOutlined className="icons" />
-        <span>3</span>
-        <PlusOutlined className="icons" />
-        <button className="add-cart">
-          Add to Cart <ShoppingCartOutlined className="icons" />
-        </button>
-        <button className="details">Details</button>
-      </Card>
-
-      <Card>
-        <label className="grid-label">Animal Name</label>
-        <Divider />
-        <img className="grid-img" />
-        <Divider />
-
-        <span>Qty:</span>
-        <MinusOutlined className="icons" />
-        <span>3</span>
-        <PlusOutlined className="icons" />
-        <button className="add-cart">
-          Add to Cart <ShoppingCartOutlined className="icons" />
-        </button>
-        <button className="details">Details</button>
-      </Card>
-
-      <Card>
-        <label className="grid-label">Animal Name</label>
-        <Divider />
-        <img className="grid-img" />
-        <Divider />
-
-        <span>Qty:</span>
-        <MinusOutlined className="icons" />
-        <span>3</span>
-        <PlusOutlined className="icons" />
-        <button className="add-cart">
-          Add to Cart <ShoppingCartOutlined className="icons" />
-        </button>
-        <button className="details">Details</button>
-      </Card>
+      {animalBreed.map(breed => {
+        console.log('animalBreed: ', animalBreed)
+        console.log('breed', breed)
+        return (
+          <Card>
+            <label className="grid-label">{breed.breed_name}</label>
+            <Divider />
+            <img className="grid-img" src={breed.breed_image} />
+            <span>Price: ${breed.price}.00</span>
+            <Divider />
+            <span>Qty:</span>
+            <MinusOutlined className="icons" />
+            <span>3</span>
+            <PlusOutlined className="icons" />
+            <button className="add-cart">
+              Add to Cart <ShoppingCartOutlined className="icons" />
+            </button>
+            <button className="details">Details</button>
+          </Card>
+        )
+      })}
     </div>
   )
 }

@@ -39,24 +39,29 @@ const Animals = () => {
   }, [])
   return (
     <Layout>
-    {animal.map(animal => {
-         return (
-            <div className="card-container">
+      {animal.map(animal => {
+        return (
+          <div className="card-container">
             <Card>
-      
-          <img onClick={() => navigate(`/animals/${animal.type}`, {replace: true})}className="main-img" src={animal.image}/>
-          <Divider />
-          <h2>{animal.type}</h2>
-        </Card>
-      </div>
-         )
-  })}
-    
+              <img
+                onClick={() =>
+                  navigate(`/animals/${animal.type}`, { replace: true })
+                }
+                className="main-img"
+                src={animal.image}
+              />
+              <Divider />
+              <h2>{animal.type}</h2>
+            </Card>
+          </div>
+        )
+      })}
     </Layout>
   )
 }
 
 export default Animals
+
 
 
 

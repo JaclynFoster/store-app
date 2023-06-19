@@ -13,3 +13,13 @@
     justify-content: space-around;
     padding: 15px;
   }
+
+  .back-home {
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.back-home:hover {
+    color: darkblue;
+}

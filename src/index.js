@@ -32,7 +32,7 @@ const router = createBrowserRouter([
     element: <AnimalCategory />
   },
   {
-    path: '/animals/:types/:breed',
+    path: '/animals/:type/:breed',
     element: <SinglePageAnimal />
   },
   {
