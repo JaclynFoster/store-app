@@ -3,6 +3,6 @@ const { test, getAllAnimals, getAllTypes} = require("../controllers/animalContro
 const app = express.Router()
 
 app.get('/all', getAllAnimals)
-app.get('/types', getAllTypes)
+app.get('/:type', getAllTypes)
 
 module.exports = app;

@@ -28,7 +28,7 @@ const router = createBrowserRouter([
     element: <Animals />
   },
   {
-    path: '/animals/:types',
+    path: '/animals/:type',
     element: <AnimalCategory />
   },
   {

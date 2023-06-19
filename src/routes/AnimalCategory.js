@@ -11,7 +11,7 @@ const AnimalCategory = (props) => {
   console.log('params', params)
   const getAllTypes = () => {
     axios
-    .get(`${process.env.REACT_APP_BACKEND_URL}/animals/types?animal_id=${params.animal_id}`)
+    .get(`${process.env.REACT_APP_BACKEND_URL}/animals/${params.type}`)
     .then(res => {
       setAnimalType(res.data)
       console.log(res.data)

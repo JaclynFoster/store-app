@@ -44,7 +44,7 @@ const Animals = () => {
             <div className="card-container">
             <Card>
       
-          <img onClick={() => navigate(`/animals/types/?type=${params.type}`, {replace: true})}className="main-img" src={animal.image}/>
+          <img onClick={() => navigate(`/animals/${animal.type}`, {replace: true})}className="main-img" src={animal.image}/>
           <Divider />
           <h2>{animal.type}</h2>
         </Card>
