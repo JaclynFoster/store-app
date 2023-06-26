@@ -13,7 +13,7 @@ app.use(express.static(`${__dirname}/../public`))
 app.use(express.json())
 app.use(cors())
 app.use('/animals', animalRouter)
-app.use('/user', userRouter)
+app.use('/login', userRouter)
 
 const sqlSetup = async () => {
   const results = await queryInvoke(createUserTable, [])
