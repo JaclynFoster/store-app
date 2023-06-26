@@ -35,15 +35,15 @@ const ContactForm = () => {
             <img className="contact-icon" src={tiktok} />
           </a>
         </div>
-        <Form className="form" name="basic" autoComplete="off">
+        <Form action="https://formsubmit.co/your@email.com" method="POST" className="form" name="basic" autoComplete="off">
           <Form.Item label="Name" name="name">
             <Input />
           </Form.Item>
-          <Form.Item label="Email" name="email">
+          <Form.Item label="Email" name="email" type="email">
             <Input />
           </Form.Item>
           <Form.Item label="Leave us a Message:">
-            <TextArea rows={6} />
+            <TextArea name="textarea" rows={6} />
           </Form.Item>
           <Form.Item>
             <Button type="primary" htmlType="submit">
