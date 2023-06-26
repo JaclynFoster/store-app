@@ -89,7 +89,7 @@ const createUser = async (req, res) => {
 //   console.log('Validate Token Body', req.body)
 // }
 
-module.exports = { getUser, validateToken, createUser }
+module.exports = { getUser, createUser }
 
 
 
