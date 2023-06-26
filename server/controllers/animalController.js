@@ -1,8 +1,5 @@
 const { queryInvoke } = require('../services/pg')
 
-const test = (req, res) => {
-  res.sendStatus(200)
-}
 
 const getAllAnimals = async (req, res) => {
   try {
@@ -50,6 +47,6 @@ const getAllBreeds = async (req, res) => {
   }
 }
 
-module.exports = { test, getAllAnimals, getAllTypes, getAllBreeds }
+module.exports = { getAllAnimals, getAllTypes, getAllBreeds }
 
 

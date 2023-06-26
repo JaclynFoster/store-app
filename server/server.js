@@ -4,7 +4,7 @@ const app = express()
 const userRouter = require('./endpoints/userRouter')
 const animalRouter= require('./endpoints/animalRouter')
 const { queryInvoke } = require('./services/pg')
-const { createAnimalTable, insertAnimals, alterAnimalsTable, addImagesToTypes, createBreedTable, insertBreeds, alterTypesTable, alterTypesColumn, createBreedsTable } = require('./schema/createTable.js')
+const { createAnimalTable, insertAnimals, alterAnimalsTable, addImagesToTypes, createBreedTable, insertBreeds, alterTypesTable, alterTypesColumn, createBreedsTable, createUserTable } = require('./schema/createTable.js')
 require('dotenv').config()
 const { SERVER_PORT } = process.env
 
@@ -16,7 +16,7 @@ app.use('/animals', animalRouter)
 app.use('/user', userRouter)
 
 const sqlSetup = async () => {
-  const results = await queryInvoke(insertBreeds, [])
+  const results = await queryInvoke(createUserTable, [])
   console.log(results)
 }
 

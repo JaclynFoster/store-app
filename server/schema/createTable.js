@@ -76,7 +76,7 @@ VALUES (873949768395784194, 'ducks', 'https://jaclynsimages.s3.us-east-2.amazona
 (873949768395882498, 'mealworms', 'https://jaclynsimages.s3.us-east-2.amazonaws.com/mealworm.jpeg')
 `
 
-createUserTable = `CREATE TABLE user (
+const createUserTable = `CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     username VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
@@ -89,6 +89,8 @@ createUserTable = `CREATE TABLE user (
     zipcode INT,
     phone INT
 )`
+
+
 
 const insertAnimals = `INSERT INTO animals (type)
 VALUES('fowl'),('lizards'),('bugs')
@@ -103,6 +105,7 @@ module.exports = {
   createAnimalTable,
   createTypesTable,
   createBreedsTable,
+  createUserTable,
   insertAnimals,
   insertTypes,
   insertBreeds,

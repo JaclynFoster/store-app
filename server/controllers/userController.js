@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken')
+const { queryInvoke } = require('../services/pg')
 require('dotenv').config()
 
 const SECRET = process.env.SECRET
@@ -16,10 +17,28 @@ const generateToken = credentials => {
   )
 }
 
-const createToken = async (req, res) => {
-  console.log('createToken', req.body)
-  let token = generateToken(req.body)
-  res.status(200).send(token)
+const getUser = async (req, res) => {
+  try {
+    const response = await queryInvoke(
+      `SELECT * FROM users WHERE username = $1 AND password = $2`
+    )
+    let token = generateToken(req.body)
+    res.status(200).send(token, response)
+  } catch (error) {
+    console.log('getUser Error:', error)
+    res.sendStatus(500)
+  }
+}
+
+const createUser = async (req, res) => {
+  try {
+    const response = await queryInvoke(`INSERT INTO users (username, password, email, first_name, last_name, address, city, state, zipcode, phone)
+         VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`)
+    res.status(200).send(response)
+  } catch (error) {
+    console.log('Error createUser: ', error)
+    res.sendStatus(500)
+  }
 }
 
 const validateToken = async (req, res) => {
@@ -33,4 +52,5 @@ const validateToken = async (req, res) => {
   console.log('Validate Token Body', req.body)
 }
 
-module.exports = { createToken, validateToken }
+module.exports = { getUser, validateToken, createUser }
+
