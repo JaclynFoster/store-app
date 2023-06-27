@@ -1,12 +1,10 @@
-import React from 'react'
-import Modal from '../components/UI/Modal'
+import React, { useState } from 'react'
+import Modal from '../components/Signup/Modal'
 
-const Cart = (props) => {
+const Cart = () => {
+
   return (
-  <Modal>
-    <div>Stuff</div>
-    <button onClose={props.onClose}>Close</button>
-  </Modal>
+ <div>Stuff</div>
     )
 }
 

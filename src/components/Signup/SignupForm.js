@@ -2,10 +2,11 @@ import React, { useRef, useState } from 'react'
 import { Divider } from 'antd'
 import axios from 'axios'
 import './Signup.css'
-import Modal from '../UI/Modal'
+import Modal from './Modal'
 const { REACT_APP_BACKEND_URL } = process.env
 
-const SignupForm = ({ showModal, setShowModal }) => {
+const SignupForm = () => {
+  const [showModal, setShowModal] = useState(false)
   const refSubmit = useRef()
   const [createUser, setCreateUser] = useState({})
   const [firstName, setFirstName] = useState('')
@@ -19,7 +20,9 @@ const SignupForm = ({ showModal, setShowModal }) => {
   const [newUsername, setNewUsername] = useState('')
   const [newPassword, setNewPassword] = useState('')
 
-  const createNewUser = () => {
+  const createNewUser = (e) => {
+    e.preventDefault()
+
     console.log(
       'first',
       firstName,
@@ -67,7 +70,11 @@ const SignupForm = ({ showModal, setShowModal }) => {
   }
 
   return (
-    <div key={createUser.id} className="signup-container">
+    <form
+      key={createUser.id}
+      className="signup-container"
+      onSubmit={createNewUser}
+    >
       <h1>Signup:</h1>
       <Divider />
       <label className="signup-label">Create Username:</label>
@@ -138,23 +145,19 @@ const SignupForm = ({ showModal, setShowModal }) => {
         className="signup-input"
       />
       {showModal ? (
-      <Modal setShowModal={setShowModal}>
-        <span>Thank you for signing up! Please login to continue.</span>
-      </Modal>
-     ): null }
-      <button
-        ref={refSubmit}
-        onClick={createNewUser}
-        className="signup-btn"
-        type="submit"
-      >
+        <Modal setShowModal={setShowModal}>
+          <span>Thank you for signing up! Please login to continue.</span>
+        </Modal>
+      ) : null}
+      <button ref={refSubmit} className="signup-btn" type="submit">
         Submit
       </button>
-    </div>
+    </form>
   )
 }
 
 export default SignupForm
+
 
 
 
