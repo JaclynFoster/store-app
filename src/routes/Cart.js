@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
-import Modal from '../components/Signup/SignupModal'
+import Layout from '../components/Layout/Layout'
+import CartItems from '../components/Cart/CartItems'
 
 const Cart = () => {
 
+ 
   return (
- <div>Stuff</div>
+    <Layout>
+      <CartItems />
+    </Layout>
     )
 }
 

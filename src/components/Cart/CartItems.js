@@ -1,7 +1,12 @@
 import React from 'react'
+import Card from '../UI/Card'
 
 const CartItems = () => {
-  return <div>Cart Items</div>
+  return (
+   <Card>
+   Work In Progress
+   </Card>
+  )
 }
 
 export default CartItems
