@@ -43,32 +43,32 @@ const getUser = async (req, res) => {
 
 const createUser = async (req, res) => {
   const {
+    username,
+    password,
+    email,
     first_name,
     last_name,
-    email,
     address,
     city,
     state,
     zipcode,
-    phone,
-    username,
-    password
+    phone
   } = req.params
   try {
     const response = await queryInvoke(
       `INSERT INTO users (username, password, email, first_name, last_name, address, city, state, zipcode, phone)
          VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
       [
+        username,
+        password,
+        email,
         first_name,
         last_name,
-        email,
         address,
         city,
         state,
         zipcode,
-        phone,
-        username,
-        password
+        phone
       ]
     )
     res.status(200).send(response)

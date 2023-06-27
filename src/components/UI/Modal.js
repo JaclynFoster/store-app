@@ -1,27 +1,25 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { createPortal } from 'react-dom'
-import "../UI/Modal.css"
+import '../UI/Modal.css'
 
-const Background = props => {
-  return <div className="background" onClick={props.onClose} />
-}
-
-const Overlay = props => {
-  return (
-    <div className="modal">
-      <div className="content">{props.children}</div>
-    </div>
-  )
-}
-const portal = document.getElementById('portal')
 const Modal = props => {
+  const [showModal, setShowModal] = useState(false)
+
+  const onClose = () => {
+    setShowModal(false)
+  }
+
   return (
     <Fragment>
-      {createPortal(<Background onClose={props.onClose} />, portal)}
-      {createPortal(<Overlay>{props.children}</Overlay>, portal)}
+      <div className="background" onClick={onClose}>
+        <div className="modal">
+          <div className="content">{props.children}</div>
+        </div>
+      </div>
     </Fragment>
   )
 }
+
 
 export default Modal
 

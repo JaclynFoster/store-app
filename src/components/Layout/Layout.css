@@ -90,9 +90,14 @@
 }
 
 .footer {
-  background-color: rgb(241, 94, 49);
-  opacity: 0.75;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
+  width: 100vw;
+    background-color: rgb(83, 91, 91);
+    height: 150px;
+    position: block;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

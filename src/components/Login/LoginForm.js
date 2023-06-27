@@ -39,6 +39,7 @@ const LoginForm = () => {
   }
 
   return (
+    <div>
     <form className="login-container" onSubmit={getUserLogin}>
       <AuthContext.Provider value={{ id: user.id }}>
         <div key={user.id}>
@@ -63,11 +64,12 @@ const LoginForm = () => {
         </div>
       </AuthContext.Provider>
       <Divider />
+    </form>
       <label className="login-label">New User:</label>
       <button onClick={() => onSignUpHandler()} className="login-btn">
         Sign Up
       </button>
-    </form>
+    </div>
   )
 }
 

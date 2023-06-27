@@ -2,10 +2,10 @@ import React from 'react'
 import Layout from '../components/Layout/Layout'
 import SignupForm from '../components/Signup/SignupForm'
 
-const Signup = () => {
+const Signup = ({createUser, setCreateUser}) => {
   return (
    <Layout>
-    <SignupForm />
+    <SignupForm createUser={createUser} setCreateUser={setCreateUser} />
    </Layout>
   )
 }
