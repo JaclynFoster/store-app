@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Modal from '../components/Signup/Modal'
+import Modal from '../components/Signup/SignupModal'
 
 const Cart = () => {
 

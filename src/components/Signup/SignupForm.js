@@ -1,8 +1,9 @@
 import React, { useRef, useState } from 'react'
 import { Divider } from 'antd'
 import axios from 'axios'
+import SignupModal from './SignupModal'
+import '../UI/Modal.css'
 import './Signup.css'
-import Modal from './Modal'
 const { REACT_APP_BACKEND_URL } = process.env
 
 const SignupForm = () => {
@@ -145,9 +146,9 @@ const SignupForm = () => {
         className="signup-input"
       />
       {showModal ? (
-        <Modal setShowModal={setShowModal}>
+        <SignupModal setShowModal={setShowModal}>
           <span>Thank you for signing up! Please login to continue.</span>
-        </Modal>
+        </SignupModal>
       ) : null}
       <button ref={refSubmit} className="signup-btn" type="submit">
         Submit

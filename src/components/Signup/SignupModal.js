@@ -1,14 +1,14 @@
 import React from 'react'
-import './Modal.css'
+import '../UI/Modal.css'
 import { useNavigate } from 'react-router-dom'
 
-const Modal = props => {
+const SignupModal = props => {
   const navigate = useNavigate()
   const clickHandler = e => {
     if (e.target.id === 'modalBackground') {
       console.log(e.target.id)
       props.setShowModal(false)
-      navigate(`/login`, {replace: true})
+      navigate(`/login`, { replace: true })
     }
   }
 
@@ -21,7 +21,8 @@ const Modal = props => {
   )
 }
 
-export default Modal
+export default SignupModal
+
 
 
 
