@@ -1,21 +1,38 @@
+.grid-card {
+    width: 350px;
+    text-align: center;
+    background-color: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 4px;
+    margin-top: 50px;
+    
+     z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+   
+}
+
 .grid {
     display: grid;
     justify-items: center;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
    grid-gap: 10px
   
 }
 
 .icons {
     font-size: 15px;
-    padding: 5px;
+    padding: 2px;
+    font-weight: bold;
 }
 
 .add-cart {
     border-radius: 14px;
     width: 150px;
     padding: 3px;
-    margin-top: 4px;
+    
 
 }
 
@@ -23,7 +40,6 @@
     padding: 3px;
     width: 100px;
     border-radius: 15px;
-    margin-top: 4px;
     background-color: rgb(244, 173, 187);
 }
 
@@ -31,12 +47,37 @@
     font-size: 20px;
     font-weight: bold;
    font-family: fantasy;
-   padding-top: 5px;
+
+   margin-top: 20px;
 }
 
 .grid-img {
-    height: 200px;
-    width: 200px;
-    border-radius: 14px;
+    width: inherit;
+    height: 300px;
     border: 2px solid darkgray;
+    
+}
+
+.container-two {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   margin-top: 15px;
+  
+   
+}
+
+.grid-btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    width: inherit;
+    margin-bottom: 10px;
+}
+
+.grid-span {
+    font-size: 15px;
+    padding: 5px;
 }

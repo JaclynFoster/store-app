@@ -12,10 +12,17 @@ const SignupModal = props => {
     }
   }
 
+  const closeButton = () => {
+    props.setShowModal(false)
+  }
+
   return (
     <div id="modalBackground" className="background" onClick={clickHandler}>
       <div className="modal">
-        <div className="content">{props.children}</div>
+        <div className="content">
+          <button onClick={closeButton} className="close">X</button>
+          {props.children}
+        </div>
       </div>
     </div>
   )
