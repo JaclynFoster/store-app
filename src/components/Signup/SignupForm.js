@@ -59,8 +59,8 @@ const SignupForm = ({ showModal, setShowModal }) => {
         setAddress('')
         setCity('')
         setState('')
-        // setZipcode(null)
-        // setPhone(null)
+        setZipcode(0)
+        setPhone(0)
         setNewUsername('')
         setNewPassword('')
       })
@@ -137,11 +137,11 @@ const SignupForm = ({ showModal, setShowModal }) => {
         onChange={e => setPhone(e.target.value)}
         className="signup-input"
       />
-      {/* {showModal ? (
+      {showModal ? (
       <Modal setShowModal={setShowModal}>
         <span>Thank you for signing up! Please login to continue.</span>
       </Modal>
-     ): null } */}
+     ): null }
       <button
         ref={refSubmit}
         onClick={createNewUser}

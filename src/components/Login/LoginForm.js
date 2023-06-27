@@ -36,6 +36,10 @@ const LoginForm = () => {
           navigate('/', { replace: true })
         }
       })
+      .catch(err => {
+        alert("Credentials invalid. Please try again")
+        console.log("error on login", err)
+      })
   }
 
   return (

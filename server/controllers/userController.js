@@ -18,18 +18,21 @@ const generateToken = credentials => {
 }
 
 const getUser = async (req, res) => {
-  const { username, password } = req.params
+  const { username, password } = req.query
+  console.log("query",req.query)
   try {
     const response = await queryInvoke(
       `SELECT * FROM users WHERE username = $1 AND password = $2`,
       [username, password]
     )
-    if (response.length) {
+    console.log("response:",response)
+    if (response.rows.length) {
+    
       let token = generateToken(req.body)
       console.log('Token:', token)
       // let valid = jwt.verify(token, SECRET)
       // if (valid) {
-      res.status(200).send({ token, response })
+      res.status(200).send({ token, data: response.rows[0] })
 
       // }
     } else {
@@ -53,7 +56,8 @@ const createUser = async (req, res) => {
     state,
     zipcode,
     phone
-  } = req.params
+  } = req.body
+  console.log("My params: ", req.params)
   try {
     const response = await queryInvoke(
       `INSERT INTO users (username, password, email, first_name, last_name, address, city, state, zipcode, phone)
