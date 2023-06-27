@@ -14,12 +14,16 @@ const ContactForm = () => {
   return (
     <div>
       <Card className="contact-card">
-        <img className="duckies"src={goosey}/>
-        <h2>We Want to Hear From You!</h2>
-        <p>
-          Leave us any feedback, questions, comments or concerns below and we
-          will contact you soon.
-        </p>
+        <div className="contact-img">
+          <img className="duckies" src={goosey} />
+          <div className="headers">
+            <h2>We Want to Hear From You!</h2>
+            <p>
+              Leave us any feedback, questions, comments or concerns below and
+              we will contact you soon.
+            </p>
+          </div>
+        </div>
         <label>Don't forget to like and subscribe:</label>
         <div className="contact-icon-container">
           <a target="_blank">
@@ -35,7 +39,13 @@ const ContactForm = () => {
             <img className="contact-icon" src={tiktok} />
           </a>
         </div>
-        <Form action="https://formsubmit.co/your@email.com" method="POST" className="form" name="basic" autoComplete="off">
+        <Form
+          action="https://formsubmit.co/your@email.com"
+          method="POST"
+          className="form"
+          name="basic"
+          autoComplete="off"
+        >
           <Form.Item label="Name" name="name">
             <Input />
           </Form.Item>
@@ -57,4 +67,5 @@ const ContactForm = () => {
 }
 
 export default ContactForm
+
 

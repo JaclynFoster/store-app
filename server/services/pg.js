@@ -6,7 +6,6 @@ const queryInvoke = async (query, params) => {
     const client = new Client({ connectionString: process.env.CONNECTION_STRING })
     await client.connect()
     const res = await client.query(query, params)
-    // console.log(res.rows[0].message)
     await client.end()
     return res
   } catch (error) {

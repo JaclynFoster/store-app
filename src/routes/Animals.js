@@ -51,7 +51,7 @@ const Animals = () => {
                 src={animal.image}
               />
               <Divider />
-              <h2>{animal.type}</h2>
+              <h2 className="animal-type">{animal.type}</h2>
             </Card>
           </div>
         )

@@ -1,18 +1,16 @@
 
 .animal-img {
-    height: 300px;
-    width: 400px;
-    border-radius: 14px;
+    width: 100%;
     border: 2px solid darkgray;
   }
 
-  .animal-card-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    padding: 15px;
-  }
+.animal-card-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
 
   .back-home {
     border: none;
@@ -22,4 +20,10 @@
 
 .back-home:hover {
     color: darkblue;
+}
+
+.animal-label {
+  text-transform: capitalize;
+  font-size: 20px;
+  font-family: fantasy;
 }
