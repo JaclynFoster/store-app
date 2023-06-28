@@ -13,6 +13,8 @@ import Signup from './routes/Signup'
 import reportWebVitals from './reportWebVitals'
 import AnimalCategory from './routes/AnimalCategory'
 import SinglePageAnimal from './routes/SinglePageAnimal'
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 const router = createBrowserRouter([
   {
