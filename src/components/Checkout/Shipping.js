@@ -30,14 +30,14 @@ const Shipping = ({
           <input
             value={firstName}
             onChange={e => setFirstName(e.target.value)}
-            className="shipping-input"
+            className="shipping-input name"
             placeholder="First Name:"
             required
           />
           <input
             value={lastName}
             onChange={e => setLastName(e.target.value)}
-            className="shipping-input"
+            className="shipping-input name"
             placeholder="Last Name:"
             required
           />
@@ -99,3 +99,4 @@ const Shipping = ({
 }
 
 export default Shipping
+

@@ -1,6 +1,7 @@
 import React from 'react'
 import CollapseChildren from '../UI/CollapseChildren'
 import './Customer.css'
+import { Divider } from 'antd'
 import { useNavigate } from 'react-router-dom'
 
 const Customer = () => {
@@ -12,6 +13,8 @@ const Customer = () => {
 
   return (
     <CollapseChildren>
+      <h1>Customer Details:</h1>
+      <Divider />
       <div className="customer-container">
         <p className="guest-p">
           Checking out as a Guest? You'll be able to save your details to create
@@ -34,4 +37,5 @@ const Customer = () => {
 }
 
 export default Customer
+
 
