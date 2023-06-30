@@ -1,9 +1,10 @@
 import React from 'react'
 import { Steps } from 'antd'
+import './Progress.css'
 
 const Progress = () => {
   return (
-    <div>
+    <div className="steps-container">
       <Steps
         items={[
           {
@@ -15,6 +16,9 @@ const Progress = () => {
 
           {
             title: 'Payment'
+          }, 
+          {
+            title: 'Order Summary'
           }
         ]}
       />

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Divider } from 'antd'
-import Card from '../UI/Card'
 import './Shipping.css'
+import CollapseChildren from '../UI/CollapseChildren'
 
 const Shipping = ({
   email,
@@ -22,7 +22,7 @@ const Shipping = ({
   setState
 }) => {
   return (
-    <Card>
+    <CollapseChildren>
       <form className="shipping-form-container">
         <h1>Shipping Details:</h1>
         <Divider />
@@ -94,7 +94,7 @@ const Shipping = ({
         />
         <button className="save-info">Save</button>
       </form>
-    </Card>
+    </CollapseChildren>
   )
 }
 

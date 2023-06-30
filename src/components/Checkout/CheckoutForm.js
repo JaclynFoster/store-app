@@ -3,7 +3,9 @@ import Progress from './Progress'
 import Customer from './Customer'
 import Payment from './Payment'
 import Shipping from './Shipping'
+import Summary from './Summary'
 import { Collapse } from 'antd'
+import './CheckoutForm.css'
 
 const CheckoutForm = () => {
   const items = [
@@ -21,6 +23,11 @@ const CheckoutForm = () => {
       key: '3',
       label: 'Payment',
       children: <Payment />
+    },
+    {
+      key: '4',
+      label: 'Order Summary',
+      children: <Summary />
     }
   ]
 
@@ -31,9 +38,18 @@ const CheckoutForm = () => {
   return (
     <div>
       <Progress />
-      <Collapse items={items} defaultActiveKey={['1']} onChange={onChange} />
+      <div>
+        <Collapse
+          size="large"
+          className="collapse-container"
+          items={items}
+          defaultActiveKey={['1']}
+          onChange={onChange}
+        />
+      </div>
     </div>
   )
 }
 
 export default CheckoutForm
+

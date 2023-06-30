@@ -9,9 +9,11 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: space-around;
+    gap: 30px;
     margin: 10px;
     padding: 10px;
+    align-items: center;
+    justify-content: center;
 }
 
 .guest-input {
@@ -27,7 +29,6 @@
     height: 50px;
     background-color: black;
     color: white;
-    margin-left: 30px;
     border-radius: 5px;
 
 }
@@ -47,16 +48,16 @@
 }
 
 .guest-p {
-    font-size: 15px;
+    font-size: 20px;
     
 }
 
 .guest-span {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
 }
 
 .signin-link {
-    font-size: 13px;
+    font-size: 15px;
     padding: 5px;
 }

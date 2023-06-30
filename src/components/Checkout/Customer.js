@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from '../UI/Card'
+import CollapseChildren from '../UI/CollapseChildren'
 import './Customer.css'
 import { useNavigate } from 'react-router-dom'
 
@@ -11,7 +11,7 @@ const Customer = () => {
   }
 
   return (
-    <Card>
+    <CollapseChildren>
       <div className="customer-container">
         <p className="guest-p">
           Checking out as a Guest? You'll be able to save your details to create
@@ -29,8 +29,9 @@ const Customer = () => {
           Sign in now
         </a>{' '}
       </span>
-    </Card>
+    </CollapseChildren>
   )
 }
 
 export default Customer
+
