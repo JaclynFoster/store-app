@@ -1,0 +1,70 @@
+.total-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  
+}
+
+.subtotal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 15px;
+}
+
+.shipping {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.tax {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.balance {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 5px;
+}
+
+.complete-order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    
+}
+
+.complete-btn {
+    width: 150px;
+    height: 50px;
+    background-color: black;
+    color: white;
+   display: flex;
+   align-self: center;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 15px;
+}
+
+.money-back-label {
+    font-weight: bold;
+}
+
+.terms {
+    font-size: 12px;
+    font-style: italic;
+}
+

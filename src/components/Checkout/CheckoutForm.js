@@ -11,7 +11,7 @@ const CheckoutForm = () => {
   const items = [
     {
       key: '1',
-      label: 'Customer:',
+      label: 'Details:',
       children: <Customer />
     },
     {
@@ -26,7 +26,7 @@ const CheckoutForm = () => {
     },
     {
       key: '4',
-      label: 'Order Summary',
+      label: 'Summary',
       children: <Summary />
     }
   ]

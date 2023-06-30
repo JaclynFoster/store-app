@@ -53,10 +53,11 @@ td {
 }
 
 .cart-btn {
-    width: 150px;
+    width: 200px;
     border-radius: 10px;
     background-color: whitesmoke;
-    height: 30px;
+    height: 55px;
+  
 }
 
 .cart-btn:hover {
