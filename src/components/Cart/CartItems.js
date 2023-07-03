@@ -21,7 +21,7 @@ const CartItems = () => {
   }
 
   const onCancel = () => {
-    navigate('/home', {replace: true})
+    navigate('/', {replace: true})
   }
   return (
     <div>

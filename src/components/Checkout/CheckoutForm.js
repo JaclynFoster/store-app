@@ -6,6 +6,7 @@ import Shipping from './Shipping'
 import Summary from './Summary'
 import { Collapse } from 'antd'
 import './CheckoutForm.css'
+import CartSummary from './CartSummary'
 
 const CheckoutForm = () => {
   const items = [
@@ -38,7 +39,7 @@ const CheckoutForm = () => {
   return (
     <div>
       <Progress />
-      <div>
+      <div className="divide-form">
         <Collapse
           size="large"
           className="collapse-container"
@@ -46,10 +47,12 @@ const CheckoutForm = () => {
           defaultActiveKey={['1']}
           onChange={onChange}
         />
+        <CartSummary />
       </div>
     </div>
   )
 }
 
 export default CheckoutForm
+
 

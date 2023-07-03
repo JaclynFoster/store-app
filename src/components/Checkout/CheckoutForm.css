@@ -5,5 +5,12 @@
     flex-direction: column;
     align-self: center;
     justify-content: center;
-    margin-left: 10%;
+  
 }
+
+.divide-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
