@@ -13,8 +13,10 @@ import Signup from './routes/Signup'
 import reportWebVitals from './reportWebVitals'
 import AnimalCategory from './routes/AnimalCategory'
 import SinglePageAnimal from './routes/SinglePageAnimal'
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
+import { store } from '../src/redux/store'
+import { Provider } from 'react-redux'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min'
 
 const router = createBrowserRouter([
   {
@@ -62,8 +64,10 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-    {/* <App /> */}
+    <Provider store={store}>
+      <RouterProvider router={router} />
+      {/* <App /> */}
+    </Provider>
   </React.StrictMode>
 )
 
@@ -71,5 +75,6 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals()
+
 
 

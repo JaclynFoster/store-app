@@ -90,9 +90,13 @@ const createUserTable = `CREATE TABLE users (
     phone INT
 )`
 
-const insertUser = `INSERT INTO users (username, password, email, first_name, last_name, address, city, state, zipcode, phone)
-VALUES('JaclynF', 'mypassword', 'Jaclynfoster89@gmail.com', 'Jaclyn', 'Foster', '1150 S Trade Days Blvd', 'Canton', 'Texas', 75103, 4697342518 )
-`
+const createCartTable = `CREATE TABLE cart (
+  id SERIAL PRIMARY KEY,
+  user_id INT NOT NULL REFERENCES users (id) ON DELETE CASCADE,
+  breed_id INT NOT NULL REFERENCES breeds(breed_id),
+  quantity INT
+)`
+
 
 const insertAnimals = `INSERT INTO animals (type)
 VALUES('fowl'),('lizards'),('bugs')
@@ -108,10 +112,10 @@ module.exports = {
   createTypesTable,
   createBreedsTable,
   createUserTable,
+  createCartTable,
   insertAnimals,
   insertTypes,
   insertBreeds,
-  insertUser,
   alterAnimalsTable,
   alterTypesTable,
   alterTypesColumn,

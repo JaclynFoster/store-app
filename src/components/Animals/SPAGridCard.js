@@ -6,9 +6,13 @@ import {
   MinusOutlined,
   ShoppingCartOutlined
 } from '@ant-design/icons'
+import {useSelector, useDispatch} from 'react-redux'
+import { changeQuantity } from '../../redux/slices/cartItemSlice'
 
 const SPAGridCard = ({ breed }) => {
   const [showDetails, setShowDetails] = useState(false)
+  const count = useSelector((state) => state.cart.value)
+  const dispatch = useDispatch()
 
   const details = () => {
     setShowDetails(true)
@@ -21,9 +25,9 @@ const SPAGridCard = ({ breed }) => {
       <div className="container-two">
         <span className="grid-span">Price: ${breed.price}.00</span>
         <span className="grid-span">Qty:</span>
-        <MinusOutlined className="icons" />
+        <MinusOutlined onClick={() => dispatch(changeQuantity({id: breed.id, quantity: -1}))} className="icons" />
         <span className="grid-span">3</span>
-        <PlusOutlined className="icons" />
+        <PlusOutlined onClick={() => dispatch(changeQuantity({id: breed.id, quantity: 1}))} className="icons" />
       </div>
       <Divider />
 
