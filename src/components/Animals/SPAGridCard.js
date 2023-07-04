@@ -11,10 +11,11 @@ import { changeQuantity } from '../../redux/slices/cartItemSlice'
 
 const SPAGridCard = ({ breed }) => {
   const [showDetails, setShowDetails] = useState(false)
-  const count = useSelector((state) => state.cart.value)
-  const dispatch = useDispatch()
+  // const count = useSelector((state) => state.cart.value)
+  // const dispatch = useDispatch()
 
   const details = () => {
+    console.log("details", breed.details)
     setShowDetails(true)
   }
   return (
@@ -25,9 +26,9 @@ const SPAGridCard = ({ breed }) => {
       <div className="container-two">
         <span className="grid-span">Price: ${breed.price}.00</span>
         <span className="grid-span">Qty:</span>
-        <MinusOutlined onClick={() => dispatch(changeQuantity({id: breed.id, quantity: -1}))} className="icons" />
+        {/* <MinusOutlined onClick={() => dispatch(changeQuantity({id: breed.id, quantity: -1}))} className="icons" /> */}
         <span className="grid-span">3</span>
-        <PlusOutlined onClick={() => dispatch(changeQuantity({id: breed.id, quantity: 1}))} className="icons" />
+        {/* <PlusOutlined onClick={() => dispatch(changeQuantity({id: breed.id, quantity: 1}))} className="icons" /> */}
       </div>
       <Divider />
 
@@ -37,6 +38,7 @@ const SPAGridCard = ({ breed }) => {
         </button>
         {showDetails ? (
           <Details setShowDetails={setShowDetails}>
+            {console.log("breed.details",breed.details)}
             <p>{breed.details}</p>
           </Details>
         ) : null}

@@ -1,6 +1,6 @@
 import React from 'react'
-import '../UI/Modal.css'
 import { useNavigate } from 'react-router-dom'
+import '../UI/Modal.css'
 
 const SignupModal = props => {
   const navigate = useNavigate()
@@ -18,7 +18,7 @@ const SignupModal = props => {
 
   return (
     <div id="modalBackground" className="background" onClick={clickHandler}>
-      <div className="modal">
+      <div className="signupModal">
         <div className="content">
           <button onClick={closeButton} className="close">X</button>
           {props.children}

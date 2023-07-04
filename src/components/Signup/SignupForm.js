@@ -2,7 +2,6 @@ import React, { useRef, useState } from 'react'
 import { Divider } from 'antd'
 import axios from 'axios'
 import SignupModal from './SignupModal'
-import '../UI/Modal.css'
 import './Signup.css'
 const { REACT_APP_BACKEND_URL } = process.env
 

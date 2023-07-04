@@ -18,7 +18,7 @@ app.get('/getUser', getUser)
 app.post('/createUser', createUser)
 
 const sqlSetup = async () => {
-  const results = await queryInvoke(createCartTable, [])
+  const results = await queryInvoke(insertBreeds, [])
   console.log(results)
 }
 

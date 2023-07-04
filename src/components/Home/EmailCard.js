@@ -28,7 +28,8 @@ const EmailCard = () => {
               Thank you for Joining our Mailing List. Check your email for our
               latest updates and deals.
             </h2>
-          </EmailModal>
+            </EmailModal>
+         
         ) : null}
         <button onClick={modalHandler} className="email-btn">
           Submit
