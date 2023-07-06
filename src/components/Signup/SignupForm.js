@@ -4,13 +4,18 @@ import axios from 'axios'
 import Modal from '../UI/Modal'
 import './Signup.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { showModal, closeModal, modalOptions } from '../../redux/slices/modalSlice'
+import {
+  showModal,
+  closeModal,
+  modalOptions
+} from '../../redux/slices/modalSlice'
 import { useNavigate } from 'react-router-dom'
+import Card from '../UI/Card'
 const { REACT_APP_BACKEND_URL } = process.env
 
 const SignupForm = () => {
   const navigate = useNavigate()
-   const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const refSubmit = useRef()
   const [createUser, setCreateUser] = useState({})
   const [firstName, setFirstName] = useState('')
@@ -25,8 +30,11 @@ const SignupForm = () => {
   const [newPassword, setNewPassword] = useState('')
   let modal = useSelector(modalOptions)
 
-  const createNewUser = (e) => {
+  const signupModalHandler = () => {
+    navigate('/login', { replace: true })
+  }
 
+  const createNewUser = e => {
     e.preventDefault()
 
     console.log(
@@ -61,7 +69,7 @@ const SignupForm = () => {
         console.log(res.data)
         refSubmit.current.removeAttribute('disabled')
         setCreateUser([{ ...res.data }])
-        dispatch(showModal("signup"))
+        dispatch(showModal('signup'))
         setFirstName('')
         setLastName('')
         setEmail('')
@@ -74,99 +82,116 @@ const SignupForm = () => {
         setNewPassword('')
       })
       .catch(err => {
-        console.log("error on signup:", err)
-        alert("Unable to add user. Please try again.")
+        console.log('error on signup:', err)
+        alert('Unable to add user. Please try again.')
       })
   }
 
   return (
-    <form
-      key={createUser.id}
-      className="signup-container"
-      onSubmit={createNewUser}
-    >
-      <h1>Signup:</h1>
-      <Divider />
-      <label className="signup-label">Create Username:</label>
-      <input
-        value={newUsername}
-        onChange={e => setNewUsername(e.target.value)}
-        className="signup-input"
-        required
-      />
-      <label className="signup-label">Create Password:</label>
-      <input
-        value={newPassword}
-        onChange={e => setNewPassword(e.target.value)}
-        className="signup-input"
-        type="password"
-        required
-      />
-      <label className="signup-label">Email:</label>
-      <input
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-        className="signup-input"
-        type="email"
-        required
-      />
-      <label className="signup-label">First Name:</label>
-      <input
-        value={firstName}
-        onChange={e => setFirstName(e.target.value)}
-        className="signup-input"
-        required
-      />
-      <label className="signup-label">Last Name:</label>
-      <input
-        value={lastName}
-        onChange={e => setLastName(e.target.value)}
-        className="signup-input"
-        required
-      />
-      <label className="signup-label">Address:</label>
-      <input
-        value={address}
-        onChange={e => setAddress(e.target.value)}
-        className="signup-input"
-      />
-      <label className="signup-label">City:</label>
-      <input
-        value={city}
-        onChange={e => setCity(e.target.value)}
-        className="signup-input"
-      />
-      <label className="signup-label">State:</label>
-      <input
-        value={state}
-        onChange={e => setState(e.target.value)}
-        className="signup-input"
-      />
-      <label className="signup-label">Zipcode:</label>
-      <input
-        value={zipcode}
-        onChange={e => setZipcode(e.target.value)}
-        className="signup-input"
-      />
-      <label className="signup-label">Phone:</label>
-      <input
-        value={phone}
-        onChange={e => setPhone(e.target.value)}
-        className="signup-input"
-      />
-      {modal.signup ? (
-        <Modal>
-          <span>Thank you for signing up! Please login to continue.</span>
-        </Modal>
-      ) : null}
-      <button ref={refSubmit} className="signup-btn" type="submit">
-        Submit
-      </button>
-    </form>
+    <div className="center-signup-container">
+      <form
+        key={createUser.id}
+        className="signup-container"
+        onSubmit={createNewUser}
+      >
+        <h1 className="signup-header">Signup:</h1>
+        <Divider />
+        <div className="form-create-user">
+          <input
+            placeholder="Create Username..."
+            value={newUsername}
+            onChange={e => setNewUsername(e.target.value)}
+            className="signup-input"
+            required
+          />
+
+          <input
+            placeholder="Create Password..."
+            value={newPassword}
+            onChange={e => setNewPassword(e.target.value)}
+            className="signup-input"
+            type="password"
+            required
+          />
+        </div>
+
+        <input
+          placeholder="Email..."
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          className="signup-input address-input"
+          type="email"
+          required
+        />
+        <div className="first-last">
+          <input
+            placeholder="First Name:..."
+            value={firstName}
+            onChange={e => setFirstName(e.target.value)}
+            className="signup-input"
+            required
+          />
+
+          <input
+            placeholder="Last Name:..."
+            value={lastName}
+            onChange={e => setLastName(e.target.value)}
+            className="signup-input"
+            required
+          />
+        </div>
+
+        <input
+          placeholder="Address:..."
+          value={address}
+          onChange={e => setAddress(e.target.value)}
+          className="signup-input address-input"
+        />
+        <div className="city-state-zip-input">
+          <input
+            placeholder="City:..."
+            value={city}
+            onChange={e => setCity(e.target.value)}
+            className="signup-input city"
+          />
+
+          <input
+            placeholder="State:..."
+            value={state}
+            onChange={e => setState(e.target.value)}
+            className="signup-input state"
+          />
+
+          <input
+            placeholder="Zip Code:..."
+            value={zipcode}
+            onChange={e => setZipcode(e.target.value)}
+            className="signup-input zip"
+          />
+        </div>
+
+        <input
+          placeholder="Phone:..."
+          value={phone}
+          onChange={e => setPhone(e.target.value)}
+          className="signup-input phone-input"
+        />
+        {modal.signup ? (
+          <Modal>
+            <span>Thank you for signing up! Please login to continue.</span>
+            <button onClick={signupModalHandler}>Continue to Login</button>
+          </Modal>
+        ) : null}
+        <button ref={refSubmit} className="signup-btn" type="submit">
+          Submit
+        </button>
+      </form>
+    </div>
   )
 }
 
 export default SignupForm
+
 
 
 

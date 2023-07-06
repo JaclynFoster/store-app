@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Card from '../UI/Card'
-import EmailModal from './EmailModal'
 import Modal from '../UI/Modal'
 import { modalOptions, showModal } from '../../redux/slices/modalSlice'
 import './Home.css'
@@ -10,7 +9,6 @@ const EmailCard = () => {
   const dispatch = useDispatch()
   const modal = useSelector(modalOptions)
   const [emailInput, setEmailInput] = useState('')
-  const [showSuccess, setShowSuccess] = useState(false)
   const modalHandler = () => {
     dispatch(showModal("email"))
     setEmailInput('')
