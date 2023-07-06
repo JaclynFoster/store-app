@@ -1,48 +1,29 @@
 .background {
-    position: fixed;
-    top: 0;
-    left: 0;
+  position:absolute;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  top: 0;
+  left: 0;
+     z-index: 200;
     width: 100%;
-    height: 100vh;
-    z-index: 200;
-    background-color: rgba(0, 0, 0, 0.75);
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
   }
 
-  .signupModal {
-    width: 100px;
-    height: 100px;
+ 
+
+  .modalBox {
+    z-index: 300;
+    display: flex;
+    position: absolute;
+    width: 50%;
     background-color: white;
+    padding: 1rem; 
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+   
   }
 
-  .modal {
-   /* position: absolute; */
-    /* top: 15vh;
-    left: 5%; */
-    /* width: 90%; */
-    width: 100px;
-    height: 100px;
-    background-color: white;
-    /* padding: 1rem; */
-    /* border-radius: 14px; */
-    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); */
-    /* z-index: 300; */
-    /* animation: slide-down 300ms ease-out forwards; */
-  }
-
-  @media (min-width: 768px) {
-    /* .modal { */
-      /* width: 40rem;
-      left: calc(50% - 20rem); */
-    /* }/ */
-  }
-
-  /* @keyframes slide-down {
-    from {
-      opacity: 0;
-      transform: translateY(-3rem);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  } */

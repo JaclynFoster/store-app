@@ -1,13 +1,18 @@
 import React, { useState } from 'react'
 import Card from '../UI/Card'
 import EmailModal from './EmailModal'
+import Modal from '../UI/Modal'
+import { modalOptions, showModal } from '../../redux/slices/modalSlice'
 import './Home.css'
+import { useDispatch, useSelector } from 'react-redux'
 
 const EmailCard = () => {
+  const dispatch = useDispatch()
+  const modal = useSelector(modalOptions)
   const [emailInput, setEmailInput] = useState('')
   const [showSuccess, setShowSuccess] = useState(false)
   const modalHandler = () => {
-    setShowSuccess(true)
+    dispatch(showModal("email"))
     setEmailInput('')
   }
   return (
@@ -22,13 +27,13 @@ const EmailCard = () => {
           type="email"
           placeholder="enter email..."
         />
-        {showSuccess ? (
-          <EmailModal setShowSuccess={setShowSuccess}>
+        {modal.email ? (
+          <Modal>
             <h2>
               Thank you for Joining our Mailing List. Check your email for our
               latest updates and deals.
             </h2>
-            </EmailModal>
+            </Modal>
          
         ) : null}
         <button onClick={modalHandler} className="email-btn">

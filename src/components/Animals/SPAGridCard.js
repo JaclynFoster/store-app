@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Details from './Details'
+import Modal from '../UI/Modal'
 import { Divider } from 'antd'
 import {
   PlusOutlined,
@@ -8,15 +8,17 @@ import {
 } from '@ant-design/icons'
 import {useSelector, useDispatch} from 'react-redux'
 import { changeQuantity } from '../../redux/slices/cartItemSlice'
+import { modalOptions, showModal } from '../../redux/slices/modalSlice'
 
 const SPAGridCard = ({ breed }) => {
-  const [showDetails, setShowDetails] = useState(false)
-  // const count = useSelector((state) => state.cart.value)
-  // const dispatch = useDispatch()
+
+  const count = useSelector((state) => state.cart.value)
+  const modal = useSelector(modalOptions)
+  const dispatch = useDispatch()
 
   const details = () => {
     console.log("details", breed.details)
-    setShowDetails(true)
+   dispatch(showModal(`breed-${breed.breed_id}`))
   }
   return (
     <div className="grid-card">
@@ -26,9 +28,9 @@ const SPAGridCard = ({ breed }) => {
       <div className="container-two">
         <span className="grid-span">Price: ${breed.price}.00</span>
         <span className="grid-span">Qty:</span>
-        {/* <MinusOutlined onClick={() => dispatch(changeQuantity({id: breed.id, quantity: -1}))} className="icons" /> */}
+        <MinusOutlined onClick={() => dispatch(changeQuantity({id: breed.id, quantity: -1}))} className="icons" />
         <span className="grid-span">3</span>
-        {/* <PlusOutlined onClick={() => dispatch(changeQuantity({id: breed.id, quantity: 1}))} className="icons" /> */}
+        <PlusOutlined onClick={() => dispatch(changeQuantity({id: breed.id, quantity: 1}))} className="icons" />
       </div>
       <Divider />
 
@@ -36,11 +38,10 @@ const SPAGridCard = ({ breed }) => {
         <button className="add-cart">
           Add to Cart <ShoppingCartOutlined className="icons" />
         </button>
-        {showDetails ? (
-          <Details setShowDetails={setShowDetails}>
-            {console.log("breed.details",breed.details)}
+        {modal[`breed-${breed.breed_id}`] ? (
+          <Modal>
             <p>{breed.details}</p>
-          </Details>
+          </Modal>
         ) : null}
         <button onClick={details} className="details">
           Details

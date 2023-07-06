@@ -1,12 +1,16 @@
 import React, { useRef, useState } from 'react'
 import { Divider } from 'antd'
 import axios from 'axios'
-import SignupModal from './SignupModal'
+import Modal from '../UI/Modal'
 import './Signup.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { showModal, closeModal, modalOptions } from '../../redux/slices/modalSlice'
+import { useNavigate } from 'react-router-dom'
 const { REACT_APP_BACKEND_URL } = process.env
 
 const SignupForm = () => {
-  const [showModal, setShowModal] = useState(false)
+  const navigate = useNavigate()
+   const dispatch = useDispatch()
   const refSubmit = useRef()
   const [createUser, setCreateUser] = useState({})
   const [firstName, setFirstName] = useState('')
@@ -19,8 +23,10 @@ const SignupForm = () => {
   const [phone, setPhone] = useState(0)
   const [newUsername, setNewUsername] = useState('')
   const [newPassword, setNewPassword] = useState('')
+  let modal = useSelector(modalOptions)
 
   const createNewUser = (e) => {
+
     e.preventDefault()
 
     console.log(
@@ -55,7 +61,7 @@ const SignupForm = () => {
         console.log(res.data)
         refSubmit.current.removeAttribute('disabled')
         setCreateUser([{ ...res.data }])
-        setShowModal(true)
+        dispatch(showModal("signup"))
         setFirstName('')
         setLastName('')
         setEmail('')
@@ -66,6 +72,10 @@ const SignupForm = () => {
         setPhone(0)
         setNewUsername('')
         setNewPassword('')
+      })
+      .catch(err => {
+        console.log("error on signup:", err)
+        alert("Unable to add user. Please try again.")
       })
   }
 
@@ -144,10 +154,10 @@ const SignupForm = () => {
         onChange={e => setPhone(e.target.value)}
         className="signup-input"
       />
-      {showModal ? (
-        <SignupModal setShowModal={setShowModal}>
+      {modal.signup ? (
+        <Modal>
           <span>Thank you for signing up! Please login to continue.</span>
-        </SignupModal>
+        </Modal>
       ) : null}
       <button ref={refSubmit} className="signup-btn" type="submit">
         Submit
