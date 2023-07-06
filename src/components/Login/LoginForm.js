@@ -37,47 +37,50 @@ const LoginForm = () => {
         }
       })
       .catch(err => {
-        alert("Credentials invalid. Please try again")
-        console.log("error on login", err)
+        alert('Credentials invalid. Please try again')
+        console.log('error on login', err)
       })
   }
 
   return (
     <div>
-    <form className="login-container" onSubmit={getUserLogin}>
-      <AuthContext.Provider value={{ id: user.id }}>
-        <div key={user.id}>
-          <h1>Login:</h1>
+      <form key={user.id} className="login-container" onSubmit={getUserLogin}>
+        <AuthContext.Provider value={{ id: user.id }}>
+          <h1 className="login-title">Login:</h1>
           <Divider />
-          <label className="login-label">Username:</label>
-          <input
-            value={username}
-            onChange={e => setUsername(e.target.value)}
-            className="login-input"
-          />
-          <label className="login-label">Password:</label>
-          <input
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            className="login-input"
-            type="password"
-          />
-          <button className="login-btn" type="submit">
-            Submit
-          </button>
-        </div>
-      </AuthContext.Provider>
-      <Divider />
-    </form>
-      <label className="login-label">New User:</label>
-      <button onClick={() => onSignUpHandler()} className="login-btn">
-        Sign Up
-      </button>
+          <div className="login-space">
+            <input
+              placeholder="Enter Username:..."
+              value={username}
+              onChange={e => setUsername(e.target.value)}
+              className="login-input"
+            />
+
+            <input
+              placeholder="Enter Password:..."
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              className="login-input"
+              type="password"
+            />
+            <button className="login-btn" type="submit">
+              Submit
+            </button>
+          </div>
+        </AuthContext.Provider>
+        <Divider />
+
+        <h4>New User?</h4>
+        <button onClick={() => onSignUpHandler()} className="login-btn">
+          Sign Up
+        </button>
+      </form>
     </div>
   )
 }
 
 export default LoginForm
+
 
 
 
