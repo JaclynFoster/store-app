@@ -1,3 +1,10 @@
+.contact-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+ } 
+
+
 .contact-icon {
     height: 50px;
     width: 50px;
@@ -7,24 +14,64 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    margin-left: 25%;
+    /* margin-left: 25%; */
     padding: 20px;
     justify-content: space-around;
-    width: 350px;
+    /* width: 350px; */
   
 }
-
+.contact-form-container {
+    margin-left: 35px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 .duckies {
     width: 200px;
     height: 200px;
     float: left;
+    padding-bottom: 15px;
 }
 
-.contact-card {
-    background-color: whitesmoke;
+.contact-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    gap: 10px;
 }
 
 .contact-img {
     display: flex;
     flex-direction: row;
+}
+
+.contact-card-container {
+    font-size: 25px;
+    padding: 15px;
+    float: right;
+    text-align: center;
+    width: 50%;
+    margin-top: 40px;
+   
+}
+
+
+
+.contact-card-main {
+    padding: 1rem;
+    border: none;
+    width: 90%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    left: 5%;
+    background-color: white;
+    box-shadow: 0 2px 1px rgba(0,0,0,0.09), 
+    0 4px 2px rgba(0,0,0,0.09), 
+    0 8px 4px rgba(0,0,0,0.09), 
+    0 16px 8px rgba(0,0,0,0.09),
+    0 32px 16px rgba(0,0,0,0.09);
 }

@@ -46,9 +46,9 @@ const Footer = () => {
 
         <div className="copyright">
           <label>
-            Copyright <CopyrightOutlined /> 2023 Fawstur Farms
+            Copyright <CopyrightOutlined /> 2023 Fawstur Farms all rights reserved
           </label>
-          <label>All rights reserved</label>
+          
           <label>Powered & Developed by Jaclyn Foster</label>
         </div>
       </div>

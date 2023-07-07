@@ -1,10 +1,8 @@
 import { Form, Input, Button } from 'antd'
 import React from 'react'
 import Card from '../UI/Card'
-import twitter from '../../images/twitter.png'
-import facebook from '../../images/facebook.png'
-import instagram from '../../images/instagram.png'
-import tiktok from '../../images/tiktok.png'
+
+
 import goosey from '../../images/goosey.jpeg'
 import '../Contact/Contact.css'
 
@@ -12,7 +10,7 @@ const { TextArea } = Input
 
 const ContactForm = () => {
   return (
-    <div>
+    <div className="contact-form-container">
       <Card className="contact-card">
         <div className="contact-img">
           <img className="duckies" src={goosey} />
@@ -24,21 +22,7 @@ const ContactForm = () => {
             </p>
           </div>
         </div>
-        <label>Don't forget to like and subscribe:</label>
-        <div className="contact-icon-container">
-          <a target="_blank">
-            <img className="contact-icon" src={twitter} />
-          </a>
-          <a target="_blank">
-            <img className="contact-icon" src={facebook} />
-          </a>
-          <a target="_blank">
-            <img className="contact-icon" src={instagram} />
-          </a>
-          <a target="_blank">
-            <img className="contact-icon" src={tiktok} />
-          </a>
-        </div>
+   
         <Form
           action="https://formsubmit.co/your@email.com"
           method="POST"

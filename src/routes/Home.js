@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout/Layout'
 import FeaturedProducts from '../components/Home/FeaturedProducts'
 import Videos from '../components/Home/Videos'
+import Review from '../components/Home/Review'
 import '../components/Home/Home.css'
 import EmailCard from '../components/Home/EmailCard'
 
@@ -53,6 +54,7 @@ const Home = () => {
            mauris pellentesque pulvinar pellentesque. Eget nunc lobortis mattis aliquam faucibus purus. </p>
       </div>
         <Videos />
+        <Review />
     </Layout>
   )
 }
