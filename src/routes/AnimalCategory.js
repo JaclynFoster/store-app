@@ -4,8 +4,11 @@ import { useNavigate, useParams } from 'react-router-dom' // to get id out of ur
 import axios from 'axios'
 import AnimalCategoryCard from '../components/Animals/AnimalCategoryCard'
 import { RollbackOutlined } from '@ant-design/icons'
+import { setLoadingTrue, setLoadingFalse } from '../redux/slices/isLoadingSlice'
+import { useDispatch } from 'react-redux'
 
 const AnimalCategory = () => {
+  const dispatch = useDispatch()
   const [animalType, setAnimalType] = useState([])
   const params = useParams()
   const navigate = useNavigate()
@@ -15,10 +18,12 @@ const AnimalCategory = () => {
 
   console.log('params', params)
   const getAllTypes = () => {
+    dispatch(setLoadingTrue())
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/animals/${params.type}`)
       .then(res => {
         setAnimalType(res.data)
+        dispatch(setLoadingFalse())
         console.log(res.data)
       })
       .catch(err => {
@@ -44,5 +49,6 @@ const AnimalCategory = () => {
 }
 
 export default AnimalCategory
+
 
 

@@ -1,22 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import Card from '../components/UI/Card'
 import axios from 'axios'
-import BSF from '../images/BSF.jpg'
-import chicken from '../images/chicken.jpg'
-import reptiles from '../images/reptiles.jpg'
 import Layout from '../components/Layout/Layout'
 import { Divider } from 'antd'
 import '../components/Animals/Animals.css'
 import { useNavigate, useParams } from 'react-router-dom'
+import { setLoadingTrue, setLoadingFalse } from '../redux/slices/isLoadingSlice'
+import { useDispatch } from 'react-redux'
 
 const Animals = () => {
+  const dispatch = useDispatch()
   const [animal, setAnimal] = useState([])
   const params = useParams()
   const getAllAnimals = () => {
+    dispatch(setLoadingTrue())
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/animals/all`)
       .then(res => {
         setAnimal(res.data)
+        dispatch(setLoadingFalse())
         console.log(res.data)
       })
       .catch(err => {
@@ -24,15 +26,6 @@ const Animals = () => {
       })
   }
   const navigate = useNavigate()
-  const fowlHandler = () => {
-    navigate('/fowl', { replace: true })
-  }
-  const reptileHandler = () => {
-    navigate('/reptiles', { replace: true })
-  }
-  const bugHandler = () => {
-    navigate('/bugs', { replace: true })
-  }
 
   useEffect(() => {
     getAllAnimals()
@@ -61,6 +54,7 @@ const Animals = () => {
 }
 
 export default Animals
+
 
 
 

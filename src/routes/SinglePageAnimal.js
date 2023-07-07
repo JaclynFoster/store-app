@@ -5,10 +5,13 @@ import SPAGrid from '../components/Animals/SPAGrid'
 import { RollbackOutlined } from '@ant-design/icons'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
+import { setLoadingTrue, setLoadingFalse } from '../redux/slices/isLoadingSlice'
 
 import '../components/Animals/SinglePageAnimal.css'
+import { useDispatch } from 'react-redux'
 
 const SinglePageAnimal = ({ animal }) => {
+  const dispatch = useDispatch()
   const [animalBreed, setAnimalBreed] = useState([])
   const navigate = useNavigate()
   const params = useParams()
@@ -17,6 +20,7 @@ const SinglePageAnimal = ({ animal }) => {
   }
   console.log('params', params)
   const getAllBreeds = () => {
+    dispatch(setLoadingTrue())
     axios
       .get(
         `${process.env.REACT_APP_BACKEND_URL}/animals/${params.type}/${
@@ -25,6 +29,7 @@ const SinglePageAnimal = ({ animal }) => {
       )
       .then(res => {
         setAnimalBreed(res.data)
+        dispatch(setLoadingFalse())
         console.log(res.data)
       })
       .catch(err => {
@@ -46,3 +51,4 @@ const SinglePageAnimal = ({ animal }) => {
 }
 
 export default SinglePageAnimal
+

@@ -4,9 +4,12 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import './Login.css'
 import AuthContext from '../../context/userContext'
+import { setLoadingTrue, setLoadingFalse } from '../../redux/slices/isLoadingSlice'
+import { useDispatch } from 'react-redux'
 const { REACT_APP_BACKEND_URL } = process.env
 
 const LoginForm = () => {
+  const dispatch = useDispatch()
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [user, setUser] = useState({})
@@ -18,6 +21,7 @@ const LoginForm = () => {
   }
 
   const getUserLogin = e => {
+    dispatch(setLoadingTrue())
     e.preventDefault()
     axios
       .get(`${REACT_APP_BACKEND_URL}/getUser`, {
@@ -33,11 +37,14 @@ const LoginForm = () => {
           )
         } else {
           props.setUserObject({ ...res.data[0] })
+          dispatch(setLoadingFalse())
           navigate('/', { replace: true })
         }
+
       })
       .catch(err => {
         alert('Credentials invalid. Please try again')
+        dispatch(setLoadingFalse())
         console.log('error on login', err)
       })
   }
