@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Card from '../UI/Card'
 import Modal from '../UI/Modal'
 import { modalOptions, showModal } from '../../redux/slices/modalSlice'
-import './Home.css'
+import './EmailCard.css'
 import { useDispatch, useSelector } from 'react-redux'
 
 const EmailCard = () => {
@@ -14,7 +14,9 @@ const EmailCard = () => {
     setEmailInput('')
   }
   return (
-    <Card className="welcome">
+    <div className="welcome">
+
+    <Card >
       <h1>Welcome to the Farm!</h1>
       <h4>Join our Mailing List for weekly specials, updates and more..</h4>
       <section className="email-section">
@@ -24,7 +26,7 @@ const EmailCard = () => {
           className="email-input"
           type="email"
           placeholder="enter email..."
-        />
+          />
         {modal.email ? (
           <Modal>
             <h2>
@@ -33,12 +35,13 @@ const EmailCard = () => {
             </h2>
             </Modal>
          
-        ) : null}
+         ) : null}
         <button onClick={modalHandler} className="email-btn">
           Submit
         </button>
       </section>
     </Card>
+         </div>
   )
 }
 

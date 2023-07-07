@@ -1,30 +1,4 @@
-.email-section {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    padding: 5px;
-    justify-content: center;
-}
 
-.email-input {
-    width: 300px;
-    border-radius: 10px;
-    padding: 5px;
-
-}
-
-.email-btn {
-    border-radius: 15px;
-    padding: 5px;
-    margin-left: 10px;
-
-}
-
-.email-btn:hover {
-    background-color: burlywood;
-    color: whitesmoke;
-}
 
 p {
     padding: 10px;
