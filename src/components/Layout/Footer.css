@@ -1,0 +1,102 @@
+.footer {
+    width: 100%;
+      background-color: rgb(83, 91, 91, 0.5);
+      position: block;
+      bottom: 0;
+      left: 0;
+      right: 0;
+     display: flex;
+  }
+
+  .section-one {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+   
+  }
+
+  .footer-logo-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-left: 15px;
+  }
+
+.footer-logo {
+    height: 25px;
+    width: 25px;
+}
+
+.footer-logo-main {
+    height: 100px;
+    width: 100px;
+}
+
+
+
+.quick-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+   justify-content: space-around;
+   
+    color: white;
+
+}
+
+.quick-link-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+   gap: 5px;
+   
+}
+
+
+.copyright {
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   
+
+
+}
+
+.link-title {
+   margin-bottom: -20px;
+   color: whitesmoke;
+}
+
+.mail-contact {
+    font-size: 20px;
+    color:darkblue;
+    display: flex;
+    flex-direction: row;
+   gap: 10px;
+ 
+}
+
+.mail-logo {
+    padding-top: 5px;
+}
+
+.question-btn {
+   background-color: whitesmoke;
+    font-size: 60px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    
+}
+
+.section-three {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
