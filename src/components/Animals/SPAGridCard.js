@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Modal from '../UI/Modal'
+import UseModal from '../UI/UseModal'
 import { Divider } from 'antd'
 import {
   PlusOutlined,
@@ -39,9 +39,9 @@ const SPAGridCard = ({ breed }) => {
           Add to Cart <ShoppingCartOutlined className="icons" />
         </button>
         {modal[`breed-${breed.breed_id}`] ? (
-          <Modal>
+          <UseModal>
             <p>{breed.details}</p>
-          </Modal>
+          </UseModal>
         ) : null}
         <button onClick={details} className="details">
           Details

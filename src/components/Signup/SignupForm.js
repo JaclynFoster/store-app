@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Divider } from 'antd'
 import axios from 'axios'
-import Modal from '../UI/Modal'
+import UseModal from '../UI/UseModal'
 import './Signup.css'
 import { useDispatch, useSelector } from 'react-redux'
 import {
@@ -177,10 +177,10 @@ const SignupForm = () => {
           className="signup-input phone-input"
         />
         {modal.signup ? (
-          <Modal>
+          <UseModal>
             <span>Thank you for signing up! Please login to continue.</span>
             <button onClick={signupModalHandler}>Continue to Login</button>
-          </Modal>
+          </UseModal>
         ) : null}
         <button ref={refSubmit} className="signup-btn" type="submit">
           Submit

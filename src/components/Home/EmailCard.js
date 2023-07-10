@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Card from '../UI/Card'
-import Modal from '../UI/Modal'
+import UseModal from '../UI/UseModal'
 import { modalOptions, showModal } from '../../redux/slices/modalSlice'
 import './EmailCard.css'
 import { useDispatch, useSelector } from 'react-redux'
@@ -28,12 +28,12 @@ const EmailCard = () => {
           placeholder="enter email..."
           />
         {modal.email ? (
-          <Modal>
+          <UseModal>
             <h2>
               Thank you for Joining our Mailing List. Check your email for our
               latest updates and deals.
             </h2>
-            </Modal>
+            </UseModal>
          
          ) : null}
         <button onClick={modalHandler} className="email-btn">

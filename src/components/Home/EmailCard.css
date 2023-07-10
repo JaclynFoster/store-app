@@ -4,27 +4,28 @@
     flex-wrap: nowrap;
     align-items: center;
     padding: 5px;
+    gap: 15px;
     justify-content: center;
  
 }
 
 .email-input {
     width: 300px;
-    border-radius: 10px;
     padding: 5px;
 
 }
 
 .email-btn {
-    border-radius: 15px;
-    padding: 5px;
-    margin-left: 10px;
+    width: 100px;
+    height: 40px;
+    background-color: black;
+    color: white;
+  
 
 }
-
 .email-btn:hover {
-    background-color: burlywood;
-    color: whitesmoke;
+    background-color: beige;
+    color: black;
 }
 
 .welcome {
