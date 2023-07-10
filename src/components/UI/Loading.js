@@ -1,20 +1,29 @@
 import React from 'react'
-import { Space, Spin } from 'antd'
-
+import { Space, Spin, Skeleton } from 'antd'
 
 const Loading = () => {
-    return (
+  return (
+    <div>
       <Space
-      direction="vertical"
-      style={({
-        width: '100%'
-      })}
+        direction="vertical"
+        style={{
+          width: '100%'
+        }}
       >
         <Spin tip="Loading" size="large">
-            <div className="content"></div>
+          <div className="content" />
         </Spin>
       </Space>
-    )
+
+      <Skeleton.Image active />
+      <Skeleton active />
+      <Skeleton.Image active />
+      <Skeleton active />
+      <Skeleton.Image active />
+      <Skeleton active />
+      <Skeleton.Image active />
+    </div>
+  )
 }
 
 export default Loading
