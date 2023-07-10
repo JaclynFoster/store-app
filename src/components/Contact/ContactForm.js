@@ -1,14 +1,28 @@
 import { Form, Input, Button } from 'antd'
-import React from 'react'
+import React, { useState } from 'react'
 import Card from '../UI/Card'
-
-
+import UseModal from '../UI/UseModal'
 import goosey from '../../images/goosey.jpeg'
 import '../Contact/Contact.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { modalOptions, showModal } from '../../redux/slices/modalSlice'
 
 const { TextArea } = Input
 
 const ContactForm = () => {
+  const [contactName, setContactName] = useState('')
+  const [contactEmail, setContactEmail] = useState('')
+  const [contactText, setContactText] = useState('')
+  const dispatch = useDispatch()
+  const modal = useSelector(modalOptions)
+
+  const contactModal = () => {
+    dispatch(showModal('contact'))
+    setContactName('')
+    setContactEmail('')
+    setContactText('')
+  }
+
   return (
     <div className="contact-form-container">
       <Card className="contact-card">
@@ -22,7 +36,7 @@ const ContactForm = () => {
             </p>
           </div>
         </div>
-   
+
         <Form
           action="https://formsubmit.co/your@email.com"
           method="POST"
@@ -31,16 +45,35 @@ const ContactForm = () => {
           autoComplete="off"
         >
           <Form.Item label="Name" name="name">
-            <Input />
+            <Input
+              value={contactName}
+              onChange={e => setContactName(e.target.value)}
+            />
           </Form.Item>
           <Form.Item label="Email" name="email" type="email">
-            <Input />
+            <Input
+              value={contactEmail}
+              onChange={e => setContactEmail(e.target.value)}
+            />
           </Form.Item>
           <Form.Item label="Leave us a Message:">
-            <TextArea name="textarea" rows={6} />
+            <TextArea
+              value={contactText}
+              onChange={e => setContactText(e.target.value)}
+              name="textarea"
+              rows={6}
+            />
           </Form.Item>
+          {modal.contact ? (
+            <UseModal>
+              <h5>
+                Thank you for reaching out to us. A member of our team will be
+                in contact with you shortly.
+              </h5>
+            </UseModal>
+          ) : null}
           <Form.Item>
-            <Button type="primary" htmlType="submit">
+            <Button onClick={contactModal} type="primary" htmlType="submit">
               Submit
             </Button>
           </Form.Item>
@@ -51,5 +84,6 @@ const ContactForm = () => {
 }
 
 export default ContactForm
+
 
 
