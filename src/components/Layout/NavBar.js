@@ -27,7 +27,7 @@ const NavBar = () => {
         <Link className="link login " to="/login">
           <UserOutlined className="icon" />Login
         </Link>
-      
+        
         <Link className="link cart-link " to="/cart">
       
           Cart <ShoppingCartOutlined className="icon" />

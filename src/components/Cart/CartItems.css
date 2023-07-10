@@ -1,66 +1,76 @@
-.total {
+.cart-detail-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+   justify-content: space-evenly;
+   margin-top: 20px;
+   margin-bottom: 20px;
+  
+}
+
+.cart-total-container {
+    padding: 5px;
+    float: right;
+    
+    text-align: right;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.cart-price {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
     align-items: center;
     text-align: center;
-    padding: 10px;
-    gap: 10px;
-    margin-left: 30%;
+    justify-content: center;
 }
 
-.total-container {
-    width: 400px;
-    float: right;
-    margin-right: 10%;
-    text-align: center;
-}
-
-.total-btns {
+.cart-qty {
     display: flex;
     flex-direction: row;
-    gap: 20px;
-    float: left;
-    margin-top: 40px;
-    margin-bottom: 40px;
-
+    gap: 15px;
+   
 }
-
-
-.table {
-   text-align: center;
- margin-top: 50px;
-
-}
-
-tbody {
-    background-color: whitesmoke;
-}
-
-td {
-    text-align: center;
-}
-
 .table-img {
-    width: 75px;
-    height: 75px;
+    width: 80px;
+    height: 80px;
     border: 1px solid grey;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    float: left;
 }
 
 .trash {
     border: none;
     width: 50px;
+    font-size: 20px;
+    text-align: center;
+    float: right;
+    
 }
 
 .cart-btn {
-    width: 200px;
-    border-radius: 10px;
-    background-color: whitesmoke;
-    height: 55px;
-  
+    width: 120px;
+    height: 50px;
+    background-color: black;
+    color: white;
+
 }
 
 .cart-btn:hover {
-    color: white;
-    background-color: rosybrown;
+    background-color: beige;
+    color: black;
+}
+
+.total-btns {
+    margin-top: 20px;
+    font-size: 15px;
+
+}
+
+.cart-icons {
+    font-size: 20px;
+    text-align: center;
 }

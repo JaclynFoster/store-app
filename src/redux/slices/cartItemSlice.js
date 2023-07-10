@@ -21,7 +21,7 @@ export const cartItemSlice = createSlice({
         
       }
     },
-
+  
     deleteFromCart: (state, action) => {
       // console.log('state', state)
       // // action.payload will by my item id to remove
@@ -48,5 +48,8 @@ export const {
   changeQuantity
 } = cartItemSlice.actions
 
+export const cartOptions = state => state.cart.cart
+
 export default cartItemSlice.reducer
+
 
