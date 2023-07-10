@@ -1,5 +1,4 @@
 import React from 'react'
-import Card from '../UI/Card'
 import { Table, Button, ButtonGroup } from 'react-bootstrap'
 import { BsTrash } from 'react-icons/bs'
 import { IoBagCheckOutline } from 'react-icons/io5'
@@ -8,20 +7,25 @@ import { MdOutlineShopTwo } from 'react-icons/md'
 import goat from '../../images/goat.jpg'
 import '../Cart/CartItems.css'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { changeQuantity } from '../../redux/slices/cartItemSlice'
+import { MinusOutlined, PlusOutlined } from '@ant-design/icons'
 
-const CartItems = () => {
+const CartItems = ({ breed }) => {
+  const dispatch = useDispatch()
+  const count = useSelector(state => state.cart.value)
   const navigate = useNavigate()
 
   const toCheckout = () => {
-    navigate('/checkout', {replace: true})
+    navigate('/checkout', { replace: true })
   }
 
   const keepShopping = () => {
-    navigate('/animals', {replace: true})
+    navigate('/animals', { replace: true })
   }
 
   const onCancel = () => {
-    navigate('/', {replace: true})
+    navigate('/', { replace: true })
   }
   return (
     <div>
@@ -43,7 +47,22 @@ const CartItems = () => {
               <img className="table-img" src={goat} />
             </td>
             <td>Crested Gecko</td>
-            <td>2</td>
+            <td>
+              {' '}
+              <MinusOutlined
+                onClick={() =>
+                  dispatch(changeQuantity({ id: breed.id, quantity: -1 }))
+                }
+                className="icons"
+              />
+              <span className="grid-span">{count}</span>
+              <PlusOutlined
+                onClick={() =>
+                  dispatch(changeQuantity({ id: breed.id, quantity: 1 }))
+                }
+                className="icons"
+              />
+            </td>
             <td>$15.00</td>
             <td>
               <Button className="trash" variant="outline-danger">
@@ -89,13 +108,13 @@ const CartItems = () => {
         </div>
         <div className="total-btns">
           <button onClick={toCheckout} className="cart-btn">
-            <IoBagCheckOutline />  Checkout
+            <IoBagCheckOutline /> Checkout
           </button>
           <button onClick={keepShopping} className="cart-btn">
             <MdOutlineShopTwo /> Keep Shopping
           </button>
           <button onClick={onCancel} className="cart-btn">
-            <ImCancelCircle />  Cancel
+            <ImCancelCircle /> Cancel
           </button>
         </div>
       </div>
@@ -104,4 +123,5 @@ const CartItems = () => {
 }
 
 export default CartItems
+
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ShoppingCartOutlined, UserOutlined } from '@ant-design/icons'
 import logo from '../../images/logo.png'
+import CartBadge from './CartBadge'
 
 const NavBar = () => {
 
@@ -31,8 +32,8 @@ const NavBar = () => {
       
           Cart <ShoppingCartOutlined className="icon" />
         </Link>
-      
-        <span className="number bump">5</span>
+        <CartBadge />
+       
       </nav>
     </div>
   )

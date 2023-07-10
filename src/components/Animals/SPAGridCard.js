@@ -6,19 +6,25 @@ import {
   MinusOutlined,
   ShoppingCartOutlined
 } from '@ant-design/icons'
-import {useSelector, useDispatch} from 'react-redux'
-import { changeQuantity } from '../../redux/slices/cartItemSlice'
+import { useSelector, useDispatch } from 'react-redux'
+import { changeQuantity, addToCart } from '../../redux/slices/cartItemSlice'
 import { modalOptions, showModal } from '../../redux/slices/modalSlice'
 
 const SPAGridCard = ({ breed }) => {
-
-  const count = useSelector((state) => state.cart.value)
+  const count = useSelector(state => state.cart.value)
   const modal = useSelector(modalOptions)
   const dispatch = useDispatch()
-
+  const cartHandler = () => {
+    dispatch(
+      addToCart({
+        quantity: 1,
+        breedObj: breed
+      })
+    )
+  }
   const details = () => {
-    console.log("details", breed.details)
-   dispatch(showModal(`breed-${breed.breed_id}`))
+    console.log('details', breed.details)
+    dispatch(showModal(`breed-${breed.breed_id}`))
   }
   return (
     <div className="grid-card">
@@ -27,15 +33,12 @@ const SPAGridCard = ({ breed }) => {
       <img className="grid-img" src={breed.breed_image} />
       <div className="container-two">
         <span className="grid-span">Price: ${breed.price}.00</span>
-        <span className="grid-span">Qty:</span>
-        <MinusOutlined onClick={() => dispatch(changeQuantity({id: breed.id, quantity: -1}))} className="icons" />
-        <span className="grid-span">3</span>
-        <PlusOutlined onClick={() => dispatch(changeQuantity({id: breed.id, quantity: 1}))} className="icons" />
       </div>
+
       <Divider />
 
       <div className="grid-btns">
-        <button className="add-cart">
+        <button onClick={cartHandler} className="add-cart">
           Add to Cart <ShoppingCartOutlined className="icons" />
         </button>
         {modal[`breed-${breed.breed_id}`] ? (
@@ -52,4 +55,5 @@ const SPAGridCard = ({ breed }) => {
 }
 
 export default SPAGridCard
+
 
