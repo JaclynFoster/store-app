@@ -51,8 +51,8 @@ const LoginForm = () => {
 
   return (
     <div className="login-container">
-      <form key={user.id}  onSubmit={getUserLogin}>
         <AuthContext.Provider value={{ id: user.id }}>
+      <form key={user.id}  onSubmit={getUserLogin}>
           <h1 className="login-title">Login:</h1>
           <Divider />
           <div className="login-space">
@@ -74,10 +74,10 @@ const LoginForm = () => {
               Submit
             </button>
           </div>
-        </AuthContext.Provider>
         <Divider />
 
       </form>
+        </AuthContext.Provider>
         <h4>New User?</h4>
         <button onClick={() => onSignUpHandler()} className="login-btn">
           Sign Up

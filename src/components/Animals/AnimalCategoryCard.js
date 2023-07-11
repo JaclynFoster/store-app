@@ -8,11 +8,11 @@ import { useNavigate } from 'react-router-dom'
 const AnimalCategoryCard = ({ animalType, animal }) => {
   const navigate = useNavigate()
  return(
-  <div>
+  <div className="animal-card-container">
    {animalType.map(type => {
      console.log('type:', type)
      return (
-       <div className="animal-card-container">
+      
        <Card>
        <img
        onClick={() =>
@@ -24,7 +24,7 @@ const AnimalCategoryCard = ({ animalType, animal }) => {
       <Divider />
       <label className="animal-label">{type.type_name}</label>
       </Card>
-      </div>
+    
       )
     })}
     

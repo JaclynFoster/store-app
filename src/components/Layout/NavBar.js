@@ -1,12 +1,53 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { ShoppingCartOutlined, UserOutlined } from '@ant-design/icons'
-import {FaUserEdit} from 'react-icons/fa'
+import { FaUserEdit } from 'react-icons/fa'
 import logo from '../../images/logo.png'
 import CartBadge from './CartBadge'
 import './NavBar.css'
+import AuthContext from '../../context/userContext'
 
 const NavBar = () => {
+  const props = useContext(AuthContext)
+  const navigate = useNavigate()
+  const showProfile = () => {
+    if (props.userObject.id) {
+      return (
+        <Link className="link" to="/profile">
+          <FaUserEdit className="edit-icon" />Edit Profile
+        </Link>
+      )
+    }
+  }
+  const hideLogin = () => {
+    if (!props.userObject.id) {
+      return (
+        <Link className="link login " to="/login">
+          <UserOutlined className="icon" />Login
+        </Link>
+      )
+    } else {
+      return (
+        <button
+          onClick={() => {
+            props.setUserObject({})
+          }}
+        >
+          Logout
+        </button>
+      )
+    }
+  }
+  // const { pathname } = useLocation()
+  // console.log(pathname)
+  // useEffect(
+  //   () => {
+  //     if (!props.userObject.id && pathname === '/cart') {
+  //       navigate('/', { replace: true })
+  //     }
+  //   },
+  //   [props.userObject.id]
+  // )
 
   return (
     <div className="nav-container">
@@ -26,26 +67,20 @@ const NavBar = () => {
         </Link>
       </nav>
       <nav className="cart-nav-container">
-       <div className="cart-nav">
+        <div className="cart-nav">
+          {hideLogin()}
+          <Link className="link cart-link " to="/cart">
+            Cart <ShoppingCartOutlined className="icon" />
+          </Link>
+          <CartBadge />
+        </div>
 
-        <Link className="link login " to="/login">
-          <UserOutlined className="icon" />Login
-        </Link>
-
-        <Link className="link cart-link " to="/cart">
-      
-          Cart <ShoppingCartOutlined className="icon" />
-        </Link>
-        <CartBadge />
-       </div>
-       
-      <div className="profile-link">
-      <Link className="link" to="/profile"><FaUserEdit className="edit-icon" />Edit Profile</Link>
-      </div>
+        <div className="profile-link">{showProfile()}</div>
       </nav>
     </div>
   )
 }
 
 export default NavBar
+
 

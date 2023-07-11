@@ -1,15 +1,15 @@
 
 .animal-img {
-    width: 100%;
     border: 2px solid darkgray;
+ 
   }
 
 .animal-card-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
+  flex-wrap: nowrap;
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
 
   .back-home {

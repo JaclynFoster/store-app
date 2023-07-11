@@ -1,13 +1,14 @@
 .main-img {
     border: 4px double slategray;
-    width: 100%;
+   
 }
 
-.card-container {
+.animal-card-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 .animal-type {

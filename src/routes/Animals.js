@@ -32,10 +32,10 @@ const Animals = () => {
   }, [])
   return (
     <Layout>
+      <div className="animal-card-container">
       {animal.map(animal => {
         return (
-          <div className="card-container">
-            <Card>
+          <Card>
               <img
                 onClick={() =>
                   navigate(`/animals/${animal.type}`, { replace: true })
@@ -46,9 +46,9 @@ const Animals = () => {
               <Divider />
               <h2 className="animal-type">{animal.type}</h2>
             </Card>
-          </div>
         )
       })}
+      </div>
     </Layout>
   )
 }
