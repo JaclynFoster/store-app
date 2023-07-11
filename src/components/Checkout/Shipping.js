@@ -4,8 +4,6 @@ import './Shipping.css'
 import CollapseChildren from '../UI/CollapseChildren'
 
 const Shipping = ({
-  email,
-  setEmail,
   firstName,
   setFirstName,
   lastName,
@@ -16,8 +14,6 @@ const Shipping = ({
   setCity,
   zipcode,
   setZipcode,
-  phone,
-  setPhone,
   state,
   setState
 }) => {
@@ -75,23 +71,6 @@ const Shipping = ({
             required
           />
         </div>
-
-        <input
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          className="shipping-input address"
-          type="email"
-          placeholder="Email:"
-          required
-        />
-
-        <input
-          value={phone}
-          onChange={e => setPhone(e.target.value)}
-          className="shipping-input phone"
-          placeholder="Phone:"
-          required
-        />
         <button className="save-info">Save</button>
       </form>
     </CollapseChildren>

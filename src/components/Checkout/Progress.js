@@ -8,7 +8,7 @@ const Progress = () => {
       <Steps
         items={[
           {
-            title: 'Details'
+            title: 'Billing'
           },
           {
             title: 'Shipping'

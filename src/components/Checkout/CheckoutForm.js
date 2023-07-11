@@ -12,7 +12,7 @@ const CheckoutForm = () => {
   const items = [
     {
       key: '1',
-      label: 'Details:',
+      label: 'Billing:',
       children: <Customer />
     },
     {

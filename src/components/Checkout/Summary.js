@@ -2,26 +2,31 @@ import React from 'react'
 import CollapseChildren from '../UI/CollapseChildren'
 import { Divider } from 'antd'
 import './Summary.css'
+import { useSelector } from 'react-redux'
+import { cartOptions } from '../../redux/slices/cartItemSlice'
+import { cartTax, totalCartAmount, grandTotal } from '../../utils/utils'
 
 const Summary = () => {
+  const cartAnimal = useSelector(cartOptions)
   return (
     <CollapseChildren className="total-container">
       <div className="subtotal">
-        <h5>Subtotal: (5 items)</h5>
-        <span> $18.00</span>
+        <h5>Subtotal: </h5>
+
+        <span>${totalCartAmount(cartAnimal)}</span>
       </div>
       <div className="shipping">
         <h5>Shipping & Handling</h5>
         <span>FREE</span>
       </div>
       <div className="tax">
-        <h5>Tax (Calculated at checkout)</h5>
-        <span>$0.00</span>
+        <h5>Taxes & Fees</h5>
+        <span>${cartTax(cartAnimal)}</span>
       </div>
       <Divider />
       <div className="balance">
         <h4>Balance: </h4>
-        <h4>$18.00</h4>
+        <h4>${grandTotal(cartAnimal)}</h4>
       </div>
       <div className="complete-order">
         <p className="terms">
@@ -36,3 +41,4 @@ const Summary = () => {
 }
 
 export default Summary
+

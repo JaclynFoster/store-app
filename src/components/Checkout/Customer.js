@@ -4,32 +4,107 @@ import './Customer.css'
 import { Divider } from 'antd'
 import { useNavigate } from 'react-router-dom'
 
-const Customer = () => {
+const Customer = ({
+  email,
+  setEmail,
+  firstName,
+  setFirstName,
+  lastName,
+  setLastName,
+  address,
+  setAddress,
+  city,
+  setCity,
+  zipcode,
+  setZipcode,
+  phone,
+  setPhone,
+  state,
+  setState
+}) => {
   const navigate = useNavigate()
 
-  const signIn = () => {
-    navigate('/login', { replace: true })
+  const editProfileHandler = () => {
+    navigate('/profile', { replace: true })
   }
 
   return (
     <CollapseChildren>
-      <h1>Customer Details:</h1>
-      <Divider />
-      <div className="customer-container">
-        <p className="guest-p">
-          Checking out as a Guest? You'll be able to save your details to create
-          an account with us later.
-        </p>
-        <label className="guest-label">Email Address:</label>
-        <div className="guest-email">
-          <input className="guest-input" type="email" />
-          <button className="guest-btn">Continue as Guest</button>
+      <form className="shipping-form-container">
+      <h1>Billing Details:</h1>
+        <Divider />
+        <div className="name">
+          <input
+            value={firstName}
+            onChange={e => setFirstName(e.target.value)}
+            className="billing-input name"
+            placeholder="First Name:"
+            required
+          />
+          <input
+            value={lastName}
+            onChange={e => setLastName(e.target.value)}
+            className="billing-input name"
+            placeholder="Last Name:"
+            required
+          />
         </div>
-      </div>
+
+        <input
+          value={address}
+          onChange={e => setAddress(e.target.value)}
+          className="billing-input address"
+          placeholder="Address:"
+          required
+        />
+        <div className="city-state-zip">
+          <input
+            value={city}
+            onChange={e => setCity(e.target.value)}
+            className="billing-input city"
+            placeholder="City:"
+            required
+          />
+
+          <input
+            value={state}
+            onChange={e => setState(e.target.value)}
+            className="billing-input state"
+            placeholder="State:"
+            required
+          />
+
+          <input
+            value={zipcode}
+            onChange={e => setZipcode(e.target.value)}
+            className="billing-input zip"
+            placeholder="Zip Code:"
+            required
+          />
+        </div>
+
+        <input
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          className="billing-input address"
+          type="email"
+          placeholder="Email:"
+          required
+        />
+
+        <input
+          value={phone}
+          onChange={e => setPhone(e.target.value)}
+          className="billing-input phone"
+          placeholder="Phone:"
+          required
+        />
+        <button className="save-info">Save</button>
+      </form>
       <span className="guest-span">
-        Already have an account?{' '}
-        <a onClick={signIn} className="signin-link">
-          Sign in now
+       Need to Update Account?
+        <a onClick={editProfileHandler} className="signin-link">
+          Edit Profile
         </a>{' '}
       </span>
     </CollapseChildren>
