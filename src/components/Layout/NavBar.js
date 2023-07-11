@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ShoppingCartOutlined, UserOutlined } from '@ant-design/icons'
+import {FaUserEdit} from 'react-icons/fa'
 import logo from '../../images/logo.png'
 import CartBadge from './CartBadge'
+import './NavBar.css'
 
 const NavBar = () => {
 
@@ -23,17 +25,23 @@ const NavBar = () => {
           Contact
         </Link>
       </nav>
-      <nav className="cart-nav">
+      <nav className="cart-nav-container">
+       <div className="cart-nav">
+
         <Link className="link login " to="/login">
           <UserOutlined className="icon" />Login
         </Link>
-        
+
         <Link className="link cart-link " to="/cart">
       
           Cart <ShoppingCartOutlined className="icon" />
         </Link>
         <CartBadge />
+       </div>
        
+      <div className="profile-link">
+      <Link className="link" to="/profile"><FaUserEdit className="edit-icon" />Edit Profile</Link>
+      </div>
       </nav>
     </div>
   )

@@ -13,6 +13,7 @@ import Signup from './routes/Signup'
 import reportWebVitals from './reportWebVitals'
 import AnimalCategory from './routes/AnimalCategory'
 import SinglePageAnimal from './routes/SinglePageAnimal'
+import Profile from './routes/Profile'
 import { store } from '../src/redux/store'
 import { Provider } from 'react-redux'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -58,7 +59,12 @@ const router = createBrowserRouter([
   {
     path: '/signup',
     element: <Signup />
-  }
+  },
+  {
+  path: '/profile',
+  element: <Profile />
+},
+
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'))

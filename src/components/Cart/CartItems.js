@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { cartOptions, changeQuantity } from '../../redux/slices/cartItemSlice'
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons'
 
-const CartItems = ({ breed }) => {
+const CartItems = () => {
   const dispatch = useDispatch()
   const cartAnimal = useSelector(cartOptions)
   const count = useSelector(state => state.cart.value)

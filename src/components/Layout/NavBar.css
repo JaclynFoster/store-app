@@ -1,0 +1,74 @@
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkAjIvaNj4hfIeiX9bi7BQdmEpYRRtDNIjuw&usqp=CAU");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.75;
+    width: 100%;
+  
+  }
+  .logo {
+    height: 100px;
+      width: 150px;
+  
+      padding-left: 15px;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+   
+  }
+  
+  .cart-nav-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+  }
+  
+  .cart-nav {
+    display: flex;
+    align-items: flex-start;
+    justify-content: right;
+    width: 250px;
+   padding: 20px;
+  
+  }
+  
+  .edit-icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  .profile-link {
+    display: flex;
+    margin-left: 30px;
+    width: 70%;
+    justify-content: space-around;
+    padding: 5px;
+  }
+  .link {
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 20px;
+    color:whitesmoke;
+  }
+  
+  .icon {
+    font-size: 20px;
+    padding-right: 5px;
+  }
+
+  .cart-link {
+    margin-left: 5px;
+  }
+  
+  .login {
+    margin-right: 10px;
+  }
