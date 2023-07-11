@@ -27,54 +27,18 @@
 
 .item-container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    flex-direction: column;
+    gap: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
 }
 
 .sub-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 10px;
-    padding-right: 20px;
-    
-}
-
-.tot-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 10px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    padding-top: 15px;
-    font-weight: bold;
-}
-
-.cart--item-display {
-    display: flex;
     flex-direction: column;
- 
+   float: right;  
 }
 
-.item-name-span {
-    font-weight: lighter;
-    font-style: italic;
-    margin-left: -15px;
-}
-
-.qty-span {
-    font-size: 15px;
-    font-style: italic;
-    font-weight: lighter;
-}
-
-.item-total-span {
-    font-size: 15px;
-    font-weight: lighter;
-}

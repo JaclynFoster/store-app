@@ -5,6 +5,7 @@ import { ImCancelCircle } from 'react-icons/im'
 import { MdOutlineShopTwo } from 'react-icons/md'
 import { Row, Col, Button, Container } from 'react-bootstrap'
 import { Divider, Card } from 'antd'
+import { totalCartAmount, cartTax, grandTotal } from '../../utils/utils'
 import '../Cart/CartItems.css'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -17,29 +18,6 @@ const CartItems = () => {
   const count = useSelector(state => state.cart.value)
   const navigate = useNavigate()
 
-  const calculateQuantity = (quantity, price) => {
-    return quantity * Number(price)
-  }
-
-  const totalCartAmount = () => {
-    console.log('Animal:', Object.values(cartAnimal))
-
-    return Object.values(cartAnimal)
-      .reduce((acc, curr) => {
-        return acc + calculateQuantity(curr.quantity, curr.price)
-      }, 0)
-      .toFixed(2)
-  }
-
-  const cartTax = () => {
-    return (totalCartAmount() * 0.0825).toFixed(2)
-  }
-
-  const grandTotal = () => {
-    console.log('cartTax', typeof cartTax())
-    console.log('totalCartAmount', typeof totalCartAmount())
-    return Number(cartTax()) + Number(totalCartAmount())
-  }
   const toCheckout = () => {
     navigate('/checkout', { replace: true })
   }
@@ -116,7 +94,7 @@ const CartItems = () => {
       <div className="cart-total-container">
         <Row>
           <Col>Subtotal</Col>
-          <Col>${totalCartAmount()}</Col>
+          <Col>${totalCartAmount(cartAnimal)}</Col>
         </Row>
         <Row>
           <Col>Shipping</Col>
@@ -126,12 +104,12 @@ const CartItems = () => {
         </Row>
         <Row>
           <Col>Est. Taxes & Fees</Col>
-          <Col>${cartTax()}</Col>
+          <Col>${cartTax(cartAnimal)}</Col>
         </Row>
         <Row>
           <Col>Est. Total</Col>
           <Col>
-            <strong>${grandTotal()}</strong>
+            <strong>${grandTotal(cartAnimal)}</strong>
           </Col>
         </Row>
 
@@ -160,6 +138,7 @@ const CartItems = () => {
 }
 
 export default CartItems
+
 
 
 
