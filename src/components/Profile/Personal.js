@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Row, Col } from 'react-bootstrap'
 import { Divider } from 'antd'
 import './Profile.css'
 
 const Personal = () => {
+  const [newFirst, setNewFirst] = useState('')
+  const [newLast, setNewLast] = useState('')
+  const [newEmail, setNewEmail] = useState('')
   return (
     <div className="profile-section-container">
       <h5 className="profile-header">Update Personal Details:</h5>
@@ -18,10 +21,18 @@ const Personal = () => {
       </Row>
       <Row>
         <Col>
-          <input className="profile-input" />
+          <input
+            value={newFirst}
+            onChange={e => setNewFirst(e.target.value)}
+            className="profile-input"
+          />
         </Col>
         <Col>
-          <input className="profile-input" />
+          <input
+            value={newLast}
+            onChange={e => setNewLast(e.target.value)}
+            className="profile-input"
+          />
         </Col>
       </Row>
 
@@ -35,10 +46,18 @@ const Personal = () => {
       </Row>
       <Row>
         <Col>
-          <input className="profile-input" />
+          <input
+            value={newPhone}
+            onChange={e => setNewPhone(e.target.value)}
+            className="profile-input"
+          />
         </Col>
         <Col>
-          <input className="profile-input" />
+          <input
+            value={newEmail}
+            onChange={e => setNewEmail(e.target.value)}
+            className="profile-input"
+          />
         </Col>
       </Row>
 
@@ -48,3 +67,4 @@ const Personal = () => {
 }
 
 export default Personal
+

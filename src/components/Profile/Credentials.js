@@ -3,7 +3,9 @@ import { Row, Col } from 'react-bootstrap'
 import { Divider } from 'antd'
 import './Profile.css'
 
-const Credentials = () => {
+const Credentials = ({ username, password, setUsername, setPassword }) => {
+  const [newUsername, setNewUsername] = useState('')
+  const [newPassword, setNewPassword] = useState('')
   return (
     <div className="profile-section-container">
       <h5 className="profile-header">Update Login Credentials:</h5>
@@ -18,10 +20,18 @@ const Credentials = () => {
       </Row>
       <Row>
         <Col>
-          <input className="profile-input" />
+          <input
+            value={username}
+            onChange={e => setUsername(e.target.value)}
+            className="profile-input"
+          />
         </Col>
         <Col>
-          <input className="profile-input" />
+          <input
+            value={newUsername}
+            onChange={e => setNewUsername(e.target.value)}
+            className="profile-input"
+          />
         </Col>
       </Row>
       <Row>
@@ -34,10 +44,18 @@ const Credentials = () => {
       </Row>
       <Row>
         <Col>
-          <input className="profile-input" />
+          <input
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            className="profile-input"
+          />
         </Col>
         <Col>
-          <input className="profile-input" />
+          <input
+            value={newPassword}
+            onChange={e => setNewPassword(e.target.value)}
+            className="profile-input"
+          />
         </Col>
       </Row>
       <Divider />
@@ -46,3 +64,4 @@ const Credentials = () => {
 }
 
 export default Credentials
+
