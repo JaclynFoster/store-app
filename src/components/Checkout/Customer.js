@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import CollapseChildren from '../UI/CollapseChildren'
 import './Customer.css'
 import { Divider } from 'antd'
 import { useNavigate } from 'react-router-dom'
+import AuthContext from '../../context/userContext'
 
 const Customer = ({
   email,
@@ -23,7 +24,8 @@ const Customer = ({
   setState
 }) => {
   const navigate = useNavigate()
-
+  const props = useContext(AuthContext)
+  console.log("props.userObject.first_name", props.userObject.first_name)
   const editProfileHandler = () => {
     navigate('/profile', { replace: true })
   }
@@ -35,14 +37,14 @@ const Customer = ({
         <Divider />
         <div className="name">
           <input
-            value={firstName}
+            value={props.userObject.first_name}
             onChange={e => setFirstName(e.target.value)}
             className="billing-input name"
             placeholder="First Name:"
             required
           />
           <input
-            value={lastName}
+            value={props.userObject.last_name}
             onChange={e => setLastName(e.target.value)}
             className="billing-input name"
             placeholder="Last Name:"
@@ -51,7 +53,7 @@ const Customer = ({
         </div>
 
         <input
-          value={address}
+          value={props.userObject.address}
           onChange={e => setAddress(e.target.value)}
           className="billing-input address"
           placeholder="Address:"
@@ -59,7 +61,7 @@ const Customer = ({
         />
         <div className="city-state-zip">
           <input
-            value={city}
+            value={props.userObject.city}
             onChange={e => setCity(e.target.value)}
             className="billing-input city"
             placeholder="City:"
@@ -67,7 +69,7 @@ const Customer = ({
           />
 
           <input
-            value={state}
+            value={props.userObject.state}
             onChange={e => setState(e.target.value)}
             className="billing-input state"
             placeholder="State:"
@@ -75,7 +77,7 @@ const Customer = ({
           />
 
           <input
-            value={zipcode}
+            value={props.userObject.zipcode}
             onChange={e => setZipcode(e.target.value)}
             className="billing-input zip"
             placeholder="Zip Code:"
@@ -84,7 +86,7 @@ const Customer = ({
         </div>
 
         <input
-          value={email}
+          value={props.userObject.email}
           onChange={e => setEmail(e.target.value)}
           className="billing-input address"
           type="email"
@@ -93,7 +95,7 @@ const Customer = ({
         />
 
         <input
-          value={phone}
+          value={props.userObject.phone}
           onChange={e => setPhone(e.target.value)}
           className="billing-input phone"
           placeholder="Phone:"

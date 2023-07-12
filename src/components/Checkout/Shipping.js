@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Divider } from 'antd'
 import './Shipping.css'
 import CollapseChildren from '../UI/CollapseChildren'
+import AuthContext from '../../context/userContext'
 
 const Shipping = ({
   firstName,
@@ -17,6 +18,7 @@ const Shipping = ({
   state,
   setState
 }) => {
+  const props = useContext(AuthContext)
   return (
     <CollapseChildren>
       <form className="shipping-form-container">
@@ -24,14 +26,14 @@ const Shipping = ({
         <Divider />
         <div className="name">
           <input
-            value={firstName}
+            value={props.userObject.first_name}
             onChange={e => setFirstName(e.target.value)}
             className="shipping-input name"
             placeholder="First Name:"
             required
           />
           <input
-            value={lastName}
+            value={props.userObject.last_name}
             onChange={e => setLastName(e.target.value)}
             className="shipping-input name"
             placeholder="Last Name:"
@@ -40,7 +42,7 @@ const Shipping = ({
         </div>
 
         <input
-          value={address}
+          value={props.userObject.address}
           onChange={e => setAddress(e.target.value)}
           className="shipping-input address"
           placeholder="Address:"
@@ -48,7 +50,7 @@ const Shipping = ({
         />
         <div className="city-state-zip">
           <input
-            value={city}
+            value={props.userObject.city}
             onChange={e => setCity(e.target.value)}
             className="shipping-input city"
             placeholder="City:"
@@ -56,7 +58,7 @@ const Shipping = ({
           />
 
           <input
-            value={state}
+            value={props.userObject.state}
             onChange={e => setState(e.target.value)}
             className="shipping-input state"
             placeholder="State:"
@@ -64,7 +66,7 @@ const Shipping = ({
           />
 
           <input
-            value={zipcode}
+            value={props.userObject.zipcode}
             onChange={e => setZipcode(e.target.value)}
             className="shipping-input zip"
             placeholder="Zip Code:"

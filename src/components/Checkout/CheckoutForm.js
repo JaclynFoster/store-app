@@ -9,6 +9,7 @@ import './CheckoutForm.css'
 import CartSummary from './CartSummary'
 
 const CheckoutForm = () => {
+
   const items = [
     {
       key: '1',
