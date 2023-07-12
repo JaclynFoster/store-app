@@ -1,5 +1,5 @@
 import React from 'react'
-import { Space, Spin, Skeleton } from 'antd'
+import { Space, Spin, Empty } from 'antd'
 
 const Loading = () => {
   return (
@@ -14,14 +14,8 @@ const Loading = () => {
           <div className="content" />
         </Spin>
       </Space>
+      <Empty description={false} />
 
-      <Skeleton.Image active />
-      <Skeleton active />
-      <Skeleton.Image active />
-      <Skeleton active />
-      <Skeleton.Image active />
-      <Skeleton active />
-      <Skeleton.Image active />
     </div>
   )
 }

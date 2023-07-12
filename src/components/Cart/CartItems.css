@@ -36,8 +36,7 @@
  padding-left: 20px;
 }
 .table-img {
-    width: 80px;
-    height: 80px;
+   
     border: 1px solid grey;
     border-radius: 10px;
     display: flex;

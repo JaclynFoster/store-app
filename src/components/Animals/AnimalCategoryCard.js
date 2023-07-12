@@ -1,5 +1,5 @@
 import React from 'react'
-import { Divider } from 'antd'
+import { Divider, Image } from 'antd'
 import Card from '../UI/Card'
 import './AnimalCategoryCard.css'
 import { useNavigate } from 'react-router-dom'

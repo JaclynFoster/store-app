@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import UseModal from '../UI/UseModal'
-import { Divider } from 'antd'
+import { Divider, Image } from 'antd'
 import {
   PlusOutlined,
   MinusOutlined,
@@ -28,29 +28,29 @@ const SPAGridCard = ({ breed }) => {
   }
   return (
     <div className="grid-card">
-      <label className="grid-label">{breed.breed_name}</label>
-      <Divider />
-      <img className="grid-img" src={breed.breed_image} />
-      <div className="container-two">
-        <span className="grid-span">Price: ${breed.price}.00</span>
-      </div>
-
-      <Divider />
-
-      <div className="grid-btns">
-        <button onClick={cartHandler} className="add-cart">
-          Add to Cart <ShoppingCartOutlined className="icons" />
-        </button>
-        {modal[`breed-${breed.breed_id}`] ? (
-          <UseModal>
-            <p>{breed.details}</p>
-          </UseModal>
-        ) : null}
-        <button onClick={details} className="details">
-          Details
-        </button>
-      </div>
+    <label className="grid-label">{breed.breed_name}</label>
+    <Divider />
+    <Image height={350} width={350} className="grid-img" src={breed.breed_image} />
+    <div className="container-two">
+      <span className="grid-span">Price: ${breed.price}.00</span>
     </div>
+
+    <Divider />
+
+    <div className="grid-btns">
+      <button onClick={cartHandler} className="add-cart">
+        Add to Cart <ShoppingCartOutlined className="icons" />
+      </button>
+      {modal[`breed-${breed.breed_id}`] ? (
+        <UseModal>
+          <p>{breed.details}</p>
+        </UseModal>
+      ) : null}
+      <button onClick={details} className="details">
+        Details
+      </button>
+    </div>
+  </div>
   )
 }
 

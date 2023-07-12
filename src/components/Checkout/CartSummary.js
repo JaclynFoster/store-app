@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Divider } from 'antd'
+import { Divider, Image } from 'antd'
 import './CartSummary.css'
 import { Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
@@ -20,7 +20,7 @@ const CartSummary = () => {
               <div className="item-container">
                 <Row>
                   <Col>
-                    <img src={item.breed_image} className="summary-img" />
+                    <Image width={50} height={50} src={item.breed_image} className="summary-img" />
                   </Col>
                   <Col>
                     <span>{item.breed_name}</span>

@@ -5,9 +5,15 @@ import ronald from '../images/ronald.jpeg'
 import scenery from '../images/lakeLife.jpeg'
 import '../components/About/About.css'
 
+
 const About = () => {
   return (
-    <Layout>
+    <Layout>   
+  
+  
+    
+    
+
       <div className="picture-section">
         <img className="about-pic" src={family} />
         <label className="about-label">It all started with a family...</label>
@@ -16,6 +22,8 @@ const About = () => {
         <img className="about-pic" src={scenery} />
         <label className="about-label">And a change of scenery...</label>
       </div>
+ 
+  
       <div className="paragraph-section">
         <h1 className="h1About">A Little About Farm...</h1>
         <div className="pGrid">

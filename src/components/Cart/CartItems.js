@@ -4,12 +4,16 @@ import { IoBagCheckOutline, IoLogoHtml5 } from 'react-icons/io5'
 import { ImCancelCircle } from 'react-icons/im'
 import { MdOutlineShopTwo } from 'react-icons/md'
 import { Row, Col, Button, Container } from 'react-bootstrap'
-import { Divider, Card } from 'antd'
+import { Divider, Card, Image } from 'antd'
 import { totalCartAmount, cartTax, grandTotal } from '../../utils/utils'
 import '../Cart/CartItems.css'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { cartOptions, changeQuantity } from '../../redux/slices/cartItemSlice'
+import {
+  cartOptions,
+  addToCart,
+  deleteFromCart
+} from '../../redux/slices/cartItemSlice'
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons'
 
 const CartItems = () => {
@@ -17,6 +21,10 @@ const CartItems = () => {
   const cartAnimal = useSelector(cartOptions)
   const count = useSelector(state => state.cart.value)
   const navigate = useNavigate()
+
+  const deleteHandler = breed_id => {
+    dispatch(deleteFromCart({ breed_id }))
+  }
 
   const toCheckout = () => {
     navigate('/checkout', { replace: true })
@@ -43,10 +51,19 @@ const CartItems = () => {
           return (
             <div className="cart-detail-container">
               <Card>
-                <Button className="trash" variant="outline-danger">
+                <Button
+                  onClick={() => deleteHandler(item.breed_id)}
+                  className="trash"
+                  variant="outline-danger"
+                >
                   <BsTrash />
                 </Button>
-                <img className="table-img" src={item.breed_image} />
+                <Image
+                  width={80}
+                  height={80}
+                  className="table-img"
+                  src={item.breed_image}
+                />
                 <Row>
                   <Col>
                     <h4 className="cart-name">{item.breed_name}</h4>
@@ -64,8 +81,8 @@ const CartItems = () => {
                       <MinusOutlined
                         onClick={() =>
                           dispatch(
-                            changeQuantity({
-                              id: item.breed_id,
+                            addToCart({
+                              breedObj: item,
                               quantity: -1
                             })
                           )
@@ -76,9 +93,7 @@ const CartItems = () => {
 
                       <PlusOutlined
                         onClick={() =>
-                          dispatch(
-                            changeQuantity({ id: item.breed_id, quantity: 1 })
-                          )
+                          dispatch(addToCart({ breedObj: item, quantity: 1 }))
                         }
                         className="cart-icons"
                       />
@@ -138,6 +153,7 @@ const CartItems = () => {
 }
 
 export default CartItems
+
 
 
 

@@ -1,5 +1,6 @@
 .main-img {
     border: 4px double slategray;
+    overflow: hidden;
    
 }
 
