@@ -15,7 +15,7 @@ const LoginForm = () => {
   const [user, setUser] = useState({})
   const props = useContext(AuthContext)
   const navigate = useNavigate()
-
+  console.log("Context Props:", props)
   const onSignUpHandler = () => {
     navigate('/signup', { replace: true })
   }
@@ -36,7 +36,8 @@ const LoginForm = () => {
             'Username or Password combination is incorrect. Please try again'
           )
         } else {
-          props.setUserObject({ ...res.data[0] })
+          console.log("UserData:", {...res.data.data})
+          props.setUserObject({ ...res.data.data})
           dispatch(setLoadingFalse())
           navigate('/', { replace: true })
         }
@@ -51,8 +52,9 @@ const LoginForm = () => {
 
   return (
     <div className="login-container">
-        <AuthContext.Provider value={{ id: user.id }}>
-      <form key={user.id}  onSubmit={getUserLogin}>
+         <AuthContext.Provider value={{ id: user.id }}>
+
+            <form key={user.id}  onSubmit={getUserLogin}>
           <h1 className="login-title">Login:</h1>
           <Divider />
           <div className="login-space">
@@ -61,7 +63,7 @@ const LoginForm = () => {
               value={username}
               onChange={e => setUsername(e.target.value)}
               className="login-input"
-            />
+              />
 
             <input
               placeholder="Enter Password:..."
@@ -69,7 +71,7 @@ const LoginForm = () => {
               onChange={e => setPassword(e.target.value)}
               className="login-input"
               type="password"
-            />
+              />
             <button className="login-btn" type="submit">
               Submit
             </button>
@@ -77,7 +79,8 @@ const LoginForm = () => {
         <Divider />
 
       </form>
-        </AuthContext.Provider>
+              </AuthContext.Provider>
+      
         <h4>New User?</h4>
         <button onClick={() => onSignUpHandler()} className="login-btn">
           Sign Up

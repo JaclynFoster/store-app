@@ -18,6 +18,7 @@ import { store } from '../src/redux/store'
 import { Provider } from 'react-redux'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min'
+import { AuthContextProvider } from './context/userContext'
 
 const router = createBrowserRouter([
   {
@@ -70,10 +71,12 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
+    <AuthContextProvider>
     <Provider store={store}>
       <RouterProvider router={router} />
       {/* <App /> */}
     </Provider>
+    </AuthContextProvider>
   </React.StrictMode>
 )
 
