@@ -2,16 +2,17 @@ import React, { useEffect, useState } from 'react'
 import Card from '../components/UI/Card'
 import axios from 'axios'
 import Layout from '../components/Layout/Layout'
+import Search from '../components/Animals/Search'
 import { Divider, Image } from 'antd'
 import '../components/Animals/Animals.css'
 import { useNavigate, useParams } from 'react-router-dom'
 import { setLoadingTrue, setLoadingFalse } from '../redux/slices/isLoadingSlice'
 import { useDispatch } from 'react-redux'
 
-const Animals = () => {
+const Animals = ({searchResult}) => {
   const dispatch = useDispatch()
   const [animal, setAnimal] = useState([])
-  const params = useParams()
+  
   const getAllAnimals = () => {
     dispatch(setLoadingTrue())
     axios
@@ -32,6 +33,7 @@ const Animals = () => {
   }, [])
   return (
     <Layout>
+      <Search />
       <div className="animal-card-container">
       {animal.map(animal => {
         return (

@@ -7,6 +7,8 @@ const Personal = () => {
   const [newFirst, setNewFirst] = useState('')
   const [newLast, setNewLast] = useState('')
   const [newEmail, setNewEmail] = useState('')
+  const [newPhone, setNewPhone] = useState('')
+  
   return (
     <div className="profile-section-container">
       <h5 className="profile-header">Update Personal Details:</h5>

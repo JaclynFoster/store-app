@@ -1,44 +1,49 @@
-// import React, { useState } from 'react'
-// import { BsSearch } from 'react-icons/bs'
-// import SPAGridCard from './SPAGridCard'
+import React, { useState } from 'react'
+import { BsSearch } from 'react-icons/bs'
+import SPAGridCard from './SPAGridCard'
+import Card from '../UI/Card'
+import axios from 'axios'
 
 
-// const Search = ({animalBreed}) => {
-    // const [searchResults, setSearchResults] = useState({query: '', result:[]})
 
-    // const searchAnimals = (e) => {
-    //     const results =  animalBreed.filter(breed => {
-    //         let name = breed.breed_name.toLowerCase()
-    //         let params = e.target.value.toLowerCase()
-    //         if (e.target.value === '') 
-    //             return breed
-    //         return name.includes(params)
-    //     })
-    //     setSearchResults({
-    //         query: e.target.value,
-    //         result: results
-    //     })
-    // }
+const Search = () => {
+    const [searchText, setSearchText] = useState('')
+    const [searchResult, setSearchResult] = useState([])
+
+   const searchAnimals = () => {
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/animals/`, {
+        params: {
+            searchText: searchText
+        }
+    })
+    .then(res => {
+        console.log('searchAnimal Result:', ...res.data)
+        setSearchResult(...res.data)
+        setSearchText('')
+    })
+    .catch(err => {
+        console.log("error on searchAnimals:", err)
+    })
+   }
 
  
 
-    // return(
-        // <div className="search-container">
-        //     <BsSearch className="search-icon"/>
-        //     <input 
-        //     placeholder="Search for Animal Breed..."
-        //     type="search"
-        //     className="search-input"
-        //     value={searchResults.query}
-        //     onChange={searchAnimals}
-        //     />
-        // <div>
-        // {/* {checkFilter().map(breed => {
-        //   return <SPAGridCard  breed={breed}/>
-        // })} */}
-        // </div>
-        // </div>
-//     )
-// }
+    return(
+        <div className="search-container">
+            <BsSearch className="search-icon"/>
+            <input 
+            placeholder="Search for Animal Breed..."
+            type="search"
+            className="search-input"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            />
+            <button onClick={() => searchAnimals()}>Search</button>
+        <div>
+            {Object.values(searchResult)}
+        </div>
+        </div>
+    )
+}
 
-// export default Search
+export default Search
