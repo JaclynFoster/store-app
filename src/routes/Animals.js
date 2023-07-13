@@ -3,16 +3,18 @@ import Card from '../components/UI/Card'
 import axios from 'axios'
 import Layout from '../components/Layout/Layout'
 import Search from '../components/Animals/Search'
-import { Divider, Image } from 'antd'
 import '../components/Animals/Animals.css'
-import { useNavigate, useParams } from 'react-router-dom'
 import { setLoadingTrue, setLoadingFalse } from '../redux/slices/isLoadingSlice'
 import { useDispatch } from 'react-redux'
+import AnimalsList from '../components/Animals/AnimalsList'
+import SearchAnimals from '../components/Animals/SearchAnimals'
 
-const Animals = ({searchResult}) => {
+const Animals = ({}) => {
   const dispatch = useDispatch()
-  const [animal, setAnimal] = useState([])
-  
+  const [animals, setAnimal] = useState([])
+  const [searchResult, setSearchResult] = useState([])
+  const [searchText, setSearchText] = useState('')
+
   const getAllAnimals = () => {
     dispatch(setLoadingTrue())
     axios
@@ -26,38 +28,32 @@ const Animals = ({searchResult}) => {
         console.log('error getAllAnimals: ', err)
       })
   }
-  const navigate = useNavigate()
+
 
   useEffect(() => {
     getAllAnimals()
   }, [])
+
+  console.log({searchText})
+  console.log({searchResult})
+  console.log('the condition: ', (searchResult.length && searchText))
   return (
     <Layout>
-      <Search />
+      <Search
+        searchText={searchText}
+        setSearchText={setSearchText}
+        searchResult={searchResult}
+        setSearchResult={setSearchResult}
+      />
       <div className="animal-card-container">
-      {animal.map(animal => {
-        return (
-          <Card>
-              <img
-                onClick={() =>
-                  navigate(`/animals/${animal.type}`, { replace: true })
-                }
-                className="main-img"
-                src={animal.image}
-              />
-              <Divider />
-              <h2 className="animal-type">{animal.type}</h2>
-            </Card>
-        )
-      })}
+        {searchResult.length && searchText ? (
+          <SearchAnimals animals={searchResult} />
+        ) : (
+          <AnimalsList animals={animals} />
+        )}
       </div>
     </Layout>
   )
 }
 
 export default Animals
-
-
-
-
-

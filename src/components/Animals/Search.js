@@ -4,9 +4,12 @@ import SPAGridCard from './SPAGridCard'
 import Card from '../UI/Card'
 import axios from 'axios'
 
-const Search = () => {
-  const [searchText, setSearchText] = useState('')
-  const [searchResult, setSearchResult] = useState([])
+const Search = ({
+  setSearchResult,
+  searchText,
+  setSearchText
+}) => {
+  //   const [searchResult, setSearchResult] = useState([])
 
   const searchAnimals = () => {
     axios
@@ -17,7 +20,7 @@ const Search = () => {
       })
       .then(res => {
         console.log('searchAnimal Result:', ...res.data)
-        // setSearchResult(...res.data)
+        setSearchResult([...res.data])
         // setSearchText('')
       })
       .catch(err => {
