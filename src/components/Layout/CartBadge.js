@@ -13,7 +13,7 @@ const CartBadge = () => {
   console.log('badgeCount:', badgeCount())
   return (
     <div>
-      <span className="number bump">{badgeCount()}</span>
+      <span className="number">{badgeCount()}</span>
     </div>
   )
 }
