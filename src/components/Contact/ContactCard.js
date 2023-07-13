@@ -1,4 +1,5 @@
 import React from 'react'
+import Card from '../UI/Card'
 import {
   MailOutlined,
   PhoneOutlined,
@@ -14,9 +15,13 @@ import tiktok from '../../images/tiktok.png'
 const ContactCard = () => {
   return (
     <div className="contact-card-container">
-      <div className="contact-card-main">
+      <Card overrideClass={"contact-card-main"}>
+
         <h3>Contact Us:</h3>
+    
         <Divider />
+        <div className="contact-info-container">
+
         <div className="contact-info">
           <MailOutlined /> <span> fawsturfam@fawsturfarms.com</span>
         </div>
@@ -32,6 +37,7 @@ const ContactCard = () => {
         </div>
         <div className="contact-info">
           <PrinterOutlined /> <span> 972-555-4546</span>
+        </div>
         </div>
         <Divider />
         <label>Don't forget to like and subscribe:</label>
@@ -49,7 +55,7 @@ const ContactCard = () => {
             <img className="contact-icon" src={tiktok} />
           </a>
         </div>
-      </div>
+      </Card>
     </div>
   )
 }

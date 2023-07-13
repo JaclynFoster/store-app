@@ -16,7 +16,7 @@ const EmailCard = () => {
   return (
     <div className="welcome">
 
-    <Card >
+    <Card overrideClass={"emailCard"}>
       <h1>Welcome to the Farm!</h1>
       <h4>Join our Mailing List for weekly specials, updates and more..</h4>
       <section className="email-section">
@@ -25,7 +25,7 @@ const EmailCard = () => {
           onChange={e => setEmailInput(e.target.value)}
           className="email-input"
           type="email"
-          placeholder="enter email..."
+          placeholder="Enter email..."
           />
         {modal.email ? (
           <UseModal>

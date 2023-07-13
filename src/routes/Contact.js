@@ -8,9 +8,11 @@ const Contact = () => {
   return (
     <Layout>
  
-  
+    <div className="contact-flex">
+
      <ContactCard />
      <ContactForm />
+    </div>
 
     
     </Layout>

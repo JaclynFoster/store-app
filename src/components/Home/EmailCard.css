@@ -1,8 +1,7 @@
 .email-section {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
+    align-items: flex-end;
     padding: 5px;
     gap: 15px;
     justify-content: center;
@@ -12,6 +11,7 @@
 .email-input {
     width: 300px;
     padding: 5px;
+    min-width: 50px;
 
 }
 
@@ -30,4 +30,16 @@
 
 .welcome {
   margin-left: 50px;
+}
+
+.emailCard {
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 14px;
+    text-align: center;
+    margin: 15px;
+    background-color: white;
+    margin-top: 50px;
+    width: 45%;
+    /* min-width: fit-content; */
 }

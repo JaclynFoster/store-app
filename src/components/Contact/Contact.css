@@ -41,6 +41,11 @@
     gap: 10px;
 }
 
+.contact-info-container {
+    display: flex;
+    flex-direction: column;
+   
+}
 .contact-img {
     display: flex;
     flex-direction: row;
@@ -60,18 +65,27 @@
 
 .contact-card-main {
     padding: 1rem;
-    border: none;
-    width: 90%;
+    border-radius: 14px;
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-    position: relative;
-    left: 5%;
     background-color: white;
-    box-shadow: 0 2px 1px rgba(0,0,0,0.09), 
-    0 4px 2px rgba(0,0,0,0.09), 
-    0 8px 4px rgba(0,0,0,0.09), 
-    0 16px 8px rgba(0,0,0,0.09),
-    0 32px 16px rgba(0,0,0,0.09);
+    margin-top: 50px;
+    margin-left: 15px;
+    min-width: 250px !important;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.contact-form-card {
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 14px;
+    text-align: center;
+    margin-right: 20px;
+    background-color: white;
+    margin-top: 50px;
+    min-width: 250px !important;
+}
+
+.contact-flex {
+    display: flex;
+
 }

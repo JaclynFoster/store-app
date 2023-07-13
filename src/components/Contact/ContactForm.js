@@ -25,7 +25,7 @@ const ContactForm = () => {
 
   return (
     <div className="contact-form-container">
-      <Card className="contact-card">
+      <Card overrideClass={"contact-form-card"}>
         <div className="contact-img">
           <img className="duckies" src={goosey} />
           <div className="headers">
