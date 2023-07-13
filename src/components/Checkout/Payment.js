@@ -66,7 +66,7 @@ const Payment = () => {
             required
           />
         </div>
-        <button className="pay-save">Save</button>
+        <button className="pay-save">Next</button>
       </div>
     </CollapseChildren>
   )

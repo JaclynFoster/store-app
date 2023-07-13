@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Progress from './Progress'
 import Customer from './Customer'
 import Payment from './Payment'
@@ -9,6 +9,7 @@ import './CheckoutForm.css'
 import CartSummary from './CartSummary'
 
 const CheckoutForm = () => {
+  const [current, setCurrent] = useState(0)
 
   const items = [
     {
@@ -39,7 +40,7 @@ const CheckoutForm = () => {
 
   return (
     <div>
-      <Progress />
+      <Progress current={current} setCurrent={setCurrent}/>
       <div className="divide-form">
         <Collapse
           size="large"

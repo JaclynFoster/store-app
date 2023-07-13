@@ -45,3 +45,15 @@
     font-size: 15px;
     padding: 5px;
 }
+
+.customer-btn {
+    width: 150px;
+    height: 50px;
+    background-color: black;
+    color: white;
+   display: flex;
+   align-self: center;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 15px;
+}

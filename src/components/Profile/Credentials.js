@@ -3,9 +3,8 @@ import { Row, Col } from 'react-bootstrap'
 import { Divider } from 'antd'
 import './Profile.css'
 
-const Credentials = ({ username, password, setUsername, setPassword }) => {
-  const [newUsername, setNewUsername] = useState('')
-  const [newPassword, setNewPassword] = useState('')
+const Credentials = ({ username, password, setUsername, setPassword, updateUsername, setUpdateUsername, updatePassword, setUpdatePassword }) => {
+   
   return (
     <div className="profile-section-container">
       <h5 className="profile-header">Update Login Credentials:</h5>
@@ -28,8 +27,8 @@ const Credentials = ({ username, password, setUsername, setPassword }) => {
         </Col>
         <Col>
           <input
-            value={newUsername}
-            onChange={e => setNewUsername(e.target.value)}
+            value={updateUsername}
+            onChange={e => setUpdateUsername(e.target.value)}
             className="profile-input"
           />
         </Col>
@@ -52,8 +51,8 @@ const Credentials = ({ username, password, setUsername, setPassword }) => {
         </Col>
         <Col>
           <input
-            value={newPassword}
-            onChange={e => setNewPassword(e.target.value)}
+            value={updatePassword}
+            onChange={e => setUpdatePassword(e.target.value)}
             className="profile-input"
           />
         </Col>

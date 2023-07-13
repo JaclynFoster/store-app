@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom'
 import AuthContext from '../../context/userContext'
 
 const Customer = ({
+  current, 
+  setCurrent,
   email,
   setEmail,
   firstName,
@@ -29,6 +31,9 @@ const Customer = ({
   const editProfileHandler = () => {
     navigate('/profile', { replace: true })
   }
+//  const changeProgress = () => {
+//    setCurrent((prevCurrent) => prevCurrent + 1)
+//   }
 
   return (
     <CollapseChildren>
@@ -101,7 +106,14 @@ const Customer = ({
           placeholder="Phone:"
           required
         />
-        <button className="save-info">Save</button>
+    
+            <button className="customer-btn"
+    
+              // onClick={() => setCurrent(current + 1)}
+            >
+              Next
+            </button>
+         
       </form>
       <span className="guest-span">
        Need to Update Account?

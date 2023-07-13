@@ -3,12 +3,9 @@ import { Row, Col } from 'react-bootstrap'
 import { Divider } from 'antd'
 import './Profile.css'
 
-const Personal = () => {
-  const [newFirst, setNewFirst] = useState('')
-  const [newLast, setNewLast] = useState('')
-  const [newEmail, setNewEmail] = useState('')
-  const [newPhone, setNewPhone] = useState('')
-  
+const Personal = ({newFirst, setNewFirst, newLast, setNewLast, newEmail, setNewEmail, newPhone, setNewPhone}) => {
+
+
   return (
     <div className="profile-section-container">
       <h5 className="profile-header">Update Personal Details:</h5>

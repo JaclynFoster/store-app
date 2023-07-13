@@ -19,15 +19,14 @@ const generateToken = credentials => {
 
 const getUser = async (req, res) => {
   const { username, password } = req.query
-  console.log("query",req.query)
+  console.log('query', req.query)
   try {
     const response = await queryInvoke(
       `SELECT * FROM users WHERE username = $1 AND password = $2`,
       [username, password]
     )
-    console.log("response:",response)
+    console.log('response:', response)
     if (response.rows.length) {
-    
       let token = generateToken(req.body)
       console.log('Token:', token)
       // let valid = jwt.verify(token, SECRET)
@@ -57,7 +56,8 @@ const createUser = async (req, res) => {
     zipcode,
     phone
   } = req.body
-  console.log("My params: ", req.params)
+
+  console.log('My params: ', req.params)
   try {
     const response = await queryInvoke(
       `INSERT INTO users (username, password, email, first_name, last_name, address, city, state, zipcode, phone)
@@ -75,12 +75,55 @@ const createUser = async (req, res) => {
         phone
       ]
     )
+   
     res.status(200).send(response)
   } catch (error) {
     console.log('Error createUser: ', error)
     res.sendStatus(500)
   }
 }
+
+const updateUser = async (req, res) => {
+  const {
+    address,
+    city,
+    state,
+    zipcode,
+    username,
+    password,
+    first_name,
+    last_name,
+    email,
+    phone
+  } = req.body
+  const { id } = req.params
+  console.log("my params:", req.params)
+  try {
+    const response = await queryInvoke(
+      `UPDATE users SET address = $1, city = $2, state = $3, zipcode = $4, username = $5, password = $6, first_name = $7, last_name = $8, email = $9, phone = $10
+        WHERE id = ${id}
+        `,
+      [
+        address,
+        city,
+        state,
+        zipcode,
+        username,
+        password,
+        first_name,
+        last_name,
+        email,
+        phone,
+      ]
+    )
+    console.log("Update User Response", response)
+    res.status(200).send(response)
+  } catch (error) {
+    console.log('Error updateUser: ', error)
+    res.sendStatus(500)
+  }
+}
+
 
 // const validateToken = async (req, res) => {
 //   let token = req.get('Authorization')
@@ -93,7 +136,7 @@ const createUser = async (req, res) => {
 //   console.log('Validate Token Body', req.body)
 // }
 
-module.exports = { getUser, createUser }
+module.exports = { getUser, createUser, updateUser }
 
 
 

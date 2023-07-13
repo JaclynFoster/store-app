@@ -3,11 +3,8 @@ import { Row, Col } from 'react-bootstrap'
 import { Divider } from 'antd'
 import './Profile.css'
 
-const Address = () => {
-  const [newStreet, setNewStreet] = useState('')
-  const [newCity, setNewCity] = useState('')
-  const [newState, setNewState] = useState('')
-  const [newZip, setNewZip] = useState('')
+const Address = ({newAddress, setNewAddress, newCity, setNewCity, newState, setNewState, newZip, setNewZip}) => {
+   
   return (
     <div className="profile-section-container">
       <h5 className="profile-header">Update Billing Address:</h5>
@@ -23,8 +20,8 @@ const Address = () => {
       <Row>
         <Col>
           <input
-            value={newStreet}
-            onChange={e => setNewStreet(e.target.value)}
+            value={newAddress}
+            onChange={e => setNewAddress(e.target.value)}
             className="profile-input"
           />
         </Col>

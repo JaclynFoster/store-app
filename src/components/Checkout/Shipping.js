@@ -73,7 +73,7 @@ const Shipping = ({
             required
           />
         </div>
-        <button className="save-info">Save</button>
+        <button className="save-info">Next</button>
       </form>
     </CollapseChildren>
   )

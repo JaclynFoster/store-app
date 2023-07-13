@@ -2,26 +2,32 @@ import React from 'react'
 import { Steps } from 'antd'
 import './Progress.css'
 
-const Progress = () => {
+const Progress = ({current, setCurrent}) => {
+  const Step = Steps.Step
+  const steps = [
+    {
+      title: 'Billing'
+    },
+    {
+      title: 'Shipping'
+    },
+
+    {
+      title: 'Payment'
+    }, 
+    {
+      title: 'Order Summary'
+    }
+  ]
   return (
     <div className="steps-container">
-      <Steps
-        items={[
-          {
-            title: 'Billing'
-          },
-          {
-            title: 'Shipping'
-          },
+      <Steps steps={steps} current={current} setCurrent={setCurrent}>
+          {steps.map(step => (
+            <Step key={step.title} title={step.title}/>
+          )
 
-          {
-            title: 'Payment'
-          }, 
-          {
-            title: 'Order Summary'
-          }
-        ]}
-      />
+          )}
+      </Steps>
     </div>
   )
 }
