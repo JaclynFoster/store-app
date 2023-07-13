@@ -15,6 +15,7 @@ app.use(express.json())
 app.use(cors())
 app.use('/animals', animalRouter)
 app.get('/getUser', getUser)
+
 app.post('/createUser', createUser)
 
 const sqlSetup = async () => {

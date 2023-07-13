@@ -1,6 +1,5 @@
 const { queryInvoke } = require('../services/pg')
 
-
 const getAllAnimals = async (req, res) => {
   try {
     const response = await queryInvoke('SELECT * FROM animals', [])
@@ -49,16 +48,19 @@ const getAllBreeds = async (req, res) => {
 
 const getSearch = async (req, res) => {
   try {
-    const {searchText} = req.query
-    console.log("searchText:", searchText)
+    const { searchText } = req.query
+    console.log('searchText:', searchText)
     const response = await queryInvoke(
       `SELECT * FROM breeds
       INNER JOIN types ON types.type_id = breeds.type_id
        INNER JOIN animals ON animals.id = breeds.animal_id
-      WHERE breed_name = $1 OR type_name = $1 OR animals.type = $1
-      `, [searchText]
+      WHERE (breeds.breed_name ILIKE '%${searchText}%') OR
+     (types.type_name ILIKE '%${searchText}%') OR 
+     (animals.type ILIKE '%${searchText}%')
+       `,
+      []
     )
-    console.log('GetSearch Results:', response.rows)
+    console.log('GetSearch Results:', response.rows.length)
     res.status(200).send(response.rows)
   } catch (error) {
     console.log('Error on getSearch', error)
@@ -67,5 +69,6 @@ const getSearch = async (req, res) => {
 }
 
 module.exports = { getAllAnimals, getAllTypes, getAllBreeds, getSearch }
+
 
 

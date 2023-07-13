@@ -4,46 +4,40 @@ import SPAGridCard from './SPAGridCard'
 import Card from '../UI/Card'
 import axios from 'axios'
 
-
-
 const Search = () => {
-    const [searchText, setSearchText] = useState('')
-    const [searchResult, setSearchResult] = useState([])
+  const [searchText, setSearchText] = useState('')
+  const [searchResult, setSearchResult] = useState([])
 
-   const searchAnimals = () => {
-    axios.get(`${process.env.REACT_APP_BACKEND_URL}/animals/`, {
+  const searchAnimals = () => {
+    axios
+      .get(`${process.env.REACT_APP_BACKEND_URL}/animals/getSearch`, {
         params: {
-            searchText: searchText
+          searchText: searchText
         }
-    })
-    .then(res => {
+      })
+      .then(res => {
         console.log('searchAnimal Result:', ...res.data)
-        setSearchResult(...res.data)
-        setSearchText('')
-    })
-    .catch(err => {
-        console.log("error on searchAnimals:", err)
-    })
-   }
+        // setSearchResult(...res.data)
+        // setSearchText('')
+      })
+      .catch(err => {
+        console.log('error on searchAnimals:', err)
+      })
+  }
 
- 
-
-    return(
-        <div className="search-container">
-            <BsSearch className="search-icon"/>
-            <input 
-            placeholder="Search for Animal Breed..."
-            type="search"
-            className="search-input"
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-            />
-            <button onClick={() => searchAnimals()}>Search</button>
-        <div>
-            {Object.values(searchResult)}
-        </div>
-        </div>
-    )
+  return (
+    <div className="search-container">
+      <BsSearch className="search-icon" />
+      <input
+        placeholder="Search for Animal Breed..."
+        type="search"
+        className="search-input"
+        value={searchText}
+        onChange={e => setSearchText(e.target.value)}
+      />
+      <button onClick={() => searchAnimals()}>Search</button>
+    </div>
+  )
 }
 
 export default Search

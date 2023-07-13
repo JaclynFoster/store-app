@@ -3,8 +3,8 @@ const { test, getAllAnimals, getAllTypes, getAllBreeds, getSearch} = require("..
 const app = express.Router()
 
 app.get('/all', getAllAnimals)
+app.get('/getSearch', getSearch)
 app.get('/:type', getAllTypes)
 app.get('/:type/:breed', getAllBreeds)
-app.get('/', getSearch)
 
 module.exports = app;
