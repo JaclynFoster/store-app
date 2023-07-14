@@ -1,12 +1,15 @@
 .paragraph-section {
-    /* width: 77vw; */
+    width: 100%;
+    min-width: 390px;
     box-shadow: inset 0px 5px 20px 10px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
     padding: 10px;
-    margin-left: 25px;
     margin-top: 20px;
-    margin-bottom: 20px;
-    
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
 }
 
 
@@ -24,6 +27,8 @@
 .about-pic {
     height: 200px;
     width: 250px;
+    min-width: 50px;
+    min-height: 50px;
     border-radius: 30px;
     border: 1px solid grey;
     box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.5);
@@ -35,12 +40,17 @@
 }
 
 .picture-section {
-    float: right;
     display: flex;
-    flex-direction:column;
+    flex-direction:row;
     padding: 10px;
-    margin-right: 20px;
     margin-top: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+    min-width: 390px;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
 }
 
 .about-label {
@@ -48,4 +58,17 @@
     font-weight: bold;
     text-align: center;
     padding: 10px;
+}
+
+.about-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    min-width: 390px;
+}
+
+.picture-align-content {
+    display: flex;
+    flex-direction: column;
 }
