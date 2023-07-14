@@ -1,13 +1,15 @@
 .footer {
     width: 100%;
-      background-color: rgb(83, 91, 91, 0.5);
       bottom: 0;
       left: 0;
       right: 0;
      /* display: flex; */
      min-width: 350px;
      overflow: hidden;
-     
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkAjIvaNj4hfIeiX9bi7BQdmEpYRRtDNIjuw&usqp=CAU");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   .section-one {
@@ -55,12 +57,13 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     /* justify-self: flex-end; */
     align-content: center;
     justify-items: center;
     padding: 5px;
-   gap: 5px;
+
+   /* gap: 5px; */
    
 }
 

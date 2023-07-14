@@ -59,7 +59,7 @@ const Footer = () => {
   
 
        
-          <QuestionCircleOutlined className="question-btn" />
+          {/* <QuestionCircleOutlined className="question-btn" /> */}
   
      
     </div>
