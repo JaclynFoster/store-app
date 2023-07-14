@@ -1,98 +1,111 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Tabs } from 'antd'
 import axios from 'axios'
-import Address from './Address'
-import Personal from './Personal'
-import Credentials from './Credentials'
 import UseModal from '../UI/UseModal'
 import AuthContext from '../../context/userContext'
 import './Profile.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { modalOptions, showModal } from '../../redux/slices/modalSlice'
+import { ProfileTabs } from './ProfileTabs'
 
 const onChange = key => {
   console.log(key)
 }
 
-const items = [
-  {
-    key: '1',
-    label: `Personal`,
-    children: <Personal />
-  },
-  {
-    key: '2',
-    label: `Address`,
-    children: <Address />
-  },
-  {
-    key: '3',
-    label: `Credentials`,
-    children: <Credentials />
-  }
-]
 const ProfileForm = ({ user }) => {
   const props = useContext(AuthContext)
   const dispatch = useDispatch()
   const modal = useSelector(modalOptions)
-  const [updateUser, setUpdateUser] = useState({})
-  const [newAddress, setNewAddress] = useState('')
-  const [newCity, setNewCity] = useState('')
-  const [newState, setNewState] = useState('')
-  const [newZip, setNewZip] = useState('')
-  const [updateUsername, setUpdateUsername] = useState('')
-  const [updatePassword, setUpdatePassword] = useState('')
-  const [newFirst, setNewFirst] = useState('')
-  const [newLast, setNewLast] = useState('')
-  const [newEmail, setNewEmail] = useState('')
-  const [newPhone, setNewPhone] = useState('')
+  const [infoObj, setInfoObj] = useState({
+    newAddress: '',
+    newCity: '',
+    newState: '',
+    newZip: '',
+    updatePassword: '',
+    newFirst: '',
+    newLast: '',
+    newEmail: '',
+    newPhone: ''
+  })
+  console.log('Props ', props)
+  useEffect(() => {
+    // ...map props to infoObj
+    const initialState = {
+      newAddress: props.userObject.address,
+      newCity: props.userObject.city,
+      newState: props.userObject.state,
+      newZip: props.userObject.zipcode,
+      updatePassword: props.userObject.password,
+      newFirst: props.userObject.first_name,
+      newLast: props.userObject.last_name,
+      newEmail: props.userObject.email,
+      newPhone: props.userObject.phone
+    }
+    setInfoObj(initialState)
+  }, [])
+
+  const stateInfoHandler = (objectKeyName, value) => {
+    setInfoObj({ ...infoObj, [objectKeyName]: value })
+  }
+
   const updateUserHandler = () => {
+    const {
+      newAddress,
+      newCity,
+      newState,
+      newZip,
+      updatePassword,
+      newFirst,
+      newLast,
+      newEmail,
+      newPhone
+    } = infoObj
     axios
-      .put(`${process.env.REACT_APP_BACKEND_URL}/updateUser${id}`, {
-        address: newAddress,
-        city: newCity,
-        state: newState,
-        zipcode: newZip,
-        username: updateUsername,
-        password: updatePassword,
-        first_name: newFirst,
-        last_name: newLast,
-        email: newEmail,
-        phone: newPhone,
-        id: userObject.id
-      })
+      .put(
+        `${process.env.REACT_APP_BACKEND_URL}/updateUser${props.userObject.id}`,
+        {
+          address: newAddress,
+          city: newCity,
+          state: newState,
+          zipcode: newZip,
+          password: updatePassword,
+          first_name: newFirst,
+          last_name: newLast,
+          email: newEmail,
+          phone: newPhone,
+          id: props.userObject.id
+        }
+      )
       .then(res => {
         console.log('UpdateUserData:', { ...res.data.data })
         props.setUserObject({ ...res.data.data })
         dispatch(showModal('profile'))
-        // setNewAddress('')
-        // setNewCity('')
-        // setNewState('')
-        // setNewZip('')
-        // setUpdateUsername('')
-        // setUpdatePassword('')
-        // setNewFirst('')
-        // setNewLast('')
-        // setNewEmail('')
-        // setNewPhone('')
+
+        let newObj = { ...infoObj }
+        Object.keys(infoObj).forEach(key => (newObj[key] = ''))
+        setInfoObj(newObj)
+        // TODO: redirect to another page
       })
   }
   return (
     <div className="profile-container">
-      <AuthContext.Provider value={{ id: user.id }}>
-        <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
-        {modal.profile ? (
-          <UseModal>
-            <h2>Changes Confirmed. Your profile has been update.</h2>
-          </UseModal>
-        ) : null}
-        <button onClick={updateUserHandler()} className="profile-btn">
-          Save Changes
-        </button>
-      </AuthContext.Provider>
+      <Tabs
+        defaultActiveKey="1"
+        items={ProfileTabs(infoObj, stateInfoHandler)}
+        onChange={onChange}
+      />
+      {modal.profile ? (
+        <UseModal>
+          <h2>Changes Confirmed. Your profile has been updated.</h2>
+        </UseModal>
+      ) : null}
+      <button onClick={updateUserHandler} className="profile-btn">
+        Save Changes
+      </button>
     </div>
   )
 }
 
 export default ProfileForm
+
 

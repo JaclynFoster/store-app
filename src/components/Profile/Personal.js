@@ -3,8 +3,8 @@ import { Row, Col } from 'react-bootstrap'
 import { Divider } from 'antd'
 import './Profile.css'
 
-const Personal = ({newFirst, setNewFirst, newLast, setNewLast, newEmail, setNewEmail, newPhone, setNewPhone}) => {
-
+const Personal = ({ infoObj, stateInfoHandler }) => {
+  const { newFirst, newLast, newEmail, newPhone } = infoObj
 
   return (
     <div className="profile-section-container">
@@ -22,14 +22,14 @@ const Personal = ({newFirst, setNewFirst, newLast, setNewLast, newEmail, setNewE
         <Col>
           <input
             value={newFirst}
-            onChange={e => setNewFirst(e.target.value)}
+            onChange={e => stateInfoHandler('newFirst', e.target.value)}
             className="profile-input"
           />
         </Col>
         <Col>
           <input
             value={newLast}
-            onChange={e => setNewLast(e.target.value)}
+            onChange={e => stateInfoHandler('newLast', e.target.value)}
             className="profile-input"
           />
         </Col>
@@ -47,14 +47,14 @@ const Personal = ({newFirst, setNewFirst, newLast, setNewLast, newEmail, setNewE
         <Col>
           <input
             value={newPhone}
-            onChange={e => setNewPhone(e.target.value)}
+            onChange={e => stateInfoHandler('newPhone', e.target.value)}
             className="profile-input"
           />
         </Col>
         <Col>
           <input
             value={newEmail}
-            onChange={e => setNewEmail(e.target.value)}
+            onChange={e => stateInfoHandler('newEmail', e.target.value)}
             className="profile-input"
           />
         </Col>
@@ -66,4 +66,5 @@ const Personal = ({newFirst, setNewFirst, newLast, setNewLast, newEmail, setNewE
 }
 
 export default Personal
+
 

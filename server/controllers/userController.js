@@ -89,7 +89,6 @@ const updateUser = async (req, res) => {
     city,
     state,
     zipcode,
-    username,
     password,
     first_name,
     last_name,
@@ -100,20 +99,20 @@ const updateUser = async (req, res) => {
   console.log("my params:", req.params)
   try {
     const response = await queryInvoke(
-      `UPDATE users SET address = $1, city = $2, state = $3, zipcode = $4, username = $5, password = $6, first_name = $7, last_name = $8, email = $9, phone = $10
-        WHERE id = ${id}
+      `UPDATE users SET address = $1, city = $2, state = $3, zipcode = $4, password = $5, first_name = $6, last_name = $7, email = $8, phone = $9
+        WHERE id = $10
         `,
       [
         address,
         city,
         state,
         zipcode,
-        username,
         password,
         first_name,
         last_name,
         email,
         phone,
+        id
       ]
     )
     console.log("Update User Response", response)
