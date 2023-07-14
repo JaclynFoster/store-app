@@ -6,15 +6,16 @@ import Review from '../components/Home/Review'
 import '../components/Home/Home.css'
 import EmailCard from '../components/Home/EmailCard'
 
+
+
 const Home = () => {
   return (
     <Layout>
       <div className="home-container">
-      
+  
 
         {/* <FeaturedProducts /> */}
         <EmailCard />
-     
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
         ut labore et dolore magna aliqua. Tincidunt augue interdum velit euismod in pellentesque massa.
          Elit duis tristique sollicitudin nibh sit amet commodo. Ac turpis egestas maecenas pharetra 

@@ -1,7 +1,7 @@
 .email-section {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
     padding: 5px;
     gap: 15px;
     justify-content: center;
@@ -39,6 +39,20 @@
     background-color: white;
     margin-top: 50px;
     width: 45%;
+    min-width: 300px;
+    justify-content: center;
    
     /* min-width: fit-content; */
 }
+
+/* .email-duck {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+} */
+
+/* .email-welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} */
