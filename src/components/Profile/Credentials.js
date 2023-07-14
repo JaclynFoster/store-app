@@ -1,5 +1,4 @@
 import React from 'react'
-import { Row, Col } from 'react-bootstrap'
 import { Divider } from 'antd'
 import './Profile.css'
 
@@ -10,36 +9,32 @@ const Credentials = ({ password, infoObj, stateInfoHandler }) => {
       <h5 className="profile-header">Update Login Credentials:</h5>
       <Divider />
 
-      <Row>
-        <Col>
-          <label className="profile-label">Current Password:</label>
-        </Col>
-        <Col>
-          <label className="profile-label">New Password:</label>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <input
-            value={password}
-            type="password"
-            placeholder={password}
-            className="profile-input"
-          />
-        </Col>
-        <Col>
-          <input
-            value={updatePassword}
-            onChange={e => stateInfoHandler('updatePassword', e.target.value)}
-            className="profile-input"
-          />
-        </Col>
-      </Row>
+      <div className="profile-label">
+        <label className="profile-label">Current Password:</label>
+
+        <label className="profile-label">New Password:</label>
+      </div>
+      <div className="profile-input-container">
+        <input
+          value={password}
+          type="password"
+          placeholder={password}
+          className="profile-input"
+        />
+
+        <input
+          value={updatePassword}
+          type="password"
+          onChange={e => stateInfoHandler('updatePassword', e.target.value)}
+          className="profile-input"
+        />
+      </div>
       <Divider />
     </div>
   )
 }
 
 export default Credentials
+
 
 
