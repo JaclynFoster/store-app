@@ -7,29 +7,35 @@ const Videos = () => {
       <h1>Helpful Links:</h1>
       <div className="links">
         <iframe
-          width="350"
-          height="300"
+          // width="250"
+          // height="200"
+          controls
           src="https://www.youtube.com/embed/pdf8inDpp0k"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         />
+       
         <iframe
-          width="350"
-          height="300"
+        controls
+          // width="250"
+          // height="200"
           src="https://www.youtube.com/embed/1x29gSHza6U"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         />
+         
         <iframe
-          width="350"
-          height="300"
+        controls
+          // width="250"
+          // height="200"
           src="https://www.youtube.com/embed/mjQ-o4iOIVA"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         />
+       
       </div>
     </div>
   )

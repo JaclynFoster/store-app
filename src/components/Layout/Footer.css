@@ -1,11 +1,13 @@
 .footer {
     width: 100%;
       background-color: rgb(83, 91, 91, 0.5);
-      position: block;
       bottom: 0;
       left: 0;
       right: 0;
-     display: flex;
+     /* display: flex; */
+     min-width: 350px;
+     overflow: hidden;
+     
   }
 
   .section-one {
@@ -31,31 +33,30 @@
     width: 25px;
 }
 
-.footer-logo-main {
+/* .footer-logo-main {
     height: 100px;
     width: 100px;
-}
+} */
 
 
 
 .quick-links {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
    justify-content: space-around;
-   
     color: white;
-
 }
 
 .quick-link-container {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
+    min-width: 150px;
     flex-direction: column;
     align-items: center;
     text-align: center;
     justify-content: space-between;
-    justify-self: flex-end;
+    /* justify-self: flex-end; */
     align-content: center;
     justify-items: center;
     padding: 5px;
@@ -74,7 +75,6 @@
 }
 
 .link-title {
-   margin-bottom: -20px;
    color: whitesmoke;
 }
 
@@ -96,12 +96,6 @@
     font-size: 60px;
     border-radius: 50%;
     margin-bottom: 15px;
-    
+    float: right;
 }
 
-.section-three {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
-}

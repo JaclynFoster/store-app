@@ -1,1 +1,14 @@
+.layout {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100%;
+    min-width: 350px;
+    box-sizing: border-box;
+    max-height: 850px;
+}
+
+html {
+    -webkit-text-size-adjust: 100%; 
+}
+
 

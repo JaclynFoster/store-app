@@ -9,22 +9,22 @@ import AuthContext from '../../context/userContext'
 
 const NavBar = () => {
   const props = useContext(AuthContext)
-  console.log("Nav Bar Props:", props)
+  console.log('Nav Bar Props:', props)
   const navigate = useNavigate()
   const showProfile = () => {
     if (props.userObject.id) {
-      return ( 
-      <Link className="link" to="/profile">
+      return (
+        <Link className="link" to="/profile">
           <FaUserEdit className="edit-icon" />Edit Profile
         </Link>
       )
     }
   }
   const hideLogin = () => {
-    console.log("userObject:", props.userObject)
+    console.log('userObject:', props.userObject)
     if (!props.userObject.id) {
-      return ( 
-      <Link className="link login " to="/login">
+      return (
+        <Link className="link login " to="/login">
           <UserOutlined className="icon" />Login
         </Link>
       )
@@ -77,14 +77,13 @@ const NavBar = () => {
           <CartBadge />
         </div>
 
-        <div className="profile-link">
-          {showProfile()}
-          </div>
+        <div className="profile-link">{showProfile()}</div>
       </nav>
     </div>
   )
 }
 
 export default NavBar
+
 
 

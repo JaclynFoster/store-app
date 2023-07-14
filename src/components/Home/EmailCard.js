@@ -14,7 +14,7 @@ const EmailCard = () => {
     setEmailInput('')
   }
   return (
-    <div className="welcome">
+ 
 
     <Card overrideClass={"emailCard"}>
       <h1>Welcome to the Farm!</h1>
@@ -41,7 +41,7 @@ const EmailCard = () => {
         </button>
       </section>
     </Card>
-         </div>
+     
   )
 }
 

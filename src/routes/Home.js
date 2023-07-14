@@ -10,8 +10,11 @@ const Home = () => {
   return (
     <Layout>
       <div className="home-container">
-        <FeaturedProducts />
+      
+
+        {/* <FeaturedProducts /> */}
         <EmailCard />
+     
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
         ut labore et dolore magna aliqua. Tincidunt augue interdum velit euismod in pellentesque massa.
          Elit duis tristique sollicitudin nibh sit amet commodo. Ac turpis egestas maecenas pharetra 

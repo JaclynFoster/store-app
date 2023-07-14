@@ -28,9 +28,7 @@
     color: black;
 }
 
-.welcome {
-  margin-left: 50px;
-}
+
 
 .emailCard {
     padding: 1rem;
@@ -41,5 +39,6 @@
     background-color: white;
     margin-top: 50px;
     width: 45%;
+   
     /* min-width: fit-content; */
 }

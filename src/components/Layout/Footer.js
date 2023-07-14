@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="section-one">
-        <img className="footer-logo-main" src={logo} />
+        {/* <img className="footer-logo-main" src={logo} /> */}
         <div className="footer-logo-container">
           <img className="footer-logo" src={facebook} />
           <img className="footer-logo" src={twitter} />
@@ -44,6 +44,10 @@ const Footer = () => {
           <a>Volunteer Opportunities</a>
         </div>
 
+        <div className="mail-contact">
+          <MailOutlined className="mail-logo" />
+          <label>fawsturfam@fawsturfarms.com</label>
+        </div>
         <div className="copyright">
           <label>
             Copyright <CopyrightOutlined /> 2023 Fawstur Farms all rights reserved
@@ -52,16 +56,12 @@ const Footer = () => {
           <label>Powered & Developed by Jaclyn Foster</label>
         </div>
       </div>
-      <div className="section-three">
-        <div className="mail-contact">
-          <MailOutlined className="mail-logo" />
-          <label>fawsturfam@fawsturfarms.com</label>
-        </div>
+  
 
-        <div>
+       
           <QuestionCircleOutlined className="question-btn" />
-        </div>
-      </div>
+  
+     
     </div>
   )
 }
