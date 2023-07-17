@@ -1,5 +1,6 @@
 import React from 'react'
-import { BsSearch } from 'react-icons/bs'
+import { Input } from 'antd'
+import { SearchOutlined } from '@ant-design/icons'
 import axios from 'axios'
 import './Search.css'
 
@@ -22,8 +23,8 @@ const Search = ({ setSearchResult, searchText, setSearchText }) => {
 
   return (
     <div className="search-container">
-      <BsSearch className="search-icon" />
-      <input
+      <Input
+        addonBefore={<SearchOutlined />}
         placeholder="Search for animal..."
         type="search"
         className="search-input"
@@ -38,4 +39,5 @@ const Search = ({ setSearchResult, searchText, setSearchText }) => {
 }
 
 export default Search
+
 
