@@ -14,14 +14,11 @@ import tiktok from '../../images/tiktok.png'
 
 const ContactCard = () => {
   return (
-    <div className="contact-card-container">
-      <Card overrideClass={"contact-card-main"}>
+    <Card overrideClass={'contact-card-main'}>
+      <h3>Contact Us:</h3>
 
-        <h3>Contact Us:</h3>
-    
-        <Divider />
-        <div className="contact-info-container">
-
+      <Divider />
+      <div className="contact-info-container">
         <div className="contact-info">
           <MailOutlined /> <span> fawsturfam@fawsturfarms.com</span>
         </div>
@@ -38,26 +35,26 @@ const ContactCard = () => {
         <div className="contact-info">
           <PrinterOutlined /> <span> 972-555-4546</span>
         </div>
-        </div>
-        <Divider />
-        <label>Don't forget to like and subscribe:</label>
-        <div className="contact-icon-container">
-          <a target="_blank">
-            <img className="contact-icon" src={twitter} />
-          </a>
-          <a target="_blank">
-            <img className="contact-icon" src={facebook} />
-          </a>
-          <a target="_blank">
-            <img className="contact-icon" src={instagram} />
-          </a>
-          <a target="_blank">
-            <img className="contact-icon" src={tiktok} />
-          </a>
-        </div>
-      </Card>
-    </div>
+      </div>
+      <Divider />
+      <label>Don't forget to like and subscribe:</label>
+      <div className="contact-icon-container">
+        <a target="_blank">
+          <img className="contact-icon" src={twitter} />
+        </a>
+        <a target="_blank">
+          <img className="contact-icon" src={facebook} />
+        </a>
+        <a target="_blank">
+          <img className="contact-icon" src={instagram} />
+        </a>
+        <a target="_blank">
+          <img className="contact-icon" src={tiktok} />
+        </a>
+      </div>
+    </Card>
   )
 }
 
 export default ContactCard
+
