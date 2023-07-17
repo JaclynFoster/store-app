@@ -7,6 +7,7 @@ import './Profile.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { modalOptions, showModal } from '../../redux/slices/modalSlice'
 import { ProfileTabs } from './ProfileTabs'
+import { useNavigate } from 'react-router-dom'
 
 const onChange = key => {
   console.log(key)
@@ -16,6 +17,7 @@ const ProfileForm = ({ user }) => {
   const props = useContext(AuthContext)
   const dispatch = useDispatch()
   const modal = useSelector(modalOptions)
+  const navigate = useNavigate()
   const [infoObj, setInfoObj] = useState({
     newAddress: '',
     newCity: '',
@@ -84,7 +86,7 @@ const ProfileForm = ({ user }) => {
         let newObj = { ...infoObj }
         Object.keys(infoObj).forEach(key => (newObj[key] = ''))
         setInfoObj(newObj)
-        // TODO: redirect to another page
+        navigate('/', {replace: true})
       })
   }
   return (
