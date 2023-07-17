@@ -1,22 +1,27 @@
 import React from 'react'
 import { Divider } from 'antd'
+import { UnlockOutlined } from '@ant-design/icons'
+import './Signup.css'
 
 const SignupCredentials = ({ signupObj, signupStateHandler }) => {
   const { newUsername, newPassword } = signupObj
   return (
-    <div className="profile-section-container">
-      <h5 className="profile-header">Enter Login Credentials:</h5>
+    <div className="signup-section-container">
+      <div className="signup-header-container">
+        <UnlockOutlined className="signup-icon" />
+        <h5 className="signup-header">Enter Login Credentials:</h5>
+      </div>
       <Divider />
 
-      <div className="profile-label">
-        <label className="profile-label">Create Username:</label>
+      <div className="signup-label">
+        <label className="signup-label">Create Username:</label>
 
-        <label className="profile-label">Create Password:</label>
+        <label className="signup-label">Create Password:</label>
       </div>
-      <div className="profile-input-container">
+      <div className="signup-input-container">
         <input
           value={newUsername}
-          className="profile-input"
+          className="signup-input"
           onChange={e => signupStateHandler('new username', e.target.value)}
         />
 
@@ -24,7 +29,7 @@ const SignupCredentials = ({ signupObj, signupStateHandler }) => {
           value={newPassword}
           type="password"
           onChange={e => signupStateHandler('new password', e.target.value)}
-          className="profile-input"
+          className="signup-input"
         />
       </div>
       <Divider />
@@ -33,4 +38,5 @@ const SignupCredentials = ({ signupObj, signupStateHandler }) => {
 }
 
 export default SignupCredentials
+
 

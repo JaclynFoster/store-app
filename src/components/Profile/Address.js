@@ -1,16 +1,20 @@
 import React from 'react'
 import { Divider } from 'antd'
+import { HomeOutlined } from '@ant-design/icons'
 import './Profile.css'
 
 const Address = ({ infoObj, stateInfoHandler }) => {
   const { newAddress, newCity, newState, newZip } = infoObj
   return (
     <div className="profile-section-container">
-      <h5 className="profile-header">Update Billing Address:</h5>
+      <div className="profile-header-container">
+        <HomeOutlined className="profile-icon" />
+        <h5 className="profile-header">Update Billing Address:</h5>
+      </div>
       <Divider />
 
       <div className="profile-label">
-        <label className="profile-label">Street:</label>
+        <label className="profile-label">Address:</label>
 
         <label className="profile-label">City:</label>
       </div>
@@ -53,6 +57,7 @@ const Address = ({ infoObj, stateInfoHandler }) => {
 }
 
 export default Address
+
 
 
 

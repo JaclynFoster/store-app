@@ -7,6 +7,16 @@ export const SignupTabs = (signupObj, signupStateHandler) => {
   return [
     {
       key: '1',
+      label: `Credentials`,
+      children: (
+        <SignupCredentials
+          signupObj={signupObj}
+          signupStateHandler={signupStateHandler}
+        />
+      )
+    },
+    {
+      key: '2',
       label: `Personal`,
       children: (
         <SignupPersonal
@@ -16,7 +26,7 @@ export const SignupTabs = (signupObj, signupStateHandler) => {
       )
     },
     {
-      key: '2',
+      key: '3',
       label: `Address`,
       children: (
         <SignupAddress
@@ -24,16 +34,8 @@ export const SignupTabs = (signupObj, signupStateHandler) => {
           signupStateHandler={signupStateHandler}
         />
       )
-    },
-    {
-      key: '3',
-      label: `Credentials`,
-      children: (
-        <SignupCredentials
-          signupObj={signupObj}
-          signupStateHandler={signupStateHandler}
-        />
-      )
     }
   ]
 }
+
+

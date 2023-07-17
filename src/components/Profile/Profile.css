@@ -1,29 +1,28 @@
 .profile-container {
-padding: 1rem;
-box-shadow:  3px 2px 4px 8px rgba(0, 0, 0, 0.25);
-border-radius: 4px;
-width: 60%;
-text-align: center;
-background-color: white;
-margin-top: 50px;
-margin-left: 20%;
-margin-bottom: 50px;
-display: flex;
-flex-direction: column;
-}
-
- .profile-section-container {
+    padding: 1rem;
+    box-shadow:  3px 2px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    width: 60%;
+    min-width: 390px;
+    text-align: center;
+    background-color: white;
+    margin-top: 55px;
+    margin-bottom: 55px;
     display: flex;
     flex-direction: column;
-} 
-
-
+    justify-content: center;
+    align-content: center;
+    justify-self:center;
+    }
+.profile-section-container {
+    width: 100%;
+    }  
 .profile-input {
     width: 350px;
     height: 40px;
-   min-width: 50px;
-}
-
+    min-width: 60px;
+    }
+    
 .profile-label {
     width: 100%;
     display: flex;
@@ -32,41 +31,66 @@ flex-direction: column;
     padding-left: 15px;
     padding-top: 10px;
     font-weight: 30px;
-    min-width: 50px;
-    /* justify-content: space-evenly; */
-   
-}
+    min-width: 50px;  
+    }
 
 .profile-header {
-    font-size: 20px;
-    text-align: left;
+    font-size: 25px;
+    text-align: center;
     padding-left: 10px;
     padding-top: 5px;
 }
-
-.profile-btn {
+    
+    .profile-btn {
     width: 150px;
-    height: 50px;
-    background-color: black;
-    color: white;
-   display: flex;
-   align-self: center;
-   justify-content: center;
-   align-items: center;
-   margin-bottom: 15px;
-   margin-top: 20px;
-}
+        height: 50px;
+        background-color: black;
+        color: white;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+        margin-top: 20px;
+    }
+    
+    .profile-btn:hover {
+        background-color: whitesmoke;
+        color: black;
+    }
+    
+    .profile-input-container {
+        width: 100%;
+        display: flex;
+        padding-left: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        justify-content: space-evenly;
+    }
 
-.profile-btn:hover {
-    background-color: whitesmoke;
-    color: black;
-}
-
-.profile-input-container {
+.profile-flex-container {
+    width: 100%;
     display: flex;
-    padding-left: 5px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    justify-content: space-evenly;
+    flex-direction: column;
+    min-width: 390px;
+    justify-content: center;
+    align-self: center;
+    justify-self: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center; 
+}
 
+.profile-icon {
+    font-size: 25px;
+}
+
+.profile-header-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
 }

@@ -1,46 +1,51 @@
 import React from 'react'
 import { Divider } from 'antd'
+import { IdcardOutlined } from '@ant-design/icons'
+import './Signup.css'
 
 const SignupPersonal = ({ signupObj, signupStateHandler }) => {
   const { firstName, lastName, email, phone } = signupObj
   return (
-    <div className="profile-section-container">
-      <h5 className="profile-header">Enter Personal Details:</h5>
-      <Divider />
-      <div className="profile-label">
-        <label className="profile-label">First Name:</label>
-
-        <label className="profile-label">Last Name:</label>
+    <div className="signup-section-container">
+      <div className="signup-header-container">
+        <IdcardOutlined className="signup-icon" />
+        <h5 className="signup-header">Enter Personal Details:</h5>
       </div>
-      <div className="profile-input-container">
+      <Divider />
+      <div className="signup-label">
+        <label className="signup-label">First Name:</label>
+
+        <label className="signup-label">Last Name:</label>
+      </div>
+      <div className="signup-input-container">
         <input
           value={firstName}
           onChange={e => signupStateHandler('first_name', e.target.value)}
-          className="profile-input"
+          className="signup-input"
         />
 
         <input
           value={lastName}
           onChange={e => signupStateHandler('last_name', e.target.value)}
-          className="profile-input"
+          className="signup-input"
         />
       </div>
-      <div className="profile-label">
-        <label className="profile-label">Phone:</label>
+      <div className="signup-label">
+        <label className="signup-label">Phone:</label>
 
-        <label className="profile-label">Email:</label>
+        <label className="signup-label">Email:</label>
       </div>
-      <div className="profile-input-container">
+      <div className="signup-input-container">
         <input
           value={phone}
           onChange={e => signupStateHandler('phone', e.target.value)}
-          className="profile-input"
+          className="signup-input"
         />
 
         <input
           value={email}
           onChange={e => signupStateHandler('email', e.target.value)}
-          className="profile-input"
+          className="signup-input"
         />
       </div>
 
@@ -50,3 +55,4 @@ const SignupPersonal = ({ signupObj, signupStateHandler }) => {
 }
 
 export default SignupPersonal
+

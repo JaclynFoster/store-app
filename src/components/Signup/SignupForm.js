@@ -98,23 +98,21 @@ const SignupForm = () => {
   }
 
   return (
-    <div className="center-signup-container">
-      <div className="profile-container">
-        <Tabs
-          defaultActiveKey="1"
-          items={SignupTabs(signupObj, signupStateHandler)}
-          onChange={onChange}
-        />
-        {modal.signup ? (
-          <UseModal>
-            <span>Thank you for signing up! Please login to continue.</span>
-            <button onClick={signupModalHandler}>Continue to Login</button>
-          </UseModal>
-        ) : null}
-        <button type="submit" onClick={createNewUser} className="profile-btn">
-          Save Changes
-        </button>
-      </div>
+    <div className="signup-container">
+      <Tabs
+        defaultActiveKey="1"
+        items={SignupTabs(signupObj, signupStateHandler)}
+        onChange={onChange}
+      />
+      {modal.signup ? (
+        <UseModal>
+          <span>Thank you for signing up! Please login to continue.</span>
+          <button onClick={signupModalHandler}>Continue to Login</button>
+        </UseModal>
+      ) : null}
+      <button type="submit" onClick={createNewUser} className="signup-btn">
+        Save Changes
+      </button>
     </div>
   )
 }

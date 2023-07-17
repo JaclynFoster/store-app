@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Row, Col } from 'react-bootstrap'
+import React from 'react'
+import { IdcardOutlined } from '@ant-design/icons'
 import { Divider } from 'antd'
 import './Profile.css'
 
@@ -8,7 +8,10 @@ const Personal = ({ infoObj, stateInfoHandler }) => {
 
   return (
     <div className="profile-section-container">
-      <h5 className="profile-header">Update Personal Details:</h5>
+      <div className="profile-header-container">
+        <IdcardOutlined className="profile-icon" />
+        <h5 className="profile-header">Update Personal Details:</h5>
+      </div>
       <Divider />
       <div className="profile-label">
         <label className="profile-label">First Name:</label>

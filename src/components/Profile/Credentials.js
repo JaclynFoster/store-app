@@ -1,12 +1,16 @@
 import React from 'react'
 import { Divider } from 'antd'
+import { UnlockOutlined } from '@ant-design/icons'
 import './Profile.css'
 
 const Credentials = ({ password, infoObj, stateInfoHandler }) => {
   const { updatePassword } = infoObj
   return (
     <div className="profile-section-container">
-      <h5 className="profile-header">Update Login Credentials:</h5>
+      <div className="profile-header-container">
+        <UnlockOutlined className="profile-icon" />
+        <h5 className="profile-header">Update Login Credentials:</h5>
+      </div>
       <Divider />
 
       <div className="profile-label">
@@ -35,6 +39,7 @@ const Credentials = ({ password, infoObj, stateInfoHandler }) => {
 }
 
 export default Credentials
+
 
 
 

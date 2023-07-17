@@ -86,7 +86,7 @@ const ProfileForm = ({ user }) => {
         let newObj = { ...infoObj }
         Object.keys(infoObj).forEach(key => (newObj[key] = ''))
         setInfoObj(newObj)
-        navigate('/', {replace: true})
+        navigate('/', { replace: true })
       })
   }
   return (
@@ -109,5 +109,6 @@ const ProfileForm = ({ user }) => {
 }
 
 export default ProfileForm
+
 
 

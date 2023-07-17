@@ -14,9 +14,12 @@ const Profile = () => {
       <button className="back-home" onClick={() => returnHandler()}>
         Back <RollbackOutlined />
       </button>
-      <ProfileForm />
+      <div className="profile-flex-container">
+        <ProfileForm />
+      </div>
     </Layout>
   )
 }
 
 export default Profile
+
