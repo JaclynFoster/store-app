@@ -9,67 +9,86 @@ import { Divider } from 'antd'
 import './Payment.css'
 import CollapseChildren from '../UI/CollapseChildren'
 
-
 const Payment = () => {
   return (
     <CollapseChildren>
-      <h1>Payment Method:</h1>
-      <Divider />
-      <div className="card-logo-container">
-        <label>Credit Cards Accepted:</label>
-        <h1>
-          {' '}
-          <FaCcVisa />{' '}
-        </h1>
-        <h1>
-          <FaCcMastercard />{' '}
-        </h1>
-        <h1>
-          <FaCcAmex />
-        </h1>
-        <h1>
-          <FaCcDiscover />{' '}
-        </h1>
-      </div>
-      <div className="payment-container">
-        <div className="pay-flex-one">
-          <input
-            className="pay-input"
-            placeholder="Name on Card"
-            type="text"
-            required
-          />
-          <input
-            className="pay-input"
-            placeholder="Credit Card Number"
-            type="password"
-            required
-          />
+      <form className="payment-container">
+        <h1>Payment Method:</h1>
+        <Divider />
+        <div className="card-logo-container">
+          <label>Credit Cards Accepted:</label>
+          <h1>
+            {' '}
+            <FaCcVisa />{' '}
+          </h1>
+          <h1>
+            <FaCcMastercard />{' '}
+          </h1>
+          <h1>
+            <FaCcAmex />
+          </h1>
+          <h1>
+            <FaCcDiscover />{' '}
+          </h1>
         </div>
-        <div className="pay-flex">
-          <input
-            className="pay"
-            placeholder="Expiration (MM/YY)"
-            type="text"
-            required
-          />
-          <input
-            className="security-code"
-            placeholder="CVV2"
-            type="text"
-            required
-          />
-          <input
-            className="pay"
-            placeholder="Billing Zip Code"
-            type="text"
-            required
-          />
+        <div className="payment-flex">
+          <div className="payment-label">
+            <label className="payment-label">Name on Card:</label>
+          </div>
+          <div className="payment-input-container">
+            <input
+              className="payment-input-container"
+              placeholder="Name on Card"
+              type="text"
+              required
+            />
+          </div>
+          <div className="payment-label">
+            <label className="payment-label">Credit Card Number:</label>
+          </div>
+          <div className="payment-input-container">
+            <input
+              className="payment-input-container"
+              placeholder="Credit Card Number"
+              type="password"
+              required
+            />
+          </div>
+          <div className="payment-label">
+            <label className="payment-label">Expiration:</label>
+            <label className="payment-label code">CVV2:</label>
+          </div>
+          <div className="payment-input-container">
+            <input
+              className="payment-input-container pay"
+              placeholder="Expiration (MM/YY)"
+              type="text"
+              required
+            />
+            <input
+              className="payment-input-container pay"
+              placeholder="CVV2"
+              type="text"
+              required
+            />
+          </div>
+          <div className="payment-label">
+            <label className="payment-label">Billing Zip Code:</label>
+          </div>
+          <div className="payment-input-container">
+            <input
+              className="payment-input-container pay-zip"
+              placeholder="Billing Zip Code"
+              type="text"
+              required
+            />
+          </div>
         </div>
         <button className="pay-save">Next</button>
-      </div>
+      </form>
     </CollapseChildren>
   )
 }
 
 export default Payment
+
