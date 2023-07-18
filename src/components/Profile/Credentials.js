@@ -20,18 +20,18 @@ const Credentials = ({ password, infoObj, stateInfoHandler }) => {
       </div>
       <div className="profile-input-container">
         <input
+          value={updatePassword}
+          type="password"
+          onChange={e => stateInfoHandler('updatePassword', e.target.value)}
+          className="profile-input"
+        />
+        <input
           value={password}
           type="password"
           placeholder={password}
           className="profile-input"
         />
 
-        <input
-          value={updatePassword}
-          type="password"
-          onChange={e => stateInfoHandler('updatePassword', e.target.value)}
-          className="profile-input"
-        />
       </div>
       <Divider />
     </div>

@@ -31,6 +31,7 @@ const NavBar = () => {
     } else {
       return (
         <button
+        className="logout-link"
           onClick={() => {
             props.setUserObject({})
           }}

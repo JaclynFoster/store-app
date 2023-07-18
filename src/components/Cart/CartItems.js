@@ -1,7 +1,8 @@
 import React from 'react'
 import { BsTrash } from 'react-icons/bs'
 import { Row, Col, Button, Container } from 'react-bootstrap'
-import { Divider, Card, Image } from 'antd'
+import Card from '../UI/Card'
+import { Divider, Image } from 'antd'
 import '../Cart/CartItems.css'
 import { useDispatch, useSelector } from 'react-redux'
 import {
@@ -35,20 +36,14 @@ const CartItems = () => {
           }
           return (
             <div className="cart-detail-container">
-              <Card>
-                <Button
-                  onClick={() => deleteHandler(item.breed_id)}
-                  className="trash"
-                  variant="outline-danger"
-                >
-                  <BsTrash />
-                </Button>
+              <Card overrideClass={'cart-card'}>
                 <Image
-                  width={80}
-                  height={80}
+                  width={100}
+                  height={100}
                   className="table-img"
                   src={item.breed_image}
                 />
+
                 <Row>
                   <Col>
                     <h4 className="cart-name">{item.breed_name}</h4>
@@ -84,6 +79,14 @@ const CartItems = () => {
                       />
                     </div>
                   </Col>
+
+                  <Button
+                    onClick={() => deleteHandler(item.breed_id)}
+                    className="trash"
+                    variant="outline-danger"
+                  >
+                    <BsTrash />
+                  </Button>
                 </Row>
               </Card>
             </div>
@@ -100,6 +103,7 @@ const CartItems = () => {
 }
 
 export default CartItems
+
 
 
 
