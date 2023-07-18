@@ -38,7 +38,6 @@ const Payment = () => {
           <div className="payment-input-container">
             <input
               className="payment-input-container"
-              placeholder="Name on Card"
               type="text"
               required
             />
@@ -49,7 +48,6 @@ const Payment = () => {
           <div className="payment-input-container">
             <input
               className="payment-input-container"
-              placeholder="Credit Card Number"
               type="password"
               required
             />
@@ -61,13 +59,11 @@ const Payment = () => {
           <div className="payment-input-container">
             <input
               className="payment-input-container pay"
-              placeholder="Expiration (MM/YY)"
               type="text"
               required
             />
             <input
               className="payment-input-container pay"
-              placeholder="CVV2"
               type="text"
               required
             />
@@ -78,7 +74,6 @@ const Payment = () => {
           <div className="payment-input-container">
             <input
               className="payment-input-container pay-zip"
-              placeholder="Billing Zip Code"
               type="text"
               required
             />

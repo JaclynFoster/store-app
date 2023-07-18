@@ -21,58 +21,72 @@ const Shipping = ({
   const props = useContext(AuthContext)
   return (
     <CollapseChildren>
-      <form className="shipping-form-container">
+      <form className="shipping-container">
         <h1>Shipping Details:</h1>
         <Divider />
-        <div className="name">
-          <input
-            value={props.userObject.first_name}
-            onChange={e => setFirstName(e.target.value)}
-            className="shipping-input name"
-            placeholder="First Name:"
-            required
-          />
-          <input
-            value={props.userObject.last_name}
-            onChange={e => setLastName(e.target.value)}
-            className="shipping-input name"
-            placeholder="Last Name:"
-            required
-          />
+        <div className="input-flex">
+          <div className="shipping-label">
+            <label className="shipping-label">First Name:</label>
+
+            <label className="shipping-label">Last Name:</label>
+          </div>
+          <div className="shipping-input-container">
+            <input
+              value={props.userObject.first_name}
+              onChange={e => setFirstName(e.target.value)}
+              className="shipping-input"
+              required
+            />
+            <input
+              value={props.userObject.last_name}
+              onChange={e => setLastName(e.target.value)}
+              className="shipping-input"
+              required
+            />
+          </div>
+          <div className="shipping-label">
+            <label className="shipping-label">Address:</label>
+
+            <label className="shipping-label">City:</label>
+          </div>
+          <div className="shipping-input-container">
+            <input
+              value={props.userObject.address}
+              onChange={e => setAddress(e.target.value)}
+              className="shipping-input"
+              required
+            />
+
+            <input
+              value={props.userObject.city}
+              onChange={e => setCity(e.target.value)}
+              className="shipping-input"
+              required
+            />
+          </div>
+
+          <div className="shipping-label">
+            <label className="shipping-label">State:</label>
+
+            <label className="shipping-label">Zip Code:</label>
+          </div>
+          <div className="shipping-input-container">
+            <input
+              value={props.userObject.state}
+              onChange={e => setState(e.target.value)}
+              className="shipping-input"
+              required
+            />
+
+            <input
+              value={props.userObject.zipcode}
+              onChange={e => setZipcode(e.target.value)}
+              className="shipping-input"
+              required
+            />
+          </div>
         </div>
 
-        <input
-          value={props.userObject.address}
-          onChange={e => setAddress(e.target.value)}
-          className="shipping-input address"
-          placeholder="Address:"
-          required
-        />
-        <div className="city-state-zip">
-          <input
-            value={props.userObject.city}
-            onChange={e => setCity(e.target.value)}
-            className="shipping-input city"
-            placeholder="City:"
-            required
-          />
-
-          <input
-            value={props.userObject.state}
-            onChange={e => setState(e.target.value)}
-            className="shipping-input state"
-            placeholder="State:"
-            required
-          />
-
-          <input
-            value={props.userObject.zipcode}
-            onChange={e => setZipcode(e.target.value)}
-            className="shipping-input zip"
-            placeholder="Zip Code:"
-            required
-          />
-        </div>
         <button className="save-info">Next</button>
       </form>
     </CollapseChildren>
@@ -80,4 +94,5 @@ const Shipping = ({
 }
 
 export default Shipping
+
 

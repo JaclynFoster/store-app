@@ -4,6 +4,7 @@
     text-align: left;
     padding: 10px;
     align-items: center;
+    width: 100%;
 }
 
 .billing-input {
@@ -40,10 +41,6 @@
 .customer-btn:hover {
     background-color: whitesmoke;
     color: black;
-}
-
-.customer-container { 
-    width: 100%;
 }
 
 .customer-label {

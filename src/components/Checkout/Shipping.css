@@ -1,80 +1,54 @@
-.shipping-form-container {
+.shipping-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    padding-left: 15px;
-    padding-right: 15px;
-  
+    text-align: left;
+    padding: 10px;
+    align-items: center;
+}
 
+.shipping-label {
+    width: 100%;
+    display: flex;
+    text-align: left;
+    align-items: flex-start;
+    padding-left: 15px;
+    padding-top: 10px;
+    font-weight: 30px;
+    min-width: 50px; 
+}
+
+.shipping-input-container {
+    width: 100%;
+    display: flex;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: space-evenly;
 }
 
 .shipping-input {
-    width: 180;
-    height: 40px;
-    padding: 5px;
+    width: 350px;
+    height: 50px;
+    min-width: 60px;
+    margin-bottom: 3px;
+    padding-left: 5px;
 }
 
-.name {
-display:flex;
-align-items: center;
-justify-content: center;
-align-self: center;
-width: 50%;
- gap: 20px;
-}
-
-.address {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-}
-
-.phone {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
-    margin-bottom: 20px;
-}
-
-.city-state-zip {
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-   justify-content: space-between;
-   align-self: center;
-   width: 50%;
-  
-}
-
-.city {
-    width: 150px;
-}
-
-.state {
-    width: 100px;
-}
-
-.zip {
-    width: 150px;
-}
 .save-info {
     width: 150px;
     height: 50px;
     background-color: black;
     color: white;
-   display: flex;
-   align-self: center;
-   justify-content: center;
-   align-items: center;
-   margin-bottom: 15px;
-   margin-top: 15px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.save-info:hover {
+    background-color: whitesmoke;
+    color: black;
 }
 
