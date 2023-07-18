@@ -40,21 +40,24 @@ const CheckoutForm = () => {
 
   return (
     <div>
-      <Progress current={current} setCurrent={setCurrent}/>
-      <div className="divide-form">
+      <Progress current={current} setCurrent={setCurrent} />
+      <div className="checkout-flex">
+        <CartSummary />
         <Collapse
           size="large"
+          width={300}
+          height={300}
           className="collapse-container"
           items={items}
           defaultActiveKey={['1']}
           onChange={onChange}
         />
-        <CartSummary />
       </div>
     </div>
   )
 }
 
 export default CheckoutForm
+
 
 

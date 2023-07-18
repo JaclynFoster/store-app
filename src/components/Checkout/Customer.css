@@ -3,37 +3,15 @@
     flex-direction: column;
     text-align: left;
     padding: 10px;
-}
-
-.guest-email {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    gap: 30px;
-    margin: 10px;
-    padding: 10px;
     align-items: center;
-    justify-content: center;
 }
 
- .billing-input {
-        width: 180;
-        height: 40px;
-        padding: 5px;
- }
-
-
-
-
-.guest-label {
-    font-weight: bold;
-    font-size: 20px;
-    margin-left: 25px;
-}
-
-.guest-p {
-    font-size: 20px;
-    
+.billing-input {
+    width: 350px;
+    height: 50px;
+    min-width: 60px;
+    margin-bottom: 3px;
+    padding-left: 5px;
 }
 
 .guest-span {
@@ -51,9 +29,43 @@
     height: 50px;
     background-color: black;
     color: white;
-   display: flex;
-   align-self: center;
-   justify-content: center;
-   align-items: center;
-   margin-bottom: 15px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.customer-btn:hover {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.customer-container { 
+    width: 100%;
+}
+
+.customer-label {
+    width: 100%;
+    display: flex;
+    text-align: left;
+    align-items: flex-start;
+    padding-left: 15px;
+    padding-top: 10px;
+    font-weight: 30px;
+    min-width: 50px; 
+}
+
+.customer-input-container {
+    width: 100%;
+    display: flex;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: space-evenly;
+}
+
+.input-flex {
+    width: 100%;
 }

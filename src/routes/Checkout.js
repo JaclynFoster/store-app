@@ -14,6 +14,8 @@ const Checkout = () => {
       <button className="back-home" onClick={() => returnToCart()}>
         Back <RollbackOutlined />
       </button>
+      
+
       <CheckoutForm />
 
       

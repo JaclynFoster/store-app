@@ -20,7 +20,12 @@ const CartSummary = () => {
               <div className="item-container">
                 <Row>
                   <Col>
-                    <Image width={50} height={50} src={item.breed_image} className="summary-img" />
+                    <Image
+                      width={50}
+                      height={50}
+                      src={item.breed_image}
+                      className="summary-img"
+                    />
                   </Col>
                   <Col>
                     <span>{item.breed_name}</span>
@@ -63,6 +68,5 @@ const CartSummary = () => {
     </aside>
   )
 }
-
 
 export default CartSummary

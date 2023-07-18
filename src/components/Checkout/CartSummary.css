@@ -1,12 +1,9 @@
 .cart-summary-container {
-    float: right;
-    width: 30%;
     height:fit-content;
     padding: 5px;
     border: 1px solid gray;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     border-radius: 14px;
-    margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 50px;
     background-color: whitesmoke;
@@ -15,7 +12,6 @@
 .summary-img {
     border-radius: 10px;
     image-rendering: crisp-edges;
-   
 }
 
 .summary-title {
@@ -31,12 +27,11 @@
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
-
 }
 
 .sub-container {
     display: flex;
     flex-direction: column;
-   float: right;  
+    float: right;  
 }
 

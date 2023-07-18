@@ -1,17 +1,29 @@
 .collapse-container {
- 
-    width: 80vw;
+    width: 60vw;
+    min-width: 393px;
     display: flex;
     flex-direction: column;
     align-self: center;
     justify-content: center;
-    margin-bottom: 30px;
-  
+    margin-bottom: 30px; 
 }
 
 .divide-form {
+    width: 50%;
+    min-width: 390px;
+    text-align: center;
+    background-color: white;
+    min-width: 200px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column-reverse;  
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
+.checkout-flex {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
