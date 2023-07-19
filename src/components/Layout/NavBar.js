@@ -11,6 +11,12 @@ const NavBar = () => {
   const props = useContext(AuthContext)
   console.log('Nav Bar Props:', props)
   const navigate = useNavigate()
+  const logout = () => {
+    navigate('/', {replace: true})
+    props.setUserObject({})
+    alert("You are now logged out.")
+
+  }
   const showProfile = () => {
     if (props.userObject.id) {
       return (
@@ -32,9 +38,7 @@ const NavBar = () => {
       return (
         <button
         className="logout-link"
-          onClick={() => {
-            props.setUserObject({})
-          }}
+          onClick={() => logout()}
         >
           Logout
         </button>
@@ -46,6 +50,7 @@ const NavBar = () => {
   // useEffect(
   //   () => {
   //     if (!props.userObject.id && pathname === '/cart') {
+  //       alert("Please Login to Continue")
   //       navigate('/', { replace: true })
   //     }
   //   },
