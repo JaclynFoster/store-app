@@ -146,6 +146,7 @@ VALUES('fowl'),('lizards'),('bugs')
 `
 const alterAnimalsTable = `ALTER TABLE animals ADD image VARCHAR(1000)
 `
+const alterReviewsTable = `ALTER TABLE reviews ADD COLUMN rating INT`
 const alterTypesTable = `ALTER TABLE breeds RENAME TO types`
 const alterTypesColumn = `ALTER TABLE types RENAME COLUMN breed_image TO type_image`
 const addImagesToTypes = `UPDATE animals SET image = $1 WHERE id = $2`
@@ -164,6 +165,7 @@ module.exports = {
   alterAnimalsTable,
   alterTypesTable,
   alterTypesColumn,
+  alterReviewsTable,
   addImagesToTypes, 
   updateDuckType
 }

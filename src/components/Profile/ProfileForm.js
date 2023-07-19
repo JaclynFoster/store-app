@@ -88,6 +88,9 @@ const ProfileForm = ({ user }) => {
         setInfoObj(newObj)
         navigate('/', { replace: true })
       })
+      .catch(err => {
+        console.log('Error on UpdateUser:', err)
+      })
   }
   return (
     <div className="profile-container">

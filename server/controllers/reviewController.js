@@ -11,13 +11,14 @@ const getReviews = async (req, res) => {
 }
 
 const createReview = async (req, res) => {
-  const { name, message } = req.body
+  const { rating, name, message } = req.body
   try {
     const response = await queryInvoke(
-      `INSERT INTO reviews (name, message)
-             VALUES ($1, $2)`,
-      [name, message]
+      `INSERT INTO reviews (rating, name, message)
+             VALUES ($1, $2, $3)`,
+      [rating, name, message]
     )
+    console.log("createReview:", response)
     res.status(200).send(response)
   } catch (error) {
     console.log('Error on createReview', error)

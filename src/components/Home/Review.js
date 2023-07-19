@@ -1,43 +1,55 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Rate } from 'antd'
+import axios from 'axios'
 import './Review.css'
-import { useDispatch, useSelector } from 'react-redux'
-import { modalOptions, showModal } from '../../redux/slices/modalSlice'
-import UseModal from '../UI/UseModal'
+import {
+  setLoadingFalse,
+  setLoadingTrue
+} from '../../redux/slices/isLoadingSlice'
+import { useDispatch } from 'react-redux'
+import CreateReview from './CreateReview'
 
 const Review = () => {
-  const [reviewText, setReviewText] = useState('')
-  const dispatch = useDispatch()
-  const modal = useSelector(modalOptions)
+  const [reviewObj, setReviewObj] = useState({
+    rating: '',
+    name: '',
+    message: ''
+  })
 
-  const reviewModal = () => {
-    dispatch(showModal('review'))
-    setReviewText('')
+  const dispatch = useDispatch()
+
+  const reviewStateHandler = (objectKeyName, value) => {
+    setReviewObj({ ...reviewObj, [objectKeyName]: value })
   }
+
+  const getReviews = () => {
+    dispatch(setLoadingTrue())
+    axios
+      .get(`${process.env.REACT_APP_BACKEND_URL}/getReviews`)
+      .then(res => {
+        setReviewObj([{ ...res.data }])
+        dispatch(setLoadingFalse())
+        console.log('getReviews:', res.data)
+      })
+      .catch(err => {
+        console.log('Error on getReviews:', err)
+      })
+  }
+
+  useEffect(() => {
+    getReviews()
+  }, [])
   return (
     <div className="review-container">
-      <h2>Leave us a Review:</h2>
-      <Rate allowHalf defaultValue={4.5} />
-      <input placeholder="Name..."type="text"/>
-      <textarea
-        value={reviewText}
-        onChange={e => setReviewText(e.target.value)}
-        className="review-text"
-        placeholder="Tell us what you think..."
+      <CreateReview
+        reviewObj={reviewObj}
+        setReviewObj={setReviewObj}
+        reviewStateHandler={reviewStateHandler}
       />
-      {modal.review ? (
-        <UseModal>
-          <h2>Thank you for your feedback. We appreciate you.</h2>
-        </UseModal>
-      ) : null}
-
-      <button onClick={reviewModal} className="review-submit">
-        Submit
-      </button>
       <h2>Here's what others have said:</h2>
       <div className="review-example-container">
         <div className="review-example">
-          <Rate disabled defaultValue={5} />
+          {/* <Rate count={rating} /> */}
           <p>
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -78,3 +90,4 @@ const Review = () => {
 }
 
 export default Review
+

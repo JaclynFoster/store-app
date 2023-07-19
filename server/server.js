@@ -9,6 +9,7 @@ const {
   createAnimalTable,
   insertAnimals,
   alterAnimalsTable,
+  alterReviewsTable,
   addImagesToTypes,
   createBreedTable,
   insertBreeds,
@@ -70,7 +71,7 @@ app.post('/createUser', createUser)
 app.post('/createReview', createReview)
 
 const sqlSetup = async () => {
-  const results = await queryInvoke(createReviewTable, [])
+  const results = await queryInvoke(alterReviewsTable, [])
   console.log(results)
 }
 
