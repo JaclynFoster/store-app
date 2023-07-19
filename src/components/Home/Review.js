@@ -18,6 +18,7 @@ const Review = () => {
     <div className="review-container">
       <h2>Leave us a Review:</h2>
       <Rate allowHalf defaultValue={4.5} />
+      <input placeholder="Name..."type="text"/>
       <textarea
         value={reviewText}
         onChange={e => setReviewText(e.target.value)}

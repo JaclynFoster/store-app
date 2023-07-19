@@ -20,6 +20,12 @@ price INT,
 details VARCHAR(10000)
 );`
 
+const createReviewTable = `CREATE TABLE reviews (
+  review_id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  message VARCHAR(1000)
+)`
+
 const insertBreeds = `INSERT INTO breeds(animal_id, type_id, breed_image, breed_name, price, details)
 VALUES(873949768395882498, 874505992323825665, 'https://jaclynsimages.s3.us-east-2.amazonaws.com/bsfpupae.jpeg', 'Live Black Soldier Fly Pupae (price per 1000)', 40, 'BSF pupae differ from pre-pupae in that they have already formed hard shells and will appear inactive. Pupae must be placed in an environment at 81 °F for proper development.')
 `
@@ -151,6 +157,7 @@ module.exports = {
   createBreedsTable,
   createUserTable,
   createCartTable,
+  createReviewTable,
   insertAnimals,
   insertTypes,
   insertBreeds,

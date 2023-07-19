@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import Layout from '../components/Layout/Layout'
 import CheckoutForm from '../components/Checkout/CheckoutForm'
-import Progress from '../components/Checkout/Progress'
 import { useNavigate } from 'react-router-dom'
 import { RollbackOutlined } from '@ant-design/icons'
 

@@ -5,6 +5,7 @@ const userRouter = require('./endpoints/userRouter')
 const animalRouter = require('./endpoints/animalRouter')
 const { queryInvoke } = require('./services/pg')
 const {
+  createReviewTable,
   createAnimalTable,
   insertAnimals,
   alterAnimalsTable,
@@ -24,6 +25,7 @@ const {
   createUser,
   updateUser
 } = require('./controllers/userController')
+const {getReviews, createReview} = require('./controllers/reviewController')
 const { SERVER_PORT } = process.env
 const session = require('express-session')
 require('dotenv').config()
@@ -61,12 +63,14 @@ app.set('trust proxy', 1)
 
 app.use('/animals', animalRouter)
 app.get('/getUser', getUser)
+app.get('/getReviews', getReviews)
 app.put('/updateUser:id', updateUser)
 
 app.post('/createUser', createUser)
+app.post('/createReview', createReview)
 
 const sqlSetup = async () => {
-  const results = await queryInvoke(updateDuckType, [])
+  const results = await queryInvoke(createReviewTable, [])
   console.log(results)
 }
 
