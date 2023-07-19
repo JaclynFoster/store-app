@@ -19,6 +19,7 @@ const Shipping = ({
   setState
 }) => {
   const props = useContext(AuthContext)
+
   return (
     <CollapseChildren>
       <form className="shipping-container">
@@ -86,13 +87,13 @@ const Shipping = ({
             />
           </div>
         </div>
-
-        <button className="save-info">Next</button>
       </form>
     </CollapseChildren>
   )
 }
 
 export default Shipping
+
+
 
 

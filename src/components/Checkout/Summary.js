@@ -1,21 +1,14 @@
 import React from 'react'
 import CollapseChildren from '../UI/CollapseChildren'
-import UseModal from '../UI/UseModal'
-import Confirmation from './Confirmation'
 import { Divider } from 'antd'
 import './Summary.css'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { cartOptions } from '../../redux/slices/cartItemSlice'
 import { cartTax, totalCartAmount, grandTotal } from '../../utils/utils'
-import { modalOptions, showModal } from '../../redux/slices/modalSlice'
 
 const Summary = () => {
   const cartAnimal = useSelector(cartOptions)
-  const modal = useSelector(modalOptions)
-  const dispatch = useDispatch()
-  const sendConfirmation = () => {
-    dispatch(showModal('confirmation'))
-  }
+
   return (
     <CollapseChildren className="total-container">
       <div className="subtotal">
@@ -41,14 +34,7 @@ const Summary = () => {
           By clicking "Complete Order" you are agreeing to our{' '}
           <a className="conditions">terms and conditions</a>.
         </p>
-        {modal.confirmation ? (
-          <UseModal>
-            <Confirmation />
-          </UseModal>
-        ) : null}
-        <button onClick={sendConfirmation} className="complete-btn">
-          Complete Order
-        </button>
+
         <label className="money-back-label">30-Day Money Back Guarantee</label>
       </div>
     </CollapseChildren>
@@ -56,5 +42,8 @@ const Summary = () => {
 }
 
 export default Summary
+
+
+
 
 

@@ -1,7 +1,47 @@
 .steps-container {
     width: 100%;
     margin-top: 10px;
-    padding: 15px;
     margin-bottom: 20px;
-  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.checkout-flex {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.progress-btn {
+    width: 150px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.progress-btn:hover {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.progress-btn-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.step-content {
+min-width: 350px;
+
 }

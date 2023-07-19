@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Divider, Image } from 'antd'
 import './CartSummary.css'
 import { Row, Col } from 'react-bootstrap'

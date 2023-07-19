@@ -4,7 +4,7 @@
     min-width: 390px;
     box-sizing: border-box;
     height: 100%;
-    max-height: 850px;
+    min-height: 850px;
     background-color: whitesmoke;
 }
 

@@ -36,11 +36,7 @@ const Payment = () => {
             <label className="payment-label">Name on Card:</label>
           </div>
           <div className="payment-input-container">
-            <input
-              className="payment-input-container"
-              type="text"
-              required
-            />
+            <input className="payment-input-container" type="text" required />
           </div>
           <div className="payment-label">
             <label className="payment-label">Credit Card Number:</label>
@@ -54,7 +50,7 @@ const Payment = () => {
           </div>
           <div className="payment-label">
             <label className="payment-label">Expiration:</label>
-            <label className="payment-label code">CVV2:</label>
+            <label className="payment-label">CVV2:</label>
           </div>
           <div className="payment-input-container">
             <input
@@ -79,11 +75,12 @@ const Payment = () => {
             />
           </div>
         </div>
-        <button className="pay-save">Next</button>
       </form>
     </CollapseChildren>
   )
 }
 
 export default Payment
+
+
 
