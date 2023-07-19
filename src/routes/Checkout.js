@@ -5,25 +5,21 @@ import Progress from '../components/Checkout/Progress'
 import { useNavigate } from 'react-router-dom'
 import { RollbackOutlined } from '@ant-design/icons'
 
-
-const Checkout = ({current, setCurrent}) => {
-
+const Checkout = ({ current, setCurrent }) => {
   const navigate = useNavigate()
   const returnToCart = () => {
-    navigate('/cart', {replace: true})
+    navigate('/cart', { replace: true })
   }
   return (
     <Layout>
       <button className="back-home" onClick={() => returnToCart()}>
         Back <RollbackOutlined />
       </button>
-      
-      
-     <CheckoutForm />
-  
-      
+
+      <CheckoutForm />
     </Layout>
   )
 }
 
 export default Checkout
+

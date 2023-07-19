@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout/Layout'
-import FeaturedProducts from '../components/Home/FeaturedProducts'
+
 import Videos from '../components/Home/Videos'
 import Review from '../components/Home/Review'
 import '../components/Home/Home.css'
@@ -14,7 +14,6 @@ const Home = () => {
       <div className="home-container">
   
 
-        {/* <FeaturedProducts /> */}
         <EmailCard />
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
         ut labore et dolore magna aliqua. Tincidunt augue interdum velit euismod in pellentesque massa.
