@@ -38,12 +38,20 @@ const Payment = ({ checkoutObj, stateCheckoutHandler }) => {
         </div>
         <div className="payment-flex">
           <div className="payment-label">
-            <label className="payment-label">Name on Card:</label>
+            <label className="payment-label">First Name on Card:</label>
+            <label className="payment-label">Last Name on Card:</label>
           </div>
           <div className="payment-input-container">
             <input
               className="payment-input-container"
               value={checkoutFirst}
+              onChange={e => stateCheckoutHandler('First/Last', e.target.value)}
+              type="text"
+              required
+            />
+             <input
+              className="payment-input-container"
+              value={checkoutLast}
               onChange={e => stateCheckoutHandler('First/Last', e.target.value)}
               type="text"
               required
