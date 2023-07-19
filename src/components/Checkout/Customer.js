@@ -1,28 +1,21 @@
-import React, { useContext } from 'react'
+import React, { useContext} from 'react'
 import CollapseChildren from '../UI/CollapseChildren'
 import './Customer.css'
 import { Divider } from 'antd'
 import { useNavigate } from 'react-router-dom'
 import AuthContext from '../../context/userContext'
 
-const Customer = ({
-  email,
-  setEmail,
-  firstName,
-  setFirstName,
-  lastName,
-  setLastName,
-  address,
-  setAddress,
-  city,
-  setCity,
-  zipcode,
-  setZipcode,
-  phone,
-  setPhone,
-  state,
-  setState
-}) => {
+const Customer = ({ checkoutObj, stateCheckoutHandler }) => {
+  const {
+    checkoutFirst,
+    checkoutLast,
+    checkoutAddress,
+    checkoutCity,
+    checkoutState,
+    checkoutZip,
+    checkoutEmail,
+    checkoutPhone
+  } = checkoutObj
   const navigate = useNavigate()
   const props = useContext(AuthContext)
   console.log('props.userObject.first_name', props.userObject.first_name)
@@ -43,14 +36,14 @@ const Customer = ({
           </div>
           <div className="customer-input-container">
             <input
-              value={props.userObject.first_name}
-              onChange={e => setFirstName(e.target.value)}
+              value={checkoutFirst}
+              onChange={e => stateCheckoutHandler('First', e.target.value)}
               className="billing-input"
               required
             />
             <input
-              value={props.userObject.last_name}
-              onChange={e => setLastName(e.target.value)}
+              value={checkoutLast}
+              onChange={e => stateCheckoutHandler('Last', e.target.value)}
               className="billing-input"
               required
             />
@@ -63,14 +56,14 @@ const Customer = ({
           </div>
           <div className="customer-input-container">
             <input
-              value={props.userObject.address}
-              onChange={e => setAddress(e.target.value)}
+              value={checkoutAddress}
+              onChange={e => stateCheckoutHandler('Address', e.target.value)}
               className="billing-input"
               required
             />
             <input
-              value={props.userObject.city}
-              onChange={e => setCity(e.target.value)}
+              value={checkoutCity}
+              onChange={e => stateCheckoutHandler('City', e.target.value)}
               className="billing-input"
               required
             />
@@ -82,15 +75,15 @@ const Customer = ({
           </div>
           <div className="customer-input-container">
             <input
-              value={props.userObject.state}
-              onChange={e => setState(e.target.value)}
+              value={checkoutState}
+              onChange={e => stateCheckoutHandler('State', e.target.value)}
               className="billing-input"
               required
             />
 
             <input
-              value={props.userObject.zipcode}
-              onChange={e => setZipcode(e.target.value)}
+              value={checkoutZip}
+              onChange={e => stateCheckoutHandler('Zip', e.target.value)}
               className="billing-input"
               required
             />
@@ -102,16 +95,16 @@ const Customer = ({
           </div>
           <div className="customer-input-container">
             <input
-              value={props.userObject.email}
-              onChange={e => setEmail(e.target.value)}
+              value={checkoutEmail}
+              onChange={e => stateCheckoutHandler('Email', e.target.value)}
               className="billing-input"
               type="email"
               required
             />
 
             <input
-              value={props.userObject.phone}
-              onChange={e => setPhone(e.target.value)}
+              value={checkoutPhone}
+              onChange={e => stateCheckoutHandler('Phone', e.target.value)}
               className="billing-input"
               required
             />
@@ -129,6 +122,7 @@ const Customer = ({
 }
 
 export default Customer
+
 
 
 

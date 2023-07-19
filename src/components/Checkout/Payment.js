@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   FaCcVisa,
   FaCcMastercard,
@@ -9,7 +9,12 @@ import { Divider } from 'antd'
 import './Payment.css'
 import CollapseChildren from '../UI/CollapseChildren'
 
-const Payment = () => {
+const Payment = ({ checkoutObj, stateCheckoutHandler }) => {
+  const { checkoutFirst, checkoutLast, checkoutZip } = checkoutObj
+  const [cardNum, setCardNum] = useState('')
+  const [cardExp, setCardExp] = useState('')
+  const [cardCVV, setCardCVV] = useState('')
+
   return (
     <CollapseChildren>
       <form className="payment-container">
@@ -36,7 +41,13 @@ const Payment = () => {
             <label className="payment-label">Name on Card:</label>
           </div>
           <div className="payment-input-container">
-            <input className="payment-input-container" type="text" required />
+            <input
+              className="payment-input-container"
+              value={checkoutFirst}
+              onChange={e => stateCheckoutHandler('First/Last', e.target.value)}
+              type="text"
+              required
+            />
           </div>
           <div className="payment-label">
             <label className="payment-label">Credit Card Number:</label>
@@ -44,6 +55,8 @@ const Payment = () => {
           <div className="payment-input-container">
             <input
               className="payment-input-container"
+              value={cardNum}
+              onChange={e => setCardNum(e.target.value)}
               type="password"
               required
             />
@@ -55,11 +68,15 @@ const Payment = () => {
           <div className="payment-input-container">
             <input
               className="payment-input-container pay"
+              value={cardExp}
+              onChange={e => setCardExp(e.target.value)}
               type="text"
               required
             />
             <input
               className="payment-input-container pay"
+              value={cardCVV}
+              onChange={e => setCardCVV(e.target.value)}
               type="text"
               required
             />
@@ -70,6 +87,8 @@ const Payment = () => {
           <div className="payment-input-container">
             <input
               className="payment-input-container pay-zip"
+              value={checkoutZip}
+              onChange={e => stateCheckoutHandler('Zip', e.target.value)}
               type="text"
               required
             />
@@ -81,6 +100,7 @@ const Payment = () => {
 }
 
 export default Payment
+
 
 
 

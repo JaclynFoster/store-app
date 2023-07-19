@@ -4,20 +4,15 @@ import './Shipping.css'
 import CollapseChildren from '../UI/CollapseChildren'
 import AuthContext from '../../context/userContext'
 
-const Shipping = ({
-  firstName,
-  setFirstName,
-  lastName,
-  setLastName,
-  address,
-  setAddress,
-  city,
-  setCity,
-  zipcode,
-  setZipcode,
-  state,
-  setState
-}) => {
+const Shipping = ({ checkoutObj, stateCheckoutHandler }) => {
+  const {
+    checkoutFirst,
+    checkoutLast,
+    checkoutAddress,
+    checkoutCity,
+    checkoutState,
+    checkoutZip
+  } = checkoutObj
   const props = useContext(AuthContext)
 
   return (
@@ -33,14 +28,14 @@ const Shipping = ({
           </div>
           <div className="shipping-input-container">
             <input
-              value={props.userObject.first_name}
-              onChange={e => setFirstName(e.target.value)}
+              value={checkoutFirst}
+              onChange={e => stateCheckoutHandler('First', e.target.value)}
               className="shipping-input"
               required
             />
             <input
-              value={props.userObject.last_name}
-              onChange={e => setLastName(e.target.value)}
+              value={checkoutLast}
+              onChange={e => stateCheckoutHandler('Last', e.target.value)}
               className="shipping-input"
               required
             />
@@ -52,15 +47,15 @@ const Shipping = ({
           </div>
           <div className="shipping-input-container">
             <input
-              value={props.userObject.address}
-              onChange={e => setAddress(e.target.value)}
+              value={checkoutAddress}
+              onChange={e => stateCheckoutHandler('Address', e.target.value)}
               className="shipping-input"
               required
             />
 
             <input
-              value={props.userObject.city}
-              onChange={e => setCity(e.target.value)}
+              value={checkoutCity}
+              onChange={e => stateCheckoutHandler('City', e.target.value)}
               className="shipping-input"
               required
             />
@@ -73,15 +68,15 @@ const Shipping = ({
           </div>
           <div className="shipping-input-container">
             <input
-              value={props.userObject.state}
-              onChange={e => setState(e.target.value)}
+              value={checkoutState}
+              onChange={e => stateCheckoutHandler('State', e.target.value)}
               className="shipping-input"
               required
             />
 
             <input
-              value={props.userObject.zipcode}
-              onChange={e => setZipcode(e.target.value)}
+              value={checkoutZip}
+              onChange={e => stateCheckoutHandler('Zip', e.target.value)}
               className="shipping-input"
               required
             />
@@ -93,6 +88,7 @@ const Shipping = ({
 }
 
 export default Shipping
+
 
 
 
