@@ -5,6 +5,7 @@ const userRouter = require('./endpoints/userRouter')
 const animalRouter = require('./endpoints/animalRouter')
 const { queryInvoke } = require('./services/pg')
 const {
+  createContactTable,
   createReviewTable,
   createAnimalTable,
   insertAnimals,
@@ -28,6 +29,7 @@ const {
   updateUser
 } = require('./controllers/userController')
 const {getReviews, createReview} = require('./controllers/reviewController')
+const {contactRequest} = require('./controllers/contactController')
 const { SERVER_PORT } = process.env
 const session = require('express-session')
 require('dotenv').config()
@@ -70,9 +72,10 @@ app.put('/updateUser:id', updateUser)
 
 app.post('/createUser', createUser)
 app.post('/createReview', createReview)
+app.post('/contactRequest', contactRequest)
 
 const sqlSetup = async () => {
-  const results = await queryInvoke(updateReviews, [])
+  const results = await queryInvoke(createContactTable, [])
   console.log(results)
 }
 

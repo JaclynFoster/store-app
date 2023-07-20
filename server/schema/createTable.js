@@ -26,6 +26,13 @@ const createReviewTable = `CREATE TABLE reviews (
   message VARCHAR(1000)
 )`
 
+const createContactTable = `CREATE TABLE contact (
+  contact_id SERIAL PRIMARY KEY,
+  contact_name VARCHAR(255),
+  contact_email VARCHAR(255),
+  contact_message VARCHAR(5000)
+)`
+
 const updateReviews = `UPDATE reviews SET message = 'Not only did Fawtsur Farms provide a top-notch 
 service, but they also went above and beyond to support me as a new pet owner. 
 They provided a comprehensive care package, including detailed instructions 
@@ -164,6 +171,7 @@ module.exports = {
   createUserTable,
   createCartTable,
   createReviewTable,
+  createContactTable,
   insertAnimals,
   insertTypes,
   insertBreeds,
