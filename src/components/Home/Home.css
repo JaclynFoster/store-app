@@ -43,3 +43,11 @@ p {
     justify-content: center;
     align-items: center;
 }
+
+.goose {
+    width: 180px;
+    height: 180px;
+    min-width: 50px;
+    min-height: 50px;
+    margin-top: 15px;
+}
