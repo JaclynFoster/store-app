@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { ShoppingCartOutlined, UserOutlined } from '@ant-design/icons'
 import { FaUserEdit } from 'react-icons/fa'
-import logo from '../../images/logo.png'
+import logo3 from '../../images/logo3-PhotoRoom.png'
 import CartBadge from './CartBadge'
 import './NavBar.css'
 import AuthContext from '../../context/userContext'
@@ -59,7 +59,7 @@ const NavBar = () => {
 
   return (
     <div className="nav-container">
-      <img src={logo} className="logo" alt="Website Logo" />
+      <img src={logo3} className="logo" alt="Website Logo" />
       <nav className="nav">
         <Link className="link" to="/">
           Home

@@ -12,6 +12,7 @@
     width: 300px;
     padding: 5px;
     min-width: 50px;
+    margin-right: 2px;
 
 }
 
@@ -39,7 +40,7 @@
     background-color: white;
     margin-top: 50px;
     width: 45%;
-    min-width: 300px;
+    min-width: 250px;
     justify-content: center;
    
     /* min-width: fit-content; */

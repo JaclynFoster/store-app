@@ -1,5 +1,5 @@
 .paragraph-section {
-    width: 100%;
+    width: 80%;
     min-width: 390px;
     box-shadow: inset 0px 5px 20px 10px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
@@ -10,12 +10,15 @@
     flex-direction: column;
     align-content: center;
     align-items: center;
+    justify-content: center;
+
 }
 
 
 .pGrid {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: 10px;
 }
 
@@ -66,6 +69,8 @@
     flex-wrap: wrap;
     width: 100%;
     min-width: 390px;
+    justify-content: center;
+   
 }
 
 .picture-align-content {

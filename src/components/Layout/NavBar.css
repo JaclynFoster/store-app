@@ -15,7 +15,8 @@
   .logo {
     height: 100px;
       width: 150px;
-  
+      background-color: transparent;
+      background-color: none;
       padding-left: 15px;
   }
   

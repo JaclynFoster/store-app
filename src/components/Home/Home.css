@@ -4,6 +4,8 @@
     align-items: center;
     width: 100%;
     min-width: 390px;
+    text-align: center;
+    justify-content: center;
 }
 
 p {
@@ -21,5 +23,23 @@ p {
     display: flex;
     flex-direction: column;
     align-content: center;
+    align-items: center;
+}
+
+.home-image {
+    width: 200px;
+    height: 200px;
+    min-width: 50px;
+    min-height: 50px;
+    /* float: left; */
+    margin-top: 20px;
+}
+
+.home-image-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-width: 390px;
+    justify-content: center;
     align-items: center;
 }
