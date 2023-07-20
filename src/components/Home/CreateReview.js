@@ -32,14 +32,16 @@ const CreateReview = ({ reviewObj, setReviewObj, reviewStateHandler }) => {
   }
 
   return (
-    <div>
+    <div className="create-review-container">
       <h2>Leave us a Review:</h2>
       <Rate
         allowHalf
+        defaultValue={4.5}
         value={rating}
         onChange={value => reviewStateHandler('rating', value)}
       />
       <input
+        className="review-input"
         value={name}
         onChange={e => reviewStateHandler('name', e.target.value)}
         placeholder="Name..."

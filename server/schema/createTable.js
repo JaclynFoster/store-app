@@ -26,6 +26,11 @@ const createReviewTable = `CREATE TABLE reviews (
   message VARCHAR(1000)
 )`
 
+const updateReviews = `UPDATE reviews SET message = 'Not only did Fawtsur Farms provide a top-notch 
+service, but they also went above and beyond to support me as a new pet owner. 
+They provided a comprehensive care package, including detailed instructions 
+on how to care for my new animal and even some helpful tips and tricks.' WHERE review_id = 884076706223390721`
+
 const insertBreeds = `INSERT INTO breeds(animal_id, type_id, breed_image, breed_name, price, details)
 VALUES(873949768395882498, 874505992323825665, 'https://jaclynsimages.s3.us-east-2.amazonaws.com/bsfpupae.jpeg', 'Live Black Soldier Fly Pupae (price per 1000)', 40, 'BSF pupae differ from pre-pupae in that they have already formed hard shells and will appear inactive. Pupae must be placed in an environment at 81 °F for proper development.')
 `
@@ -167,5 +172,6 @@ module.exports = {
   alterTypesColumn,
   alterReviewsTable,
   addImagesToTypes, 
-  updateDuckType
+  updateDuckType,
+  updateReviews
 }

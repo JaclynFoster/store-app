@@ -11,6 +11,8 @@ const Home = () => {
     <Layout>
       <div className="home-container">
         <EmailCard />
+        <div className="homeP">
+
         <p>
           Selling animals online can be a convenient way to connect with
           potential buyers and find good homes for your furry friends. There are
@@ -88,6 +90,7 @@ const Home = () => {
           presence. It's been a remarkable journey, and I am grateful for every
           step that led me to where I am today.
         </p>
+        </div>
       </div>
       <Videos />
       <Review />

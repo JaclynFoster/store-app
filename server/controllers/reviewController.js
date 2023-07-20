@@ -2,7 +2,7 @@ const { queryInvoke } = require('../services/pg')
 
 const getReviews = async (req, res) => {
   try {
-    const response = await queryInvoke(`SELECT * FROM reviews`, [])
+    const response = await queryInvoke(`SELECT * FROM reviews ORDER BY review_id DESC LIMIT 3`, [])
     res.status(200).send(response.rows)
   } catch (error) {
     console.log('getReviews query error: ', error)
