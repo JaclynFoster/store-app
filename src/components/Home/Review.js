@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux'
 import CreateReview from './CreateReview'
 
 const Review = () => {
+  const [review, setReview] = useState([])
   const [reviewObj, setReviewObj] = useState({
     rating: '',
     name: '',
@@ -27,7 +28,9 @@ const Review = () => {
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/getReviews`)
       .then(res => {
-        setReviewObj([{ ...res.data }])
+        console.log('Review Object', Object.keys(reviewObj))
+        setReview([...res.data])
+        console.log('setReviewObj:', setReviewObj([{ ...res.data }]))
         dispatch(setLoadingFalse())
         console.log('getReviews:', res.data)
       })
@@ -48,46 +51,22 @@ const Review = () => {
       />
       <h2>Here's what others have said:</h2>
       <div className="review-example-container">
-        <div className="review-example">
-          {/* <Rate count={rating} /> */}
-          <p>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Tincidunt augue interdum velit euismod in pellentesque massa. Elit
-            duis tristique sollicitudin nibh sit amet commodo. Ac turpis egestas
-            maecenas pharetra convallis posuere morbi. Imperdiet sed euismod
-            nisi porta lorem mollis aliquam ut porttitor. "
-          </p>
-          <span>-Julia K.</span>
-        </div>
-        <div className="review-example">
-          <Rate disabled defaultValue={5} />
-          <p>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Tincidunt augue interdum velit euismod in pellentesque massa. Elit
-            duis tristique sollicitudin nibh sit amet commodo. Ac turpis egestas
-            maecenas pharetra convallis posuere morbi. Imperdiet sed euismod
-            nisi porta lorem mollis aliquam ut porttitor. "
-          </p>
-          <span>-Arnold S.</span>
-        </div>
-        <div className="review-example">
-          <Rate disabled defaultValue={5} />
-          <p>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Tincidunt augue interdum velit euismod in pellentesque massa. Elit
-            duis tristique sollicitudin nibh sit amet commodo. Ac turpis egestas
-            maecenas pharetra convallis posuere morbi. Imperdiet sed euismod
-            nisi porta lorem mollis aliquam ut porttitor. "
-          </p>
-          <span>-Mavis C.</span>
-        </div>
+        {review.map(item => {
+          return (
+            <div className="review-example">
+              <Rate value={Number(item.rating)} />
+
+              <p>{item.message}</p>
+              <span>-{item.name}</span>
+            </div>
+          )
+        })}
       </div>
     </div>
   )
 }
 
 export default Review
+
+
 
