@@ -37,71 +37,56 @@ const About = () => {
           <h1 className="h1About">A Little About The Farm...</h1>
           <div className="pGrid">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Aenean
-              vel elit scelerisque mauris pellentesque pulvinar pellentesque.
-              Aliquam ut porttitor leo a diam sollicitudin. Non diam phasellus
-              vestibulum lorem sed. Sit amet aliquam id diam maecenas ultricies
-              mi eget mauris. Viverra orci sagittis eu volutpat odio. Cursus
-              mattis molestie a iaculis at erat pellentesque. Nulla facilisi
-              morbi tempus iaculis urna id volutpat. Maecenas sed enim ut sem
-              viverra aliquet eget. Id donec ultrices tincidunt arcu non sodales
-              neque sodales ut. Nullam eget felis eget nunc lobortis mattis
-              aliquam faucibus purus. Volutpat sed cras ornare arcu dui vivamus
-              arcu. Enim nec dui nunc mattis enim ut. Sed viverra tellus in hac
-              habitasse platea dictumst vestibulum. Blandit libero volutpat sed
-              cras ornare. Leo vel fringilla est ullamcorper eget nulla facilisi
-              etiam dignissim. Interdum velit euismod in pellentesque massa
-              placerat duis. Quis blandit turpis cursus in hac habitasse platea
-              dictumst. Aliquet bibendum enim facilisis gravida neque. Elit
-              pellentesque habitant morbi tristique senectus et netus et.
-              Euismod lacinia at quis risus sed vulputate odio. Nunc consequat
-              interdum varius sit amet mattis vulputate. Id consectetur purus ut
-              faucibus pulvinar. Faucibus turpis in eu mi bibendum neque
-              egestas. Vitae nunc sed velit dignissim sodales ut. Et ultrices
-              neque ornare aenean euismod elementum. Duis ut diam quam nulla
-              porttitor. Ornare arcu dui vivamus arcu felis bibendum. Dolor sit
-              amet consectetur adipiscing elit. Elementum sagittis vitae et leo.
-              Sit amet consectetur adipiscing elit duis. Quam id leo in vitae
-              turpis massa. Morbi tristique senectus et netus. Convallis
-              convallis tellus id interdum velit. A iaculis at erat pellentesque
-              adipiscing commodo. Morbi tristique senectus et netus et. Magna
-              eget est lorem ipsum dolor sit. Sit amet facilisis magna etiam
-              tempor orci eu. Nisl vel pretium lectus quam id leo in vitae.
-              Sapien eget mi proin sed libero enim sed faucibus. Magna sit amet
-              purus gravida quis blandit turpis cursus. Consectetur adipiscing
-              elit pellentesque habitant morbi tristique. Morbi blandit cursus
-              risus at. Nec feugiat nisl pretium fusce id velit. Nunc sed
-              blandit libero volutpat sed. Habitasse platea dictumst vestibulum
-              rhoncus.{' '}
+              Well, life as an animal farmer has been quite the wild ride, but I
+              wouldn't have it any other way. Starting out, it was just me and a
+              couple of chickens in my backyard. But with dedication, hard work,
+              and a passion for animal welfare, I managed to turn my small
+              venture into a thriving animal farming business. I made sure to
+              provide my animals with a comfortable and sustainable environment,
+              focusing on their well-being above all else. I sought out ways to
+              continuously improve their living conditions, implementing
+              innovative practices and technology to enhance their quality of
+              life. Through word-of-mouth and positive customer feedback, my
+              business started to grow. Along the way, I faced countless
+              challenges, from extreme weather conditions to fluctuating market
+              demands. However, with resilience and a touch of creativity, I
+              overcame those hurdles and built a brand that people trust and
+              respect. It's incredibly rewarding to know that my hard work and
+              passion have contributed to the local community.
             </p>
 
             <p>
-              Imperdiet dui accumsan sit amet nulla facilisi morbi tempus.
-              Turpis egestas sed tempus urna et pharetra pharetra. Egestas sed
-              tempus urna et pharetra pharetra massa. Turpis massa tincidunt dui
-              ut ornare lectus sit. Vivamus arcu felis bibendum ut tristique et
-              egestas quis. Et malesuada fames ac turpis egestas maecenas. In
-              massa tempor nec feugiat nisl pretium fusce. Consectetur
-              adipiscing elit ut aliquam purus sit amet luctus. Egestas tellus
-              rutrum tellus pellentesque eu tincidunt tortor. Egestas maecenas
-              pharetra convallis posuere morbi leo urna. Faucibus ornare
-              suspendisse sed nisi lacus. Phasellus vestibulum lorem sed risus
-              ultricies tristique nulla aliquet. Ligula ullamcorper malesuada
-              proin libero nunc consequat interdum. Lobortis feugiat vivamus at
-              augue eget arcu dictum varius. Maecenas pharetra convallis posuere
-              morbi leo urna molestie at. Mi in nulla posuere sollicitudin
-              aliquam ultrices. Pharetra magna ac placerat vestibulum lectus
-              mauris ultrices eros in. Rutrum tellus pellentesque eu tincidunt
-              tortor aliquam. Risus nullam eget felis eget nunc lobortis. Vel
-              risus commodo viverra maecenas accumsan. Ut diam quam nulla
-              porttitor massa id. Mattis nunc sed blandit libero volutpat. A
-              iaculis at erat pellentesque. Aliquet sagittis id consectetur
-              purus. Et tortor at risus viverra adipiscing at in tellus. Sed
-              augue lacus viverra vitae congue. Tristique senectus et netus et
-              malesuada fames. Bibendum at varius vel pharetra. Lorem ipsum
-              dolor sit amet consectetur adipiscing elit ut. Molestie nunc non
-              blandit massa enim nec dui nunc.
+              Oh, Ronald the duck! He's more than just a web-footed friend to
+              me. Ronald came into my life during a particularly gloomy period.
+              His vibrant feathers and playful quacks brought so much joy and
+              laughter. Through his gentle presence, Ronald taught me to
+              appreciate the beauty of nature and to nurture a deep love and
+              respect for all animals. The bond I formed with Ronald, it was
+              something extraordinary. His little webbed feet waddling beside me
+              as we explored the park, his quick splashes in the pond, it felt
+              like a magical connection. Ronald awakened a compassion within me
+              that I didn't know I had. I started feeding the ducks at the local
+              pond, volunteering at animal shelters, and even advocating for
+              wildlife conservation. However, life can be heartbreakingly
+              unpredictable.The loss of Ronald left a profound void in my heart.
+              I grieved for him, feeling the weight of his absence and the
+              impact he had on my life. But from that pain, something
+              extraordinary happened. Losing Ronald made me even more determined
+              to make a difference in the lives of animals. Ronald is the
+              embodiment of resilience and adaptability. Watching him gracefully
+              glide on the water, I couldn't help but draw parallels to building
+              an online business. Like Ronald, I learned to navigate through the
+              murky and ever-changing digital landscape, constantly adjusting my
+              strategies to stay afloat. His unwavering determination and
+              ability to connect with others inspired me to cultivate meaningful
+              relationships with my customers and build a community around my
+              online venture. Ronald taught me that, just like a duck takes to
+              water, I could embrace the challenges and ride the waves of
+              entrepreneurship. So, yes, Ronald truly changed me. He opened my
+              eyes to the beauty of nature, ignited my compassion for animals,
+              and taught me that even the smallest creatures can make the
+              biggest impact. He will forever hold a special place in my heart,
+              and his legacy lives on through the work I do
             </p>
           </div>
         </div>
@@ -111,6 +96,7 @@ const About = () => {
 }
 
 export default About
+
 
 
 
