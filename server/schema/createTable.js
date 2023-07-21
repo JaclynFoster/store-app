@@ -163,6 +163,8 @@ const alterTypesTable = `ALTER TABLE breeds RENAME TO types`
 const alterTypesColumn = `ALTER TABLE types RENAME COLUMN breed_image TO type_image`
 const addImagesToTypes = `UPDATE animals SET image = $1 WHERE id = $2`
 const updateDuckType = `UPDATE types SET type_image = 'https://jaclynsimages.s3.us-east-2.amazonaws.com/ducklings.jpg' WHERE type_name = 'ducks'`
+const updateRunnerDucks = `UPDATE breeds SET breed_name = 'Indian Runner Ducks' WHERE breed_id = 875340367804760065`
+
 
 module.exports = {
   createAnimalTable,
@@ -181,5 +183,6 @@ module.exports = {
   alterReviewsTable,
   addImagesToTypes, 
   updateDuckType,
-  updateReviews
+  updateReviews,
+  updateRunnerDucks
 }

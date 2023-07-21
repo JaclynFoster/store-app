@@ -21,7 +21,8 @@ const {
   insertUser,
   createCartTable,
   updateDuckType,
-  updateReviews
+  updateReviews,
+  updateRunnerDucks
 } = require('./schema/createTable.js')
 const {
   getUser,
@@ -75,7 +76,7 @@ app.post('/createReview', createReview)
 app.post('/contactRequest', contactRequest)
 
 const sqlSetup = async () => {
-  const results = await queryInvoke(createContactTable, [])
+  const results = await queryInvoke(updateRunnerDucks, [])
   console.log(results)
 }
 
