@@ -1,11 +1,17 @@
 import React, { useState } from 'react'
 import Progress from './Progress'
+import { Divider } from 'antd'
 import { StepsTabs } from './StepsTabs'
 import { useDispatch, useSelector } from 'react-redux'
-import { modalOptions, showModal } from '../../redux/slices/modalSlice'
+import {
+  closeModal,
+  modalOptions,
+  showModal
+} from '../../redux/slices/modalSlice'
 import UseModal from '../UI/UseModal'
 import Confirmation from './Confirmation'
-import './Progress.css'
+import './CheckoutForm.css'
+import { useNavigate } from 'react-router-dom'
 
 const CheckoutForm = () => {
   const [checkoutObj, setCheckoutObj] = useState({
@@ -20,6 +26,7 @@ const CheckoutForm = () => {
   })
 
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const modal = useSelector(modalOptions)
   // const {token} = theme.useToken()
   const [current, setCurrent] = useState(0)
@@ -32,6 +39,12 @@ const CheckoutForm = () => {
   const sendConfirmation = () => {
     dispatch(showModal('confirmation'))
   }
+
+  const checkoutModalHandler = () => {
+    dispatch(closeModal('confirmation'))
+    navigate('/animals', { replace: true })
+  }
+
   const stateCheckoutHandler = (objectKeyName, value) => {
     setCheckoutObj({ ...checkoutObj, [objectKeyName]: value })
   }
@@ -58,7 +71,16 @@ const CheckoutForm = () => {
         )}
         {modal.confirmation ? (
           <UseModal modalName={'confirmation'}>
-            <Confirmation />
+            <div className="checkout-modal-container">
+              <Confirmation />
+              <Divider />
+              <button
+                onClick={checkoutModalHandler}
+                className="checkout-confirm-btn"
+              >
+                Continue Shopping
+              </button>
+            </div>
           </UseModal>
         ) : null}
 
@@ -74,6 +96,7 @@ const CheckoutForm = () => {
 }
 
 export default CheckoutForm
+
 
 
 

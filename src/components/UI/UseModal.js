@@ -10,7 +10,7 @@ import './Modal.css'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 const UseModal = props => {
-  const {pathname} = useLocation()
+  const { pathname } = useLocation()
   const modal = useSelector(modalOptions)
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -21,14 +21,14 @@ const UseModal = props => {
 
   const afterClose = () => {
     if (pathname === '/checkout') {
-      navigate('/animals', {replace: true})
-  } else if (pathname === '/signup') {
-      navigate('/login', {replace: true})
-  } else {
-      navigate('/', {replace: true})
+      navigate('/animals', { replace: true })
+    } else if (pathname === '/signup') {
+      navigate('/login', { replace: true })
+    } else {
+      navigate('/', { replace: true })
+    }
   }
-  }
-console.log("modal", modal)
+  console.log('modal', modal)
   return (
     <Modal afterClose={afterClose} show={modal[props.modalName]}>
       <ModalHeader>
@@ -37,13 +37,18 @@ console.log("modal", modal)
         </button>
       </ModalHeader>
       <ModalBody>{props.children}</ModalBody>
-      <ModalFooter>
-        <button className="ok-btn" onClick={closeButton}>
-          OK
-        </button>
-      </ModalFooter>
+      {!props.modalName === 'confirmation' ||
+      !props.modalName === 'signup' ||
+      !props.modalName === 'profile' ? (
+          <ModalFooter>
+            <button className="ok-btn" onClick={closeButton}>
+            OK
+            </button>
+          </ModalFooter>
+        ) : null}
     </Modal>
   )
 }
 
 export default UseModal
+

@@ -1,11 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Tabs } from 'antd'
+import { Tabs, Divider } from 'antd'
 import axios from 'axios'
 import UseModal from '../UI/UseModal'
 import AuthContext from '../../context/userContext'
 import './Profile.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { modalOptions, showModal } from '../../redux/slices/modalSlice'
+import {
+  modalOptions,
+  showModal,
+  closeModal
+} from '../../redux/slices/modalSlice'
 import { ProfileTabs } from './ProfileTabs'
 import { useNavigate } from 'react-router-dom'
 
@@ -46,6 +50,10 @@ const ProfileForm = ({ user }) => {
     setInfoObj(initialState)
   }, [])
 
+  const profileModalHandler = () => {
+    dispatch(closeModal('profile'))
+    navigate('/animals', { replace: true })
+  }
   const stateInfoHandler = (objectKeyName, value) => {
     setInfoObj({ ...infoObj, [objectKeyName]: value })
   }
@@ -101,7 +109,13 @@ const ProfileForm = ({ user }) => {
       />
       {modal.profile ? (
         <UseModal modalName={'profile'}>
-          <h2>Changes Confirmed. Your profile has been updated.</h2>
+          <div className="profile-modal-container">
+            <h2>Changes Confirmed. Your profile has been updated.</h2>
+            <Divider />
+            <button className="profile-modal-btn" onClick={profileModalHandler}>
+              Continue
+            </button>
+          </div>
         </UseModal>
       ) : null}
       <button onClick={updateUserHandler} className="profile-btn">
@@ -112,6 +126,7 @@ const ProfileForm = ({ user }) => {
 }
 
 export default ProfileForm
+
 
 
 

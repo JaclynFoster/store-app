@@ -89,7 +89,6 @@ const SignupForm = () => {
         let newSignupObj = { ...signupObj }
         Object.keys(signupObj).forEach(key => (signupObj[key] = ''))
         setSignupObj(newSignupObj)
-
       })
       .catch(err => {
         console.log('error on signup:', err)
@@ -104,15 +103,16 @@ const SignupForm = () => {
         items={SignupTabs(signupObj, signupStateHandler)}
         onChange={onChange}
       />
-   
-        <UseModal modalName={'signup'}>
-          <div className="signup-modal-container">
 
+      <UseModal modalName={'signup'}>
+        <div className="signup-modal-container">
           <span>Thank you for signing up! Please login to continue.</span>
-          <button className="signup-modal-btn" onClick={signupModalHandler}>Continue to Login</button>
-          </div>
-        </UseModal>
-     
+          <button className="signup-modal-btn" onClick={signupModalHandler}>
+            Continue to Login
+          </button>
+        </div>
+      </UseModal>
+
       <button type="submit" onClick={createNewUser} className="signup-btn">
         Save Changes
       </button>
@@ -121,6 +121,7 @@ const SignupForm = () => {
 }
 
 export default SignupForm
+
 
 
 

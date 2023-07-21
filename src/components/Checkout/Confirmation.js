@@ -13,6 +13,7 @@ const Confirmation = () => {
     return number
   }
 
+
   return (
     <div className="confirm-container">
       <FcOk className="confirm-icon" />

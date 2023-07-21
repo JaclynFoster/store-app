@@ -1,0 +1,45 @@
+.checkout-modal-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout-confirm-btn {
+    width: 200px;
+    height: 40px;
+    background-color: black;
+    color: white;
+  
+
+}
+.checkout-confirm-btn:hover {
+    background-color: beige;
+    color: black;
+}
+
+.progress-btn {
+    width: 150px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.progress-btn:hover {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.progress-btn-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
