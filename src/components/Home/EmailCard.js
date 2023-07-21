@@ -28,7 +28,7 @@ const EmailCard = () => {
           placeholder="Enter email..."
         />
         {modal.email ? (
-          <UseModal>
+          <UseModal modalName={'email'}>
             <h2>
               Thank you for Joining our Mailing List. Check your email for our
               latest updates and deals.

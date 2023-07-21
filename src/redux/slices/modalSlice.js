@@ -1,6 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
+
+
+
 const initialState = {
     value: {
         //examples:
@@ -22,9 +25,7 @@ export const displayModal = createSlice({
         closeModal: state => {
             state.value = {}
         },
-        // toggleModal: state => {
-        //     state.value = !state.value
-        // }
+
     }
 })
 

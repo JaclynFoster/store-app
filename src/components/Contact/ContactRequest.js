@@ -85,7 +85,7 @@ const ContactRequest = ({}) => {
       />
 
       {modal.contact ? (
-        <UseModal>
+        <UseModal modalName={'contact'}>
           <h5>
             Thank you for reaching out to us. A member of our team will be in
             contact with you shortly.

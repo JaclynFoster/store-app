@@ -57,7 +57,7 @@ const CheckoutForm = () => {
           </button>
         )}
         {modal.confirmation ? (
-          <UseModal>
+          <UseModal modalName={'confirmation'}>
             <Confirmation />
           </UseModal>
         ) : null}

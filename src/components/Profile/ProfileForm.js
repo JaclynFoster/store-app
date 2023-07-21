@@ -100,7 +100,7 @@ const ProfileForm = ({ user }) => {
         onChange={onChange}
       />
       {modal.profile ? (
-        <UseModal>
+        <UseModal modalName={'profile'}>
           <h2>Changes Confirmed. Your profile has been updated.</h2>
         </UseModal>
       ) : null}

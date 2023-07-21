@@ -16,7 +16,7 @@ const onChange = key => {
 const SignupForm = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const refSubmit = useRef()
+  // const refSubmit = useRef()
   const [signupObj, setSignupObj] = useState({
     newUsername: '',
     newPassword: '',
@@ -66,7 +66,7 @@ const SignupForm = () => {
       newUsername,
       newPassword
     )
-    refSubmit.current.setAttribute('disabled', true)
+    // refSubmit.current.setAttribute('disabled', true)
     axios
       .post(`${REACT_APP_BACKEND_URL}/createUser`, {
         username: newUsername,
@@ -82,14 +82,14 @@ const SignupForm = () => {
       })
       .then(res => {
         console.log(res.data)
-        refSubmit.current.removeAttribute('disabled')
+        // refSubmit.current.removeAttribute('disabled')
         console.log('UpdateUserData:', { ...res.data.data })
         setSignupObj([{ ...res.data }])
         dispatch(showModal('signup'))
         let newSignupObj = { ...signupObj }
         Object.keys(signupObj).forEach(key => (signupObj[key] = ''))
         setSignupObj(newSignupObj)
-        navigate('/', { replace: true })
+
       })
       .catch(err => {
         console.log('error on signup:', err)
@@ -104,12 +104,15 @@ const SignupForm = () => {
         items={SignupTabs(signupObj, signupStateHandler)}
         onChange={onChange}
       />
-      {modal.signup ? (
-        <UseModal>
+   
+        <UseModal modalName={'signup'}>
+          <div className="signup-modal-container">
+
           <span>Thank you for signing up! Please login to continue.</span>
-          <button onClick={signupModalHandler}>Continue to Login</button>
+          <button className="signup-modal-btn" onClick={signupModalHandler}>Continue to Login</button>
+          </div>
         </UseModal>
-      ) : null}
+     
       <button type="submit" onClick={createNewUser} className="signup-btn">
         Save Changes
       </button>
