@@ -20,13 +20,13 @@ const SignupPersonal = ({ signupObj, signupStateHandler }) => {
       <div className="signup-input-container">
         <input
           value={firstName}
-          onChange={e => signupStateHandler('first_name', e.target.value)}
+          onChange={e => signupStateHandler('firstName', e.target.value)}
           className="signup-input"
         />
 
         <input
           value={lastName}
-          onChange={e => signupStateHandler('last_name', e.target.value)}
+          onChange={e => signupStateHandler('lastName', e.target.value)}
           className="signup-input"
         />
       </div>

@@ -22,13 +22,13 @@ const SignupCredentials = ({ signupObj, signupStateHandler }) => {
         <input
           value={newUsername}
           className="signup-input"
-          onChange={e => signupStateHandler('new username', e.target.value)}
+          onChange={e => signupStateHandler('newUsername', e.target.value)}
         />
 
         <input
           value={newPassword}
           type="password"
-          onChange={e => signupStateHandler('new password', e.target.value)}
+          onChange={e => signupStateHandler('newPassword', e.target.value)}
           className="signup-input"
         />
       </div>

@@ -1,26 +1,22 @@
-import { Form, Input, Button } from 'antd'
 import React, { useState } from 'react'
 import Card from '../UI/Card'
-import UseModal from '../UI/UseModal'
+import ContactRequest from './ContactRequest'
 import goosey from '../../images/goosey.jpeg'
 import '../Contact/Contact.css'
-import { useDispatch, useSelector } from 'react-redux'
-import { modalOptions, showModal } from '../../redux/slices/modalSlice'
-
-const { TextArea } = Input
 
 const ContactForm = () => {
-  const [contactName, setContactName] = useState('')
-  const [contactEmail, setContactEmail] = useState('')
-  const [contactText, setContactText] = useState('')
-  const dispatch = useDispatch()
-  const modal = useSelector(modalOptions)
+  const [contactObj, setContactObj] = useState({
+    contact_name: '',
+    contact_email: '',
+    contact_message: ''
+  })
 
-  const contactModal = () => {
-    dispatch(showModal('contact'))
-    setContactName('')
-    setContactEmail('')
-    setContactText('')
+  const contactStateHandler = (objectKeyName, value) => {
+    console.log({ objectKeyName })
+    console.log({ value })
+    const newObj = Object.assign(contactObj, { [objectKeyName]: value })
+    console.log('new obj: ', newObj)
+    setContactObj(newObj)
   }
 
   return (
@@ -36,54 +32,21 @@ const ContactForm = () => {
             </p>
           </div>
         </div>
-
-        <Form
-          action="https://formsubmit.co/your@email.com"
-          method="POST"
-          className="form"
-          name="basic"
-          autoComplete="off"
-        >
-          <Form.Item label="Name" name="name">
-            <Input
-              value={contactName}
-              onChange={e => setContactName(e.target.value)}
-            />
-          </Form.Item>
-          <Form.Item label="Email" name="email" type="email">
-            <Input
-              value={contactEmail}
-              onChange={e => setContactEmail(e.target.value)}
-            />
-          </Form.Item>
-          <Form.Item label="Leave us a Message:">
-            <TextArea
-              value={contactText}
-              onChange={e => setContactText(e.target.value)}
-              name="textarea"
-              rows={6}
-            />
-          </Form.Item>
-          {modal.contact ? (
-            <UseModal>
-              <h5>
-                Thank you for reaching out to us. A member of our team will be
-                in contact with you shortly.
-              </h5>
-            </UseModal>
-          ) : null}
-          <Form.Item>
-            <Button onClick={contactModal} type="primary" htmlType="submit">
-              Submit
-            </Button>
-          </Form.Item>
-        </Form>
+        <ContactRequest
+          contact_name={contactObj.contact_name}
+          contact_email={contactObj.contact_email}
+          contact_message={contactObj.contact_message}
+          contactObj={contactObj}
+          setContactObj={setContactObj}
+          contactStateHandler={contactStateHandler}
+        />
       </Card>
     </div>
   )
 }
 
 export default ContactForm
+
 
 
 

@@ -6,11 +6,17 @@ import newLogo from '../../images/newLogo.png'
 import CartBadge from './CartBadge'
 import './NavBar.css'
 import AuthContext from '../../context/userContext'
+import { useDispatch, useSelector } from 'react-redux'
+import { cartOptions } from '../../redux/slices/cartItemSlice'
 
 const NavBar = () => {
   const props = useContext(AuthContext)
+  const cart = useSelector(cartOptions)
+  console.log("cart", cart)
   console.log('Nav Bar Props:', props)
   const navigate = useNavigate()
+
+
   const logout = () => {
     navigate('/', {replace: true})
     props.setUserObject({})

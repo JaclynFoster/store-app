@@ -45,14 +45,14 @@ const Payment = ({ checkoutObj, stateCheckoutHandler }) => {
             <input
               className="payment-input-container"
               value={checkoutFirst}
-              onChange={e => stateCheckoutHandler('First/Last', e.target.value)}
+              onChange={e => stateCheckoutHandler('checkoutFirst', e.target.value)}
               type="text"
               required
             />
              <input
               className="payment-input-container"
               value={checkoutLast}
-              onChange={e => stateCheckoutHandler('First/Last', e.target.value)}
+              onChange={e => stateCheckoutHandler('checkoutLast', e.target.value)}
               type="text"
               required
             />
@@ -96,7 +96,7 @@ const Payment = ({ checkoutObj, stateCheckoutHandler }) => {
             <input
               className="payment-input-container pay-zip"
               value={checkoutZip}
-              onChange={e => stateCheckoutHandler('Zip', e.target.value)}
+              onChange={e => stateCheckoutHandler('checkoutZip', e.target.value)}
               type="text"
               required
             />

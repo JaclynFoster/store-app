@@ -27,8 +27,7 @@
     width: 200px;
     height: 200px;
     float: left;
-    padding-bottom: 15px;
-}
+} 
 
 .contact-info {
     display: flex;
@@ -82,4 +81,48 @@
 
 .form {
     min-width: 200px;
+}
+
+.contact-textarea {
+    width: 100%;
+    height: 200px;
+}
+
+.textarea-label {
+    float: left;
+    padding-bottom: 5px;
+}
+
+.contact-request-btn {
+    width: 150px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px; 
+    margin-top: 20px; 
+}
+
+.contact-request-btn:hover {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.contact-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-label {
+    float: left;
+}
+
+.headers {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+
 }

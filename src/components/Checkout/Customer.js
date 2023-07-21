@@ -37,13 +37,13 @@ const Customer = ({ checkoutObj, stateCheckoutHandler }) => {
           <div className="customer-input-container">
             <input
               value={checkoutFirst}
-              onChange={e => stateCheckoutHandler('First', e.target.value)}
+              onChange={e => stateCheckoutHandler('checkoutFirst', e.target.value)}
               className="billing-input"
               required
             />
             <input
               value={checkoutLast}
-              onChange={e => stateCheckoutHandler('Last', e.target.value)}
+              onChange={e => stateCheckoutHandler('checkoutLast', e.target.value)}
               className="billing-input"
               required
             />
@@ -57,13 +57,13 @@ const Customer = ({ checkoutObj, stateCheckoutHandler }) => {
           <div className="customer-input-container">
             <input
               value={checkoutAddress}
-              onChange={e => stateCheckoutHandler('Address', e.target.value)}
+              onChange={e => stateCheckoutHandler('checkoutAddress', e.target.value)}
               className="billing-input"
               required
             />
             <input
               value={checkoutCity}
-              onChange={e => stateCheckoutHandler('City', e.target.value)}
+              onChange={e => stateCheckoutHandler('checkoutCity', e.target.value)}
               className="billing-input"
               required
             />
@@ -76,14 +76,14 @@ const Customer = ({ checkoutObj, stateCheckoutHandler }) => {
           <div className="customer-input-container">
             <input
               value={checkoutState}
-              onChange={e => stateCheckoutHandler('State', e.target.value)}
+              onChange={e => stateCheckoutHandler('checkoutState', e.target.value)}
               className="billing-input"
               required
             />
 
             <input
               value={checkoutZip}
-              onChange={e => stateCheckoutHandler('Zip', e.target.value)}
+              onChange={e => stateCheckoutHandler('checkoutZip', e.target.value)}
               className="billing-input"
               required
             />
@@ -96,7 +96,7 @@ const Customer = ({ checkoutObj, stateCheckoutHandler }) => {
           <div className="customer-input-container">
             <input
               value={checkoutEmail}
-              onChange={e => stateCheckoutHandler('Email', e.target.value)}
+              onChange={e => stateCheckoutHandler('checkoutEmail', e.target.value)}
               className="billing-input"
               type="email"
               required
@@ -104,7 +104,7 @@ const Customer = ({ checkoutObj, stateCheckoutHandler }) => {
 
             <input
               value={checkoutPhone}
-              onChange={e => stateCheckoutHandler('Phone', e.target.value)}
+              onChange={e => stateCheckoutHandler('checkoutPhone', e.target.value)}
               className="billing-input"
               required
             />
