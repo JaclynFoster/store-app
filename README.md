@@ -1,6 +1,9 @@
 
 # About the App
-Fawstur Farms is an E-Commerce page allowing users to browse different animals and add items to their cart. Routes include a home page, about section, contact section, Animals pages with 3 searchable sections, login/signup section, cart, checkout and edit profile page. 
+Fawstur Farms is an E-Commerce page allowing users to browse different animals and add items to their cart. Routes include a home page, about section, contact section, Animals pages with 3 searchable sections, login/signup section, cart, checkout and edit profile page. All sections of the site are mobile responsive.
+![My_Image](homePage.png "Screenshot of App Home")
+![My_Image](animalsSection.png "Screenshot of App Animals Main Page")
+![My_Image](mobileResponsive.png "Screenshot of App Mobile Responsive Pages")
 
 ## Framework 
 Built using React, React Router, Redux, Context API, Javascript, HTML, CSS, Bootstrap, Axios for front end. Back end utilizes Node, Express, Cors, JSON Web Token and Sequelize.
