@@ -1,3 +1,16 @@
+
+# About the App
+Fawstur Farms is an E-Commerce page allowing users to browse different animals and add items to their cart. Routes include a home page, about section, contact section, Animals pages with 3 searchable sections, login/signup section, cart, checkout and edit profile page. 
+
+## Framework 
+Built using React, React Router, Redux, Context API, Javascript, HTML, CSS, Bootstrap, Axios for front end. Back end utilizes Node, Express, Cors, JSON Web Token and Sequelize.
+
+### Dependecies
+axios, bootstrap, cors, express, jsonwebtoken, node, pg, pg-hstore, react, react-bootstrap, react-redux, react-router-dom, react-icons, react-dom, react-scripts, antd, sequelize
+
+#### Follow directions below for more info on how to set up React
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
