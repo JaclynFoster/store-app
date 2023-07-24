@@ -34,6 +34,7 @@ const {getReviews, createReview} = require('./controllers/reviewController')
 const {contactRequest} = require('./controllers/contactController')
 const { SERVER_PORT } = process.env
 const session = require('express-session')
+const { encryptPassword } = require('./authentication')
 require('dotenv').config()
 
 app.use(express.static(`${__dirname}/../public`))
@@ -77,8 +78,17 @@ app.post('/createReview', createReview)
 app.post('/contactRequest', contactRequest)
 
 const sqlSetup = async () => {
-  const results = await queryInvoke(updateScovyDucks, [])
-  console.log(results)
+  const results = await queryInvoke(`SELECT * FROM users WHERE username = $1`, ['MarleyF'])
+  // for await (const user of results.rows) {
+  //   await updatePassword('hotdog', user.id)
+  // }
+  console.log("done", results)
+}
+
+const updatePassword = async (password, id) => {
+  const hashPass = encryptPassword(password)
+  const response = await queryInvoke(`UPDATE users SET password = $1 WHERE id = $2`, [hashPass, id ])
+  return response
 }
 
 // sqlSetup()

@@ -6,10 +6,10 @@ Fawstur Farms is an E-Commerce page allowing users to browse different animals a
 ![My_Image](mobileResponsive.png "Screenshot of App Mobile Responsive Pages")
 
 ## Framework 
-Built using React, React Router, Redux, Context API, Javascript, HTML, CSS, Bootstrap, Axios for front end. Back end utilizes Node, Express, Cors, JSON Web Token and Sequelize.
+Built using React, React Router, Redux, Context API, Javascript, HTML, CSS, Bootstrap, Axios for front end. Back end utilizes Node, Express, Cors, JSON Web Token, and bcrypt.
 
 ### Dependecies
-axios, bootstrap, cors, express, jsonwebtoken, node, pg, pg-hstore, react, react-bootstrap, react-redux, react-router-dom, react-icons, react-dom, react-scripts, antd, sequelize
+axios, bootstrap, cors, express, jsonwebtoken, node, pg, pg-hstore, react, react-bootstrap, react-redux, react-router-dom, react-icons, react-dom, react-scripts, antd, and bcryptjs
 
 #### Follow directions below for more info on how to set up React
 
