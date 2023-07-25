@@ -1,3 +1,4 @@
+const serverless = require('serverless-http');
 const express = require('express')
 const cors = require('cors')
 const app = express()
@@ -90,6 +91,8 @@ const updatePassword = async (password, id) => {
   const response = await queryInvoke(`UPDATE users SET password = $1 WHERE id = $2`, [hashPass, id ])
   return response
 }
+
+module.exports.handler = serverless(app);
 
 // sqlSetup()
 app.listen(SERVER_PORT, () => {
