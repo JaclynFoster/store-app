@@ -80,7 +80,7 @@ app.post('/createReview', createReview)
 app.post('/contactRequest', contactRequest)
 
 const sqlSetup = async () => {
-  const results = await queryInvoke(updateDuckType, [])
+  const results = await queryInvoke(updateChickens, [])
   console.log("done", results)
 }
 
