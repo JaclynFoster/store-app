@@ -37,18 +37,17 @@ const UseModal = props => {
         </button>
       </ModalHeader>
       <ModalBody>{props.children}</ModalBody>
-      {!props.modalName === 'confirmation' ||
-      !props.modalName === 'signup' ||
-      !props.modalName === 'profile' ? (
-          <ModalFooter>
-            <button className="ok-btn" onClick={closeButton}>
+      {props.modalName === 'email' || props.modalName === 'contact' ? (
+        <ModalFooter>
+          <button className="ok-btn" onClick={closeButton}>
             OK
-            </button>
-          </ModalFooter>
-        ) : null}
+          </button>
+        </ModalFooter>
+      ) : null}
     </Modal>
   )
 }
 
 export default UseModal
+
 
