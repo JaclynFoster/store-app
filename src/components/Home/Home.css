@@ -27,11 +27,9 @@ p {
 }
 
 .home-image {
-    width: 200px;
-    height: 200px;
-    min-width: 50px;
-    min-height: 50px;
-    /* float: left; */
+    width: 180px;
+    height: 180px;
+    min-width: 65px;
     margin-top: 20px;
 }
 
@@ -42,12 +40,12 @@ p {
     min-width: 390px;
     justify-content: center;
     align-items: center;
+    min-height: 300px;
 }
 
 .goose {
     width: 180px;
     height: 180px;
-    min-width: 50px;
-    min-height: 50px;
+    min-width: 65px;
     margin-top: 15px;
 }
