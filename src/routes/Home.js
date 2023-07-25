@@ -1,20 +1,20 @@
 import React from 'react'
 import Layout from '../components/Layout/Layout'
-import chickenHomePage from '../images/chickenHomePage.png'
+// import chickenHomePage from '../images/chickenHomePage.png'
 import Videos from '../components/Home/Videos'
 import Review from '../components/Home/Review'
 import '../components/Home/Home.css'
 import EmailCard from '../components/Home/EmailCard'
-import gooseHomePage from '../images/gooseHomePage.png'
+// import gooseHomePage from '../images/gooseHomePage.png'
 
 const Home = () => {
   return (
     <Layout>
       <div className="home-container">
         <div className="home-image-container">
-          <img className="home-image" src={chickenHomePage} />
+          {/* <img className="home-image" src={chickenHomePage} /> */}
           <EmailCard />
-          <img className="goose" src={gooseHomePage} />
+          {/* <img className="goose" src={gooseHomePage} /> */}
         </div>
         <div className="homeP">
           <p>
