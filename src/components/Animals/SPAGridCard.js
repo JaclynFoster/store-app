@@ -5,6 +5,7 @@ import { ShoppingCartOutlined } from '@ant-design/icons'
 import { useSelector, useDispatch } from 'react-redux'
 import { addToCart } from '../../redux/slices/cartItemSlice'
 import { modalOptions, showModal } from '../../redux/slices/modalSlice'
+import './SPAGrid.css'
 
 const SPAGridCard = ({ breed }) => {
   const count = useSelector(state => state.cart.value)
@@ -28,8 +29,8 @@ const SPAGridCard = ({ breed }) => {
         <label className="grid-label">{breed.breed_name}</label>
         <Divider />
         <Image
-          height={350}
-          width={350}
+          height={250}
+          width={300}
           className="grid-img"
           src={breed.breed_image}
         />
@@ -43,11 +44,9 @@ const SPAGridCard = ({ breed }) => {
           <button onClick={cartHandler} className="add-cart">
             Add to Cart <ShoppingCartOutlined className="icons" />
           </button>
-          {modal[`breed-${breed.breed_id}`] ? (
-            <UseModal>
+            <UseModal modalName={`breed-${breed.breed_id}`}>
               <p>{breed.details}</p>
             </UseModal>
-          ) : null}
           <button onClick={details} className="details">
             Details
           </button>

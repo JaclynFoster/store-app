@@ -103,7 +103,6 @@ const SignupForm = () => {
         items={SignupTabs(signupObj, signupStateHandler)}
         onChange={onChange}
       />
-
       <UseModal modalName={'signup'}>
         <div className="signup-modal-container">
           <span>Thank you for signing up! Please login to continue.</span>

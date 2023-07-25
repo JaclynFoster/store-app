@@ -1,5 +1,5 @@
 .grid {
-     width: 350px;
+    width: 300px;
     min-width: 50px; 
     text-align: center;
     background-color: whitesmoke;
@@ -12,8 +12,10 @@
     justify-content: center;
     align-self: center;
     align-content: center;
+    justify-self: center;
+    justify-items: center;
     margin-bottom: 50px;
-    margin-left: 15px;
+
     
 }
 @media(min-width: 600px) {
@@ -53,10 +55,10 @@
 }
 
 .grid-img {
-   width: 100%;
+   /* width: 100%;
    min-width: 50px;
    height: 350px;
-   min-height: 50px;
+   min-height: 50px; */
     border: 2px solid darkgray;
     overflow: hidden;
 }
@@ -90,4 +92,7 @@
     grid-template-columns: repeat(auto-fit, repeat(3, 1fr));
     gap: 15px;
     margin: 0 auto;
+    align-self: center;
+    justify-self: center;
+    width: 80%;
 }

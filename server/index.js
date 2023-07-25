@@ -24,7 +24,7 @@ const {
   updateDuckType,
   updateReviews,
   updateRunnerDucks,
-  updateScovyDucks
+  updateCayugaDucks
 } = require('./schema/createTable.js')
 const {
   getUser,
@@ -79,10 +79,7 @@ app.post('/createReview', createReview)
 app.post('/contactRequest', contactRequest)
 
 const sqlSetup = async () => {
-  const results = await queryInvoke(`SELECT * FROM users WHERE username = $1`, ['MarleyF'])
-  // for await (const user of results.rows) {
-  //   await updatePassword('hotdog', user.id)
-  // }
+  const results = await queryInvoke(updateCayugaDucks, [])
   console.log("done", results)
 }
 

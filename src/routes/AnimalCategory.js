@@ -6,6 +6,7 @@ import AnimalCategoryCard from '../components/Animals/AnimalCategoryCard'
 import { RollbackOutlined } from '@ant-design/icons'
 import { setLoadingTrue, setLoadingFalse } from '../redux/slices/isLoadingSlice'
 import { useDispatch } from 'react-redux'
+import '../components/Animals/Animals.css'
 
 const AnimalCategory = () => {
   const dispatch = useDispatch()
@@ -40,10 +41,13 @@ const AnimalCategory = () => {
       <button className="back-home" onClick={() => backHomeHandler()}>
         Back <RollbackOutlined />
       </button>
+      <div className="animal-card-container">
+
       <AnimalCategoryCard
         animalType={animalType}
         setAnimalType={setAnimalType}
-      />
+        />
+        </div>
     </Layout>
   )
 }

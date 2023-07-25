@@ -162,8 +162,8 @@ const alterReviewsTable = `ALTER TABLE reviews ADD COLUMN rating INT`
 const alterTypesTable = `ALTER TABLE breeds RENAME TO types`
 const alterTypesColumn = `ALTER TABLE types RENAME COLUMN breed_image TO type_image`
 const addImagesToTypes = `UPDATE animals SET image = $1 WHERE id = $2`
-const updateDuckType = `UPDATE types SET type_image = 'https://jaclynsimages.s3.us-east-2.amazonaws.com/ducklings.jpg' WHERE type_name = 'ducks'`
-const updateScovyDucks = `UPDATE breeds SET breed_image = 'https://jaclynsimages.s3.us-east-2.amazonaws.com/muscov.jpeg' WHERE breed_id = 875338773224423426`
+const updateDuckType = `UPDATE types SET type_image = 'https://jaclynsimages.s3.us-east-2.amazonaws.com/ducks.jpg' WHERE type_name = 'ducks'`
+const updateCayugaDucks = `UPDATE breeds SET breed_image = 'https://jaclynsimages.s3.us-east-2.amazonaws.com/crest.jpeg' WHERE breed_id = 875325806995308546`
 
 
 module.exports = {
@@ -184,5 +184,5 @@ module.exports = {
   addImagesToTypes, 
   updateDuckType,
   updateReviews,
-  updateScovyDucks
+  updateCayugaDucks
 }
