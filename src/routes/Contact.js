@@ -7,16 +7,13 @@ import '../components/Contact/Contact.css'
 const Contact = () => {
   return (
     <Layout>
- 
-    <div className="contact-flex">
-
-     <ContactCard />
-     <ContactForm />
-    </div>
-
-    
+      <div className="contact-flex">
+        <ContactCard />
+        <ContactForm />
+      </div>
     </Layout>
   )
 }
 
 export default Contact
+

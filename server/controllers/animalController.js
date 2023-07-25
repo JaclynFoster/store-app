@@ -72,3 +72,4 @@ module.exports = { getAllAnimals, getAllTypes, getAllBreeds, getSearch }
 
 
 
+

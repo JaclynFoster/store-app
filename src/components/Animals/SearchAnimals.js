@@ -1,7 +1,4 @@
 import React from 'react'
-import Card from '../UI/Card'
-import { Divider } from 'antd'
-import { useNavigate } from 'react-router-dom'
 import SPAGridCard from './SPAGridCard'
 
 const SearchAnimals = ({ animals }) => {
@@ -15,3 +12,4 @@ const SearchAnimals = ({ animals }) => {
 }
 
 export default SearchAnimals
+

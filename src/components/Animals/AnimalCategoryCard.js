@@ -1,5 +1,5 @@
 import React from 'react'
-import { Divider, Image } from 'antd'
+import { Divider } from 'antd'
 import Card from '../UI/Card'
 import './AnimalCategoryCard.css'
 import { useNavigate } from 'react-router-dom'
@@ -29,5 +29,6 @@ const AnimalCategoryCard = ({ animalType, animal }) => {
 }
 
 export default AnimalCategoryCard
+
 
 

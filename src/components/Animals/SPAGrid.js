@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './SPAGrid.css'
 import SPAGridCard from './SPAGridCard'
 
-const SPAGrid = ({ animalBreed}) => {
+const SPAGrid = ({ animalBreed }) => {
   return (
     <div className="grid-container">
       {animalBreed.map(breed => {
@@ -15,6 +15,7 @@ const SPAGrid = ({ animalBreed}) => {
 }
 
 export default SPAGrid
+
 
 
 

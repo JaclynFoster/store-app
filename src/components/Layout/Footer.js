@@ -3,11 +3,7 @@ import facebook from '../../images/facebook.png'
 import twitter from '../../images/twitter.png'
 import instagram from '../../images/instagram.png'
 import tiktok from '../../images/tiktok.png'
-import {
-  CopyrightOutlined,
-  MailOutlined,
-  QuestionCircleOutlined
-} from '@ant-design/icons'
+import { CopyrightOutlined, MailOutlined } from '@ant-design/icons'
 import './Footer.css'
 import { Divider } from 'antd'
 
@@ -15,7 +11,6 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="section-one">
-        {/* <img className="footer-logo-main" src={logo} /> */}
         <div className="footer-logo-container">
           <img className="footer-logo" src={facebook} />
           <img className="footer-logo" src={twitter} />
@@ -49,21 +44,17 @@ const Footer = () => {
         </div>
         <div className="copyright">
           <label>
-            Copyright <CopyrightOutlined /> 2023 Fawstur Farms all rights reserved
+            Copyright <CopyrightOutlined /> 2023 Fawstur Farms all rights
+            reserved
           </label>
-          
+
           <label>Powered & Developed by Jaclyn Foster</label>
         </div>
       </div>
-  
-
-       
-          {/* <QuestionCircleOutlined className="question-btn" /> */}
-  
-     
     </div>
   )
 }
 
 export default Footer
+
 

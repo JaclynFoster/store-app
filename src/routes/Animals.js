@@ -29,14 +29,13 @@ const Animals = ({}) => {
       })
   }
 
-
   useEffect(() => {
     getAllAnimals()
   }, [])
 
-  console.log({searchText})
-  console.log({searchResult})
-  console.log('the condition: ', (searchResult.length && searchText))
+  console.log({ searchText })
+  console.log({ searchResult })
+  console.log('the condition: ', searchResult.length && searchText)
   return (
     <Layout>
       <Search
@@ -57,3 +56,4 @@ const Animals = ({}) => {
 }
 
 export default Animals
+

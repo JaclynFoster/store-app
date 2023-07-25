@@ -16,9 +16,9 @@ const Loading = () => {
         </Spin>
       </Space>
       <Empty description={false} />
-
     </div>
   )
 }
 
 export default Loading
+

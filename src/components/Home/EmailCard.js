@@ -5,7 +5,6 @@ import { modalOptions, showModal } from '../../redux/slices/modalSlice'
 import './EmailCard.css'
 import { useDispatch, useSelector } from 'react-redux'
 
-
 const EmailCard = () => {
   const dispatch = useDispatch()
   const modal = useSelector(modalOptions)
@@ -44,5 +43,6 @@ const EmailCard = () => {
 }
 
 export default EmailCard
+
 
 

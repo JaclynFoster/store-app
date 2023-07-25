@@ -31,7 +31,6 @@ const Credentials = ({ password, infoObj, stateInfoHandler }) => {
           placeholder={password}
           className="profile-input"
         />
-
       </div>
       <Divider />
     </div>
@@ -39,6 +38,7 @@ const Credentials = ({ password, infoObj, stateInfoHandler }) => {
 }
 
 export default Credentials
+
 
 
 

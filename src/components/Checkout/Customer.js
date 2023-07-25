@@ -1,4 +1,4 @@
-import React, { useContext} from 'react'
+import React, { useContext } from 'react'
 import CollapseChildren from '../UI/CollapseChildren'
 import './Customer.css'
 import { Divider } from 'antd'
@@ -37,13 +37,17 @@ const Customer = ({ checkoutObj, stateCheckoutHandler }) => {
           <div className="customer-input-container">
             <input
               value={checkoutFirst}
-              onChange={e => stateCheckoutHandler('checkoutFirst', e.target.value)}
+              onChange={e =>
+                stateCheckoutHandler('checkoutFirst', e.target.value)
+              }
               className="billing-input"
               required
             />
             <input
               value={checkoutLast}
-              onChange={e => stateCheckoutHandler('checkoutLast', e.target.value)}
+              onChange={e =>
+                stateCheckoutHandler('checkoutLast', e.target.value)
+              }
               className="billing-input"
               required
             />
@@ -57,13 +61,17 @@ const Customer = ({ checkoutObj, stateCheckoutHandler }) => {
           <div className="customer-input-container">
             <input
               value={checkoutAddress}
-              onChange={e => stateCheckoutHandler('checkoutAddress', e.target.value)}
+              onChange={e =>
+                stateCheckoutHandler('checkoutAddress', e.target.value)
+              }
               className="billing-input"
               required
             />
             <input
               value={checkoutCity}
-              onChange={e => stateCheckoutHandler('checkoutCity', e.target.value)}
+              onChange={e =>
+                stateCheckoutHandler('checkoutCity', e.target.value)
+              }
               className="billing-input"
               required
             />
@@ -76,14 +84,18 @@ const Customer = ({ checkoutObj, stateCheckoutHandler }) => {
           <div className="customer-input-container">
             <input
               value={checkoutState}
-              onChange={e => stateCheckoutHandler('checkoutState', e.target.value)}
+              onChange={e =>
+                stateCheckoutHandler('checkoutState', e.target.value)
+              }
               className="billing-input"
               required
             />
 
             <input
               value={checkoutZip}
-              onChange={e => stateCheckoutHandler('checkoutZip', e.target.value)}
+              onChange={e =>
+                stateCheckoutHandler('checkoutZip', e.target.value)
+              }
               className="billing-input"
               required
             />
@@ -96,7 +108,9 @@ const Customer = ({ checkoutObj, stateCheckoutHandler }) => {
           <div className="customer-input-container">
             <input
               value={checkoutEmail}
-              onChange={e => stateCheckoutHandler('checkoutEmail', e.target.value)}
+              onChange={e =>
+                stateCheckoutHandler('checkoutEmail', e.target.value)
+              }
               className="billing-input"
               type="email"
               required
@@ -104,7 +118,9 @@ const Customer = ({ checkoutObj, stateCheckoutHandler }) => {
 
             <input
               value={checkoutPhone}
-              onChange={e => stateCheckoutHandler('checkoutPhone', e.target.value)}
+              onChange={e =>
+                stateCheckoutHandler('checkoutPhone', e.target.value)
+              }
               className="billing-input"
               required
             />
@@ -122,6 +138,7 @@ const Customer = ({ checkoutObj, stateCheckoutHandler }) => {
 }
 
 export default Customer
+
 
 
 

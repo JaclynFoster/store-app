@@ -29,13 +29,17 @@ const Shipping = ({ checkoutObj, stateCheckoutHandler }) => {
           <div className="shipping-input-container">
             <input
               value={checkoutFirst}
-              onChange={e => stateCheckoutHandler('checkoutFirst', e.target.value)}
+              onChange={e =>
+                stateCheckoutHandler('checkoutFirst', e.target.value)
+              }
               className="shipping-input"
               required
             />
             <input
               value={checkoutLast}
-              onChange={e => stateCheckoutHandler('checkoutLast', e.target.value)}
+              onChange={e =>
+                stateCheckoutHandler('checkoutLast', e.target.value)
+              }
               className="shipping-input"
               required
             />
@@ -48,14 +52,18 @@ const Shipping = ({ checkoutObj, stateCheckoutHandler }) => {
           <div className="shipping-input-container">
             <input
               value={checkoutAddress}
-              onChange={e => stateCheckoutHandler('checkoutAddress', e.target.value)}
+              onChange={e =>
+                stateCheckoutHandler('checkoutAddress', e.target.value)
+              }
               className="shipping-input"
               required
             />
 
             <input
               value={checkoutCity}
-              onChange={e => stateCheckoutHandler('checkoutCity', e.target.value)}
+              onChange={e =>
+                stateCheckoutHandler('checkoutCity', e.target.value)
+              }
               className="shipping-input"
               required
             />
@@ -69,14 +77,18 @@ const Shipping = ({ checkoutObj, stateCheckoutHandler }) => {
           <div className="shipping-input-container">
             <input
               value={checkoutState}
-              onChange={e => stateCheckoutHandler('checkoutState', e.target.value)}
+              onChange={e =>
+                stateCheckoutHandler('checkoutState', e.target.value)
+              }
               className="shipping-input"
               required
             />
 
             <input
               value={checkoutZip}
-              onChange={e => stateCheckoutHandler('checkoutZip', e.target.value)}
+              onChange={e =>
+                stateCheckoutHandler('checkoutZip', e.target.value)
+              }
               className="shipping-input"
               required
             />
@@ -88,6 +100,7 @@ const Shipping = ({ checkoutObj, stateCheckoutHandler }) => {
 }
 
 export default Shipping
+
 
 
 

@@ -3,7 +3,9 @@ const { Client } = require('pg')
 
 const queryInvoke = async (query, params) => {
   try {
-    const client = new Client({ connectionString: process.env.CONNECTION_STRING })
+    const client = new Client({
+      connectionString: process.env.CONNECTION_STRING
+    })
     await client.connect()
     const res = await client.query(query, params)
     await client.end()
@@ -18,3 +20,4 @@ const queryInvoke = async (query, params) => {
 // Making a reusable query invoker
 
 module.exports = { queryInvoke }
+
