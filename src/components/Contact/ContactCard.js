@@ -16,7 +16,6 @@ const ContactCard = () => {
   return (
     <Card overrideClass={'contact-card-main'}>
       <h3>Contact Us:</h3>
-
       <Divider />
       <div className="contact-info-container">
         <div className="contact-info">

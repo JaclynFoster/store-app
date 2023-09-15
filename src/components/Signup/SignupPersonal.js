@@ -14,7 +14,6 @@ const SignupPersonal = ({ signupObj, signupStateHandler }) => {
       <Divider />
       <div className="signup-label">
         <label className="signup-label">First Name:</label>
-
         <label className="signup-label">Last Name:</label>
       </div>
       <div className="signup-input-container">
@@ -23,7 +22,6 @@ const SignupPersonal = ({ signupObj, signupStateHandler }) => {
           onChange={e => signupStateHandler('firstName', e.target.value)}
           className="signup-input"
         />
-
         <input
           value={lastName}
           onChange={e => signupStateHandler('lastName', e.target.value)}
@@ -32,7 +30,6 @@ const SignupPersonal = ({ signupObj, signupStateHandler }) => {
       </div>
       <div className="signup-label">
         <label className="signup-label">Phone:</label>
-
         <label className="signup-label">Email:</label>
       </div>
       <div className="signup-input-container">
@@ -41,14 +38,12 @@ const SignupPersonal = ({ signupObj, signupStateHandler }) => {
           onChange={e => signupStateHandler('phone', e.target.value)}
           className="signup-input"
         />
-
         <input
           value={email}
           onChange={e => signupStateHandler('email', e.target.value)}
           className="signup-input"
         />
       </div>
-
       <Divider />
     </div>
   )

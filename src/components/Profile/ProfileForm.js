@@ -90,7 +90,6 @@ const ProfileForm = ({ user }) => {
         console.log('UpdateUserData:', { ...res.data.data })
         props.setUserObject({ ...res.data.data })
         dispatch(showModal('profile'))
-
         let newObj = { ...infoObj }
         Object.keys(infoObj).forEach(key => (newObj[key] = ''))
         setInfoObj(newObj)

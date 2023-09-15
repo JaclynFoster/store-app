@@ -23,7 +23,6 @@ const Shipping = ({ checkoutObj, stateCheckoutHandler }) => {
         <div className="input-flex">
           <div className="shipping-label">
             <label className="shipping-label">First Name:</label>
-
             <label className="shipping-label">Last Name:</label>
           </div>
           <div className="shipping-input-container">
@@ -46,7 +45,6 @@ const Shipping = ({ checkoutObj, stateCheckoutHandler }) => {
           </div>
           <div className="shipping-label">
             <label className="shipping-label">Address:</label>
-
             <label className="shipping-label">City:</label>
           </div>
           <div className="shipping-input-container">
@@ -58,7 +56,6 @@ const Shipping = ({ checkoutObj, stateCheckoutHandler }) => {
               className="shipping-input"
               required
             />
-
             <input
               value={checkoutCity}
               onChange={e =>
@@ -68,10 +65,8 @@ const Shipping = ({ checkoutObj, stateCheckoutHandler }) => {
               required
             />
           </div>
-
           <div className="shipping-label">
             <label className="shipping-label">State:</label>
-
             <label className="shipping-label">Zip Code:</label>
           </div>
           <div className="shipping-input-container">
@@ -83,7 +78,6 @@ const Shipping = ({ checkoutObj, stateCheckoutHandler }) => {
               className="shipping-input"
               required
             />
-
             <input
               value={checkoutZip}
               onChange={e =>

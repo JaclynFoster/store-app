@@ -83,7 +83,6 @@ const CheckoutForm = () => {
             </div>
           </UseModal>
         ) : null}
-
         {current ===
           StepsTabs(checkoutObj, stateCheckoutHandler).length - 1 && (
             <button className="progress-btn" onClick={() => sendConfirmation()}>

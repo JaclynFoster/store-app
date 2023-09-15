@@ -4,21 +4,10 @@ font-family: 'Merienda', cursive;
 .layout {
     margin-left: 0 !important;
     margin-right: 0 !important;
-    /* width: 100%; */
-    /* left: 0;
-    top: 0; */
-    /* opacity: 0.6; */
     min-width: 390px;
     box-sizing: border-box;
     height: auto;
     background-color: whitesmoke;
-    /* min-height: 800px; */
-    /* background-image: url('https://media.istockphoto.com/id/1414242896/photo/chicken-farming-family-feeding-chickens-on-a-farm-estate-with-hens-raised-for-meat-industry.jpg?s=612x612&w=0&k=20&c=JKV6_Ds4rSS9WuZLiZlQvGYiFQ-xMeZdt6qXYpbaf7g=');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-origin: inherit;
-    position: relative; */
-    /* opacity: 0.4; */
 }
 
 html {

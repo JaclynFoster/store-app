@@ -24,7 +24,6 @@ const Confirmation = () => {
       <h5>
         <strong>Order Number:</strong> {randomNumber()}{' '}
       </h5>
-
       <h5>
         <strong>Purchase Date:</strong> {purchaseDate()}
       </h5>

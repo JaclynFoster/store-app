@@ -1,16 +1,14 @@
 .footer {
     width: 100%;
-      bottom: 0;
-      left: 0;
-      right: 0;
-     /* display: flex; */
-     min-width: 350px;
-     overflow: hidden;
-        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkAjIvaNj4hfIeiX9bi7BQdmEpYRRtDNIjuw&usqp=CAU");
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-width: 350px;
+    overflow: hidden;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkAjIvaNj4hfIeiX9bi7BQdmEpYRRtDNIjuw&usqp=CAU");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-  
   }
 
   .section-one {
@@ -21,7 +19,6 @@
     padding: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
-   
   }
 
   .footer-logo-container {
@@ -35,21 +32,6 @@
     height: 25px;
     width: 25px;
 }
-
-/* .footer-logo-main {
-    height: 100px;
-    width: 100px;
-} */
-
-
-
-/* .quick-links {
-    display: flex;
-    flex-direction: row;
-   justify-content: space-around;
-    color: white;
-
-} */
 
 .quick-link-container {
     display: flex;
@@ -65,22 +47,17 @@
     justify-items: center;
     padding: 5px;
     color: white;
-   /* gap: 5px; */
-   
 }
 
 
 .copyright {
-   text-align: center;
-   display: flex;
-   flex-direction: column;
-   
-
-
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .link-title {
-   color: whitesmoke;
+  color: whitesmoke;
 }
 
 .mail-contact {
@@ -88,8 +65,7 @@
     color:rgb(54, 54, 129);
     display: flex;
     flex-direction: row;
-   gap: 10px;
- 
+    gap: 10px;
 }
 
 .mail-logo {
@@ -97,7 +73,7 @@
 }
 
 .question-btn {
-   background-color: whitesmoke;
+    background-color: whitesmoke;
     font-size: 60px;
     border-radius: 50%;
     margin-bottom: 15px;

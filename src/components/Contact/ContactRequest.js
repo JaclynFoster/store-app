@@ -55,7 +55,6 @@ const ContactRequest = ({}) => {
           )
         }
       />
-
       <label className="contact-label">Email:</label>
       <Input
         value={getValue('contact_email')}
@@ -83,7 +82,6 @@ const ContactRequest = ({}) => {
         maxLength={1000}
         rows={6}
       />
-
       {modal.contact ? (
         <UseModal modalName={'contact'}>
           <h5>
@@ -92,7 +90,6 @@ const ContactRequest = ({}) => {
           </h5>
         </UseModal>
       ) : null}
-
       <div className="contact-btn-container">
         <Button
           className="contact-request-btn"

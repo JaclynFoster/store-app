@@ -34,7 +34,6 @@ const Summary = () => {
           By clicking "Complete Order" you are agreeing to our{' '}
           <a className="conditions">terms and conditions</a>.
         </p>
-
         <label className="money-back-label">30-Day Money Back Guarantee</label>
       </div>
     </CollapseChildren>

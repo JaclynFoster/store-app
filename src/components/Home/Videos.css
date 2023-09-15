@@ -1,16 +1,15 @@
 .link-section {
     background-color: rgb(196, 194, 190, 0.4);
     position: relative;
-    /* bottom: 0;  */
     padding-bottom: 20px;
-   width: 100%; 
-   min-width: 390px;
+    width: 100%; 
+    min-width: 390px;
 }
 
 .links {
     display: flex;
     justify-content: space-around;
-  width: 100%;
+    width: 100%;
     min-width: 390px;
     overflow: scroll;
 }

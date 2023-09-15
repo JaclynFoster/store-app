@@ -43,7 +43,6 @@ const SinglePageAnimal = ({ animal }) => {
       <button className="back-btn" onClick={() => backHandler()}>
         Back <RollbackOutlined />
       </button>
-
       <SPAGrid animalBreed={animalBreed} setAnimalBreed={setAnimalBreed} />
     </Layout>
   )

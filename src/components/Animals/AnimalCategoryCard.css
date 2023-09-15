@@ -1,18 +1,12 @@
 
-/* .animal-img {
-    border: 2px solid darkgray;
-    height: 350px;
-    overflow:inherit;
-  } */
   .animal-img {
-
     border: 4px double slategray;
     overflow: hidden;
     width: 100%;
     max-height: 300x;
   }
 .animal-card-container {
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

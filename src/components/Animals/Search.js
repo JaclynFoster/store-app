@@ -20,7 +20,6 @@ const Search = ({ setSearchResult, searchText, setSearchText }) => {
         console.log('error on searchAnimals:', err)
       })
   }
-
   return (
     <div className="search-container">
       <Input

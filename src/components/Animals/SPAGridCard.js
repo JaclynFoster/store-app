@@ -37,9 +37,7 @@ const SPAGridCard = ({ breed }) => {
         <div className="container-two">
           <span className="grid-span">Price: ${breed.price}.00</span>
         </div>
-
         <Divider />
-
         <div className="grid-btns">
           <button onClick={cartHandler} className="add-cart">
             Add to Cart <ShoppingCartOutlined className="icons" />

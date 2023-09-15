@@ -37,7 +37,6 @@ const Footer = () => {
           <Divider type="vertical" orientation="center" />
           <a>Volunteer Opportunities</a>
         </div>
-
         <div className="mail-contact">
           <MailOutlined className="mail-logo" />
           <label>fawsturfam@fawsturfarms.com</label>
@@ -47,7 +46,6 @@ const Footer = () => {
             Copyright <CopyrightOutlined /> 2023 Fawstur Farms all rights
             reserved
           </label>
-
           <label>Powered & Developed by Jaclyn Foster</label>
         </div>
       </div>

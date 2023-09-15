@@ -1,24 +1,24 @@
 .carousel-img {
     width: 100%;
- min-width: 50px;
- height: 600px;
- min-height: 500px; 
- border-radius: 14px;
- border: 1px solid rgb(243, 61, 29);
+    min-width: 50px;
+    height: 600px;
+    min-height: 500px; 
+    border-radius: 14px;
+    border: 1px solid rgb(243, 61, 29);
 overflow: hidden;
 }
 
-
 .carousel-container {
-   text-align: center;
-   padding: 15px;
-   float: right;
-   border-radius: 14px; 
-   width: 100%;
-   min-width: 150px;
-   height: 400px;
-   min-height: 100px;
+    text-align: center;
+    padding: 15px;
+    float: right;
+    border-radius: 14px; 
+    width: 100%;
+    min-width: 150px;
+    height: 400px;
+    min-height: 100px;
 }
+
 .carousel {
     border-radius: 10px;
     text-align: center;

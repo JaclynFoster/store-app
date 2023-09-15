@@ -16,7 +16,6 @@ const onChange = key => {
 const SignupForm = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  // const refSubmit = useRef()
   const [signupObj, setSignupObj] = useState({
     newUsername: '',
     newPassword: '',
@@ -66,7 +65,6 @@ const SignupForm = () => {
       newUsername,
       newPassword
     )
-    // refSubmit.current.setAttribute('disabled', true)
     axios
       .post(`${REACT_APP_BACKEND_URL}/createUser`, {
         username: newUsername,
@@ -82,7 +80,6 @@ const SignupForm = () => {
       })
       .then(res => {
         console.log(res.data)
-        // refSubmit.current.removeAttribute('disabled')
         console.log('UpdateUserData:', { ...res.data.data })
         setSignupObj([{ ...res.data }])
         dispatch(showModal('signup'))
@@ -111,7 +108,6 @@ const SignupForm = () => {
           </button>
         </div>
       </UseModal>
-
       <button type="submit" onClick={createNewUser} className="signup-btn">
         Save Changes
       </button>

@@ -51,7 +51,6 @@ const LoginForm = () => {
         console.log('error on login', err)
       })
   }
-
   return (
     <div className="login-container">
       <AuthContext.Provider value={{ id: user.id }}>
@@ -65,7 +64,6 @@ const LoginForm = () => {
               onChange={e => setUsername(e.target.value)}
               className="login-input"
             />
-
             <input
               placeholder="Enter Password:..."
               value={password}

@@ -31,7 +31,6 @@ const Customer = ({ checkoutObj, stateCheckoutHandler }) => {
         <div className="input-flex">
           <div className="customer-label">
             <label className="customer-label">First Name:</label>
-
             <label className="customer-label">Last Name:</label>
           </div>
           <div className="customer-input-container">
@@ -52,10 +51,8 @@ const Customer = ({ checkoutObj, stateCheckoutHandler }) => {
               required
             />
           </div>
-
           <div className="customer-label">
             <label className="customer-label">Address:</label>
-
             <label className="customer-label">City:</label>
           </div>
           <div className="customer-input-container">
@@ -78,7 +75,6 @@ const Customer = ({ checkoutObj, stateCheckoutHandler }) => {
           </div>
           <div className="customer-label">
             <label className="customer-label">State:</label>
-
             <label className="customer-label">Zipcode:</label>
           </div>
           <div className="customer-input-container">
@@ -90,7 +86,6 @@ const Customer = ({ checkoutObj, stateCheckoutHandler }) => {
               className="billing-input"
               required
             />
-
             <input
               value={checkoutZip}
               onChange={e =>
@@ -102,7 +97,6 @@ const Customer = ({ checkoutObj, stateCheckoutHandler }) => {
           </div>
           <div className="customer-label">
             <label className="customer-label">Email:</label>
-
             <label className="customer-label">Phone:</label>
           </div>
           <div className="customer-input-container">
@@ -115,7 +109,6 @@ const Customer = ({ checkoutObj, stateCheckoutHandler }) => {
               type="email"
               required
             />
-
             <input
               value={checkoutPhone}
               onChange={e =>

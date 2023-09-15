@@ -27,7 +27,6 @@ const Progress = ({ current, StepsTabs, setCheckoutObj }) => {
     title: item.title,
     content: item.content
   }))
-
   return (
     <div className="steps-container">
       <Steps items={items} current={current} />

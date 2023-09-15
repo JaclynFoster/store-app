@@ -2,8 +2,7 @@
     border: 4px double slategray;
     overflow: hidden;
     width: 100%;
-   max-height: 300x;
-   /* max-width: 300px; */
+    max-height: 300px;
 }
 
 .animal-card-container {
@@ -11,7 +10,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     margin-bottom: 60px;
-    width: 100%;
+    width: 100vw;
 }
 
 .animal-type {

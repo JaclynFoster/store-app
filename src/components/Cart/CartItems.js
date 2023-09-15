@@ -43,20 +43,16 @@ const CartItems = () => {
                   className="table-img"
                   src={item.breed_image}
                 />
-
                 <Row>
                   <Col>
                     <h4 className="cart-name">{item.breed_name}</h4>
                   </Col>
-
                   <Col>
                     <h5>Price:</h5>
                     <h5>${item.price}.00</h5>
                   </Col>
-
                   <Col>
                     <h5>Qty:</h5>
-
                     <div className="cart-qty">
                       <MinusOutlined
                         onClick={() =>
@@ -70,7 +66,6 @@ const CartItems = () => {
                         className="cart-icons"
                       />
                       <h5>{item.quantity}</h5>
-
                       <PlusOutlined
                         onClick={() =>
                           dispatch(addToCart({ breedObj: item, quantity: 1 }))
@@ -79,7 +74,6 @@ const CartItems = () => {
                       />
                     </div>
                   </Col>
-
                   <Button
                     onClick={() => deleteHandler(item.breed_id)}
                     className="trash"

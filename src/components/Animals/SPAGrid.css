@@ -14,9 +14,7 @@
     align-content: center;
     justify-self: center;
     justify-items: center;
-    margin-bottom: 50px;
-
-    
+    margin-bottom: 50px;   
 }
 @media(min-width: 600px) {
     .grid-container {grid-template-columns: repeat(2, 1fr)} 
@@ -50,15 +48,11 @@
 .grid-label {
     font-size: 20px;
     font-weight: bold;
-   font-family: fantasy;
-   margin-top: 20px;
+    font-family: fantasy;
+    margin-top: 20px;
 }
 
 .grid-img {
-   /* width: 100%;
-   min-width: 50px;
-   height: 350px;
-   min-height: 50px; */
     border: 2px solid darkgray;
     overflow: hidden;
 }
@@ -68,8 +62,6 @@
     flex-direction: row;
     align-items: center;
     margin-top: 15px;
-  
-   
 }
 
 .grid-btns {

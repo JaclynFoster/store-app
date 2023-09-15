@@ -23,7 +23,6 @@ export const StepsTabs = (checkoutObj, stateCheckoutHandler) => [
       />
     )
   },
-
   {
     title: 'Payment',
     content: (

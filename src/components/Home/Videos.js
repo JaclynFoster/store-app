@@ -13,7 +13,6 @@ const Videos = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         />
-
         <iframe
           controls
           src="https://www.youtube.com/embed/1x29gSHza6U"
@@ -21,7 +20,6 @@ const Videos = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         />
-
         <iframe
           controls
           src="https://www.youtube.com/embed/mjQ-o4iOIVA"

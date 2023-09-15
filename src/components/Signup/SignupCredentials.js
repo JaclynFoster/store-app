@@ -12,10 +12,8 @@ const SignupCredentials = ({ signupObj, signupStateHandler }) => {
         <h5 className="signup-header">Enter Login Credentials:</h5>
       </div>
       <Divider />
-
       <div className="signup-label">
         <label className="signup-label">Create Username:</label>
-
         <label className="signup-label">Create Password:</label>
       </div>
       <div className="signup-input-container">
@@ -24,7 +22,6 @@ const SignupCredentials = ({ signupObj, signupStateHandler }) => {
           className="signup-input"
           onChange={e => signupStateHandler('newUsername', e.target.value)}
         />
-
         <input
           value={newPassword}
           type="password"

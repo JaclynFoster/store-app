@@ -12,10 +12,8 @@ const SignupAddress = ({ signupObj, signupStateHandler }) => {
         <h5 className="signup-header">Enter Billing Address:</h5>
       </div>
       <Divider />
-
       <div className="signup-label">
         <label className="signup-label">Address:</label>
-
         <label className="signup-label">City:</label>
       </div>
       <div className="signup-input-container">
@@ -24,17 +22,14 @@ const SignupAddress = ({ signupObj, signupStateHandler }) => {
           onChange={e => signupStateHandler('address', e.target.value)}
           className="signup-input"
         />
-
         <input
           value={city}
           onChange={e => signupStateHandler('city', e.target.value)}
           className="signup-input"
         />
       </div>
-
       <div className="signup-label">
         <label className="signup-label">State:</label>
-
         <label className="signup-label">Zip Code:</label>
       </div>
       <div className="signup-input-container">
@@ -43,14 +38,12 @@ const SignupAddress = ({ signupObj, signupStateHandler }) => {
           onChange={e => signupStateHandler('state', e.target.value)}
           className="signup-input"
         />
-
         <input
           value={zipcode}
           onChange={e => signupStateHandler('zipcode', e.target.value)}
           className="signup-input"
         />
       </div>
-
       <Divider />
     </div>
   )

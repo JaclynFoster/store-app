@@ -15,7 +15,6 @@ const Personal = ({ infoObj, stateInfoHandler }) => {
       <Divider />
       <div className="profile-label">
         <label className="profile-label">First Name:</label>
-
         <label className="profile-label">Last Name:</label>
       </div>
       <div className="profile-input-container">
@@ -24,7 +23,6 @@ const Personal = ({ infoObj, stateInfoHandler }) => {
           onChange={e => stateInfoHandler('newFirst', e.target.value)}
           className="profile-input"
         />
-
         <input
           value={newLast}
           onChange={e => stateInfoHandler('newLast', e.target.value)}
@@ -33,7 +31,6 @@ const Personal = ({ infoObj, stateInfoHandler }) => {
       </div>
       <div className="profile-label">
         <label className="profile-label">Phone:</label>
-
         <label className="profile-label">Email:</label>
       </div>
       <div className="profile-input-container">
@@ -42,14 +39,12 @@ const Personal = ({ infoObj, stateInfoHandler }) => {
           onChange={e => stateInfoHandler('newPhone', e.target.value)}
           className="profile-input"
         />
-
         <input
           value={newEmail}
           onChange={e => stateInfoHandler('newEmail', e.target.value)}
           className="profile-input"
         />
       </div>
-
       <Divider />
     </div>
   )

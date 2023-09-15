@@ -12,10 +12,8 @@ const Credentials = ({ password, infoObj, stateInfoHandler }) => {
         <h5 className="profile-header">Update Login Credentials:</h5>
       </div>
       <Divider />
-
       <div className="profile-label">
         <label className="profile-label">Current Password:</label>
-
         <label className="profile-label">New Password:</label>
       </div>
       <div className="profile-input-container">

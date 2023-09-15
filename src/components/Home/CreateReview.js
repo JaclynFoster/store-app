@@ -58,7 +58,6 @@ const CreateReview = ({ reviewObj, setReviewObj, reviewStateHandler }) => {
           <h2>Thank you for your feedback. We appreciate you.</h2>
         </UseModal>
       ) : null}
-
       <button onClick={createReview} className="review-submit">
         Submit
       </button>

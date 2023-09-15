@@ -55,7 +55,6 @@ const Review = () => {
           return (
             <div className="review-example">
               <Rate value={Number(item.rating)} />
-
               <p>{item.message}</p>
               <span>-{item.name}</span>
             </div>

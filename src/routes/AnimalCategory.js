@@ -42,7 +42,6 @@ const AnimalCategory = () => {
         Back <RollbackOutlined />
       </button>
       <div className="animal-card-container">
-
       <AnimalCategoryCard
         animalType={animalType}
         setAnimalType={setAnimalType}

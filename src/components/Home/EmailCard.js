@@ -17,7 +17,6 @@ const EmailCard = () => {
     <Card overrideClass={'emailCard'}>
       <h1>Welcome to the Farm!</h1>
       <h4>Join our Mailing List for weekly specials, updates and more..</h4>
-
       <section className="email-section">
         <input
           value={emailInput}

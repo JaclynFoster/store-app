@@ -12,10 +12,8 @@ const Address = ({ infoObj, stateInfoHandler }) => {
         <h5 className="profile-header">Update Billing Address:</h5>
       </div>
       <Divider />
-
       <div className="profile-label">
         <label className="profile-label">Address:</label>
-
         <label className="profile-label">City:</label>
       </div>
       <div className="profile-input-container">
@@ -24,17 +22,14 @@ const Address = ({ infoObj, stateInfoHandler }) => {
           onChange={e => stateInfoHandler('newAddress', e.target.value)}
           className="profile-input"
         />
-
         <input
           value={newCity}
           onChange={e => stateInfoHandler('newCity', e.target.value)}
           className="profile-input"
         />
       </div>
-
       <div className="profile-label">
         <label className="profile-label">State:</label>
-
         <label className="profile-label">Zip Code:</label>
       </div>
       <div className="profile-input-container">
@@ -43,14 +38,12 @@ const Address = ({ infoObj, stateInfoHandler }) => {
           onChange={e => stateInfoHandler('newState', e.target.value)}
           className="profile-input"
         />
-
         <input
           value={newZip}
           onChange={e => stateInfoHandler('newZip', e.target.value)}
           className="profile-input"
         />
       </div>
-
       <Divider />
     </div>
   )
